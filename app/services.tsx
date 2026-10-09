@@ -6,6 +6,8 @@ const serviceDetails = [
     id: 1,
     name: "Collection",
     image: "/services/collection.jpg",
+    // Alt text for accessibility
+    altText: "Curated event collection showcase with thematic decorations and lighting",
     description:
       "Curated event collections and themed showcases that tell your story. We create cohesive visual narratives across all event elements, from decor to lighting.",
     features: [
@@ -32,6 +34,8 @@ const serviceDetails = [
     id: 3,
     name: "Festivals",
     image: "/services/festivals.jpg",
+    // Alt text for accessibility
+    altText: "Thematic festival installations with cultural decorations and lighting",
     description:
       "Thematic installations and cultural celebration designs that capture the spirit of your festival. We blend tradition with contemporary design for memorable celebrations.",
     features: [
@@ -45,6 +49,8 @@ const serviceDetails = [
     id: 4,
     name: "Exhibitions",
     image: "/services/exhibitions.jpg",
+    // Alt text for accessibility
+    altText: "Art gallery exhibition setup with professional lighting and display arrangements",
     description:
       "Art displays and gallery installations that showcase your brand or art collection. Professional setup with attention to sightlines and visitor flow.",
     features: [
@@ -58,6 +64,8 @@ const serviceDetails = [
     id: 5,
     name: "Public Events",
     image: "/services/public-events.jpg",
+    // Alt text for accessibility
+    altText: "Conference and public event setup with seating, stages, and technical production",
     description:
       "Conferences, seminars, and community gatherings executed with precision. We handle all aspects from logistics to creative design for successful public gatherings.",
     features: [
@@ -71,6 +79,8 @@ const serviceDetails = [
     id: 6,
     name: "Party Organizers",
     image: "/services/party-organizers.jpg",
+    // Alt text for accessibility
+    altText: "Full-service party planning with decorations, catering setup, and entertainment",
     description:
       "Full-service party planning and organization from concept to execution. Themed parties, corporate events, and celebrations tailored to your vision.",
     features: [
@@ -84,6 +94,8 @@ const serviceDetails = [
     id: 7,
     name: "Craftizner",
     image: "/services/craftizner.jpg",
+    // Alt text for accessibility
+    altText: "Handcrafted custom decorative items and artisan crafts for events",
     description:
       "Custom craft and handmade decorative items that add a personal touch to your event. Unique, artisan-crafted pieces that stand out.",
     features: [
@@ -97,6 +109,8 @@ const serviceDetails = [
     id: 8,
     name: "Real Flowers Decor",
     image: "/services/real-flowers.jpg",
+    // Alt text for accessibility
+    altText: "Fresh-water floral arrangements and seasonal blooms for event decoration",
     description:
       "Fresh-water blooms and natural floral arrangements for authentic, living beauty. Seasonal flowers sourced sustainably for your special occasion.",
     features: [
@@ -110,6 +124,8 @@ const serviceDetails = [
     id: 9,
     name: "Wedding Decor",
     image: "/services/wedding-decor.jpg",
+    // Alt text for accessibility
+    altText: "Mandap and wedding venue decoration with floral arrangements and lighting",
     description:
       "Mandap and wedding venue decoration that creates magical moments. Traditional and contemporary styles tailored to your love story.",
     features: [
@@ -120,6 +136,8 @@ const serviceDetails = [
     id: 10,
     name: "Mandap Decor",
     image: "/services/mandap-decor.jpg",
+    // Alt text for accessibility
+    altText: "Traditional mandap structure with floral decorations and sacred geometry",
     description:
       "Traditional mandap setups and structures that create the sacred space for wedding ceremonies. Authentic designs with modern touches.",
     features: [
@@ -133,6 +151,8 @@ const serviceDetails = [
     id: 11,
     name: "Event Supplies",
     image: "/services/event-supplies.jpg",
+    // Alt text for accessibility
+    altText: "Wide variety of event equipment and materials for all types of gatherings",
     description:
       "Complete event equipment and materials for all types of gatherings. From basic essentials to premium accessories.",
     features: [
@@ -146,6 +166,8 @@ const serviceDetails = [
     id: 12,
     name: "Balloons Supplies",
     image: "/services/balloons.jpg",
+    // Alt text for accessibility
+    altText: "Colorful balloon displays and arch installations for celebrations",
     description:
       "Balloon displays and arch installations that add color and joy to any celebration. Creative designs for weddings, parties, and corporate events.",
     features: [
@@ -159,6 +181,8 @@ const serviceDetails = [
     id: 13,
     name: "Artificial Flowers",
     image: "/services/artificial-flowers.jpg",
+    // Alt text for accessibility
+    altText: "Premium artificial floral decorations that offer lasting beauty without wilting",
     description:
       "Premium artificial floral decorations that offer lasting beauty without compromising on elegance. Perfect for long-term events and photo sessions.",
     features: [

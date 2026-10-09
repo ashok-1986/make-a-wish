@@ -132,6 +132,10 @@ export default function PortfolioPage() {
                 className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity"
                 width={500}
                 height={300}
+                loading="lazy"
+                style={{
+                  srcSet: item.image.replace(/\.[^.]+$/, '') + '@2x.jpg 2x, ' + item.image.replace(/\.[^.]+$(), '') + '@3x.jpg 3x'},
+                }}
               />
               <div className="p-5">
                 <h3 className="text-xl font-medium text-text-primary mb-1">

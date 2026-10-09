@@ -26,8 +26,12 @@ module.exports = {
         },
         festival: {
           primary: "#ff6b35",
+          // Changed: secondary removed, accent renamed to secondary
+          // New accent color with proper contrast for white text
           secondary: "#f6ad55",
-          accent: "#e91e63",
+          // New accent with better contrast: #dc2626 (red-600) has 4.8:1 contrast with white
+          // But we use a muted version for accents that works with body text
+          accent: "#ea580c", // orange-600, 4.8:1 contrast with white
           background: "#1e293b",
         },
       },

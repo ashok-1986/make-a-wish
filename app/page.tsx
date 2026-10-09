@@ -85,10 +85,10 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/portfolio" className="inline-block bg-accent-primary text-white px-8 py-4 rounded-full font-medium transition-colors hover:opacity-90">
+                <Link href="/portfolio" className="inline-block bg-accent-primary text-white px-8 py-4 rounded-full font-medium transition-colors hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary">
                   Explore Our Portfolio
                 </Link>
-                <Link href="/contact" className="inline-block border-2 border-text-primary text-text-primary px-8 py-4 rounded-full font-medium transition-colors hover:bg-bg-primary hover:text-accent-primary">
+                <Link href="/contact" className="inline-block border-2 border-text-primary text-text-primary px-8 py-4 rounded-full font-medium transition-colors hover:bg-bg-primary hover:text-accent-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary">
                   Get a Quote
                 </Link>
               </div>
@@ -113,7 +113,7 @@ export default function HomePage() {
             {categories.map((category) => (
               <div
                 key={category.id}
-                className={`p-6 rounded-xl hover:shadow-lg transition-shadow ${category.color}`}
+                className={`p-6 rounded-xl hover:shadow-lg transition-shadow hover:-translate-y-1 ${category.color}`}
               >
                 <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl ${category.color.replace(
                   "bg-",

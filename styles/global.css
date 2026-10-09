@@ -27,3 +27,22 @@
     transition-timing-function: step-start !important;
   }
 }
+
+/* Focus-visible states for all interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-focus, var(--radius, 4px));
+}
+
+/* Button press feedback */
+button:active,
+a:active {
+  transform: scale(0.97);
+  transition: transform 160ms ease-out;
+}
