@@ -5,10 +5,10 @@ Website basis below mentioned PRD
 ## Make a Wish Website — One-Page PRD
 
 ### 1. Executive Summary
-This website showcases Prabhav Pratishthan's event‑management portfolio, serving as a digital catalog and lead‑generation hub for Collection, Paper Flowers, Festivals, Exhibitions, Public Events, Party Organizers, Craftizner, Real Flowers Decor, Wedding Decor, Mandap Decor, Event Supplies, Balloons Supplies, and Artificial Flowers. It bridges the firm's offline expertise with online discoverability, enabling prospective clients to explore offerings, request quotes, and initiate collaborations.
+This website showcases Make a Wish's event‑management portfolio, serving as a digital catalog and lead‑generation hub for Collection, Paper Flowers, Festivals, Exhibitions, Public Events, Party Organizers, Craftizner, Real Flowers Decor, Wedding Decor, Mandap Decor, Event Supplies, Balloons Supplies, and Artificial Flowers. It bridges the firm's offline expertise with online discoverability, enabling prospective clients to explore offerings, request quotes, and initiate collaborations.
 
 ### 2. Value Proposition
-Prabhav Pratishthan combines Navi Mumbai‑rooted creativity with end‑to‑end event execution, delivering bespoke experiences across 12 curated categories. The website differentiates the firm by presenting a visual, categorized showcase, transparent pricing tiers, and an intuitive inquiry flow that converts visitors into booked projects.
+Make a Wish combines Navi Mumbai‑rooted creativity with end‑to‑end event execution, delivering bespoke experiences across 12 curated categories. The website differentiates the firm by presenting a visual, categorized showcase, transparent pricing tiers, and an intuitive inquiry flow that converts visitors into booked projects.
 
 ### 3. Target Audience (5 Primary Personas)
 1. **Corporate HR planners** seeking conference and public‑event solutions.  

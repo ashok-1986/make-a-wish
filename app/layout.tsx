@@ -1,8 +1,8 @@
 import "./styles/global.css";
 
 export const metadata = {
-  title: "Make a Wish | Prabhav Pratishthan Event Services",
-  description: "Prabhav Pratishthan - Navi Mumbai's premier event management company offering comprehensive event solutions including collection, paper flowers, festivals, exhibitions, and more.",
+  title: "Make a Wish | Make a Wish Event Services",
+  description: "Make a Wish - Navi Mumbai's premier event management company offering comprehensive event solutions including collection, paper flowers, festivals, exhibitions, and more.",
 };
 
 export default function RootLayout({

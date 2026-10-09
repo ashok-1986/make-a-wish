@@ -11,11 +11,11 @@ export default function AboutPage() {
 
           <div className="prose lg:prose-2xl max-w-2xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-display font-bold text-text-primary mb-6">
-              About Prabhav Pratishthan
+              About Make a Wish
             </h1>
 
             <p className="text-text-secondary mb-8 leading-relaxed">
-              Prabhav Pratishthan is Navi Mumbai's premier event management company, combining local creativity with global standards to deliver bespoke event experiences. With over years of expertise, we specialize in transforming visions into memorable realities.
+              Make a Wish is Navi Mumbai's premier event management company, combining local creativity with global standards to deliver bespoke event experiences. With over years of expertise, we specialize in transforming visions into memorable realities.
             </p>
 
             <h2 className="text-3xl font-display font-bold text-text-primary mb-6">
