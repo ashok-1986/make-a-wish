@@ -53,7 +53,7 @@ export default function HomePage() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <span className="text-2xl font-display font-bold text-accent-primary">
-              Prabhav Pratishthan
+              Make a Wish
             </span>
           </div>
 
@@ -77,7 +77,7 @@ export default function HomePage() {
             <div className="text-center max-w-2xl mx-auto">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary leading-tight mb-6">
                 Celebrate Every Moment<br />
-                <span className="text-accent-primary">with Prabhav Pratishthan</span>
+                <span className="text-accent-primary">with Make a Wish</span>
               </h1>
 
               <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-2xl mx-auto">
@@ -85,10 +85,10 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/portfolio" className="inline-block bg-accent-primary text-white px-8 py-4 rounded-full font-medium transition-colors hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary">
+                <Link href="/portfolio" className="inline-block bg-accent-primary text-white px-8 py-4 rounded-full font-medium transition-colors hover:opacity-90">
                   Explore Our Portfolio
                 </Link>
-                <Link href="/contact" className="inline-block border-2 border-text-primary text-text-primary px-8 py-4 rounded-full font-medium transition-colors hover:bg-bg-primary hover:text-accent-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-primary">
+                <Link href="/contact" className="inline-block border-2 border-text-primary text-text-primary px-8 py-4 rounded-full font-medium transition-colors hover:bg-bg-primary hover:text-accent-primary">
                   Get a Quote
                 </Link>
               </div>
@@ -113,7 +113,7 @@ export default function HomePage() {
             {categories.map((category) => (
               <div
                 key={category.id}
-                className={`p-6 rounded-xl hover:shadow-lg transition-shadow hover:-translate-y-1 ${category.color}`}
+                className={`p-6 rounded-xl hover:shadow-lg transition-shadow ${category.color}`}
               >
                 <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl ${category.color.replace(
                   "bg-",
@@ -185,7 +185,7 @@ export default function HomePage() {
             <ArticleTestimonial
               name="Corporate HR Director"
               company="TechCorp India"
-              quote="Prabhav Pratishthan transformed our annual conference into an extraordinary experience. The attention to detail was impeccable!"
+              quote="Make a Wish transformed our annual conference into an extraordinary experience. The attention to detail was impeccable!"
             />
             <ArticleTestimonial
               name="Wedding Planner"
