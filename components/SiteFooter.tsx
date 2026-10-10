@@ -20,6 +20,13 @@ export function SiteFooter() {
               </Link>
             </li>
           ))}
+          {contact.phone && (
+            <li>
+              <a href={contact.phone} className="link-underline inline-block py-2 text-sun">
+                {contact.display}
+              </a>
+            </li>
+          )}
           {contact.whatsapp && (
             <li>
               <a

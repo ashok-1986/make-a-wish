@@ -34,20 +34,31 @@ export function SiteHeader() {
           ))}
         </ul>
 
-        {contact.whatsapp ? (
-          <a
-            href={contact.whatsapp}
-            className="btn !min-h-0 !px-5 !py-2.5 !text-base"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-        ) : (
-          <Link href="/contact" className="btn !min-h-0 !px-5 !py-2.5 !text-base">
-            Get in touch
-          </Link>
-        )}
+        <div className="flex items-center gap-3">
+          {contact.phone && (
+            <a
+              href={contact.phone}
+              className="btn btn-ghost !min-h-0 !px-5 !py-2.5 !text-base text-plum"
+              aria-label={`Call ${contact.display}`}
+            >
+              Call
+            </a>
+          )}
+          {contact.whatsapp ? (
+            <a
+              href={contact.whatsapp}
+              className="btn !min-h-0 !px-5 !py-2.5 !text-base"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+          ) : (
+            <Link href="/contact" className="btn !min-h-0 !px-5 !py-2.5 !text-base">
+              Get in touch
+            </Link>
+          )}
+        </div>
       </nav>
     </header>
   );

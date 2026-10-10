@@ -24,7 +24,7 @@ export function ContactLinks({ tone = "plum" }: { tone?: "plum" | "sun" }) {
       )}
       {contact.phone && (
         <a href={contact.phone} className={secondary}>
-          Call us
+          Call {contact.display}
         </a>
       )}
     </div>

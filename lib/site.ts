@@ -3,11 +3,14 @@
 
 export const SITE_NAME = "Make a Wish";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER; // digits only, with country code, e.g. 919XXXXXXXXX
-const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER; // e.g. +919XXXXXXXXX
+/* Env vars override these defaults if set in Vercel. */
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919769864175"; // digits only, with country code
+const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "+919769864175";
 const email = process.env.NEXT_PUBLIC_EMAIL;
 
 export const contact = {
+  /* Human-readable form for showing the number as text */
+  display: "+91 97698 64175",
   whatsapp: whatsappNumber
     ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         "Hello Make a Wish, I would like to plan an event."
