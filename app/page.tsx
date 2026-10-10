@@ -98,13 +98,7 @@ export default function HomePage() {
                 key={category.id}
                 className={`p-6 rounded-xl hover:shadow-lg transition-shadow ${category.color}`}
               >
-                <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl ${category.color.replace(
-                  "bg-",
-                  "bg-"
-                )} ${category.color.replace(
-                  "text-",
-                  "text-"
-                )}">
+                <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl">
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-medium text-text-primary mb-2">
@@ -132,12 +126,19 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-4">
-              Our 12 Service Offerings
-            </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              Comprehensive event solutions tailored to your vision and requirements
-            </p>
+            {categories.slice(0, 12).map((category) => (
+              <div
+                key={category.id}
+                className="p-6 rounded-xl border border-border-color hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-xl font-medium text-text-primary mb-2">
+                  {category.name}
+                </h3>
+                <p className="text-sm text-text-secondary">
+                  {getCategoryDescription(category.id)}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
