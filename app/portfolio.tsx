@@ -70,7 +70,6 @@ const portfolioItems = [
 ];
 
 const categories = [
-  { id: 0, name: "All", filter: "all" },
   { id: 1, name: "Collection", filter: "collection" },
   { id: 2, name: "Paper Flowers", filter: "paper-flowers" },
   { id: 3, name: "Festivals", filter: "festivals" },
@@ -87,10 +86,9 @@ const categories = [
 ];
 
 export default function PortfolioPage() {
-  const [selectedCategory, setSelectedCategory] = React.useState(0);
+  const [selectedCategory, setSelectedCategory] = React.useState(1);
 
   const filteredItems = React.useMemo(() => {
-    if (selectedCategory === 0) return portfolioItems;
     return portfolioItems.filter(
       (item) => item.category.toLowerCase().replace(/\s/g, "-") === categories[selectedCategory].filter
     );

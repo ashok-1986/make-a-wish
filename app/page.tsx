@@ -18,23 +18,6 @@ const categories = [
   { id: 13, name: "Artificial Flowers", icon: "🌺", color: "bg-secondary text-text-secondary" },
 ];
 
-/* Services breakdown from the PRD */
-const services = [
-  { id: 1, name: "Collection", description: "Curated event collections and themes" },
-  { id: 2, name: "Paper Flowers", description: "Artificial flower arrangements and decorations" },
-  { id: 3, name: "Festivals", description: "Thematic installations and cultural celebrations" },
-  { id: 4, name: "Exhibitions", description: "Art displays and gallery installations" },
-  { id: 5, name: "Public Events", description: "Conferences, seminars, and community gatherings" },
-  { id: 6, name: "Party Organizers", description: "Full-service party planning and execution" },
-  { id: 7, name: "Craftizner", description: "Custom craft and handmade decorative items" },
-  { id: 8, name: "Real Flowers Decor", description: "Fresh-water blooms and natural floral arrangements" },
-  { id: 9, name: "Wedding Decor", description: "Mandap and wedding venue decoration" },
-  { id: 10, name: "Mandap Decor", description: "Traditional mandap setups and structures" },
-  { id: 11, name: "Event Supplies", description: "Complete event equipment and materials" },
-  { id: 12, name: "Balloons Supplies", description: "Balloon displays and arch installations" },
-  { id: 13, name: "Artificial Flowers", description: "Premium artificial floral decorations" },
-];
-
 /* Navigation links */
 const navLinks = [
   { name: "Home", href: "/", active: true },
@@ -149,22 +132,12 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="p-6 rounded-xl border border-border-color hover:transition-all hover:border-accent-primary hover:text-accent-primary"
-              >
-                <div className="w-10 h-10 mx-auto mb-4 flex items-center justify-center rounded-xl bg-accent-primary/10">
-                  {/* Service icon would go here */}
-                </div>
-                <h3 className="text-xl font-medium text-text-primary mb-3">
-                  {service.name}
-                </h3>
-                <p className="text-sm text-text-secondary line-clamp-2">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+<h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-4">
+              Our 12 Service Offerings
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Comprehensive event solutions tailored to your vision and requirements
+            </p>
           </div>
         </div>
       </section>

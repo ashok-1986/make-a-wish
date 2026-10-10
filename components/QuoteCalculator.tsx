@@ -180,7 +180,7 @@ export function QuoteCalculator({
                         />
                         <span>{displayName}</span>
                         <span className="ml-auto text-right text-sm font-medium">
-                          {servicePricing[service] >= 100000 ? `₹${servicePricing[service] / 1000}k+` : `₹${servicePricing[service] / 1000}k`}
+                          {`₹${servicePricing[service] / 1000}k`}
                         </span>
                       </label>
                   );
@@ -208,12 +208,12 @@ export function QuoteCalculator({
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-accent-primary/10">
                 <p className="text-sm text-text-secondary">Base Price</p>
-                <p className="text-3xl font-bold text-accent-primary">{calculateTotal().basePrice >= 100000 ? `₹${calculateTotal().basePrice / 1000}k+` : `₹${calculateTotal().basePrice / 1000}k`}</p>
+                <p className="text-3xl font-bold text-accent-primary">{`₹${calculateTotal().basePrice / 1000}k`}</p>
               </div>
               <div className="p-4 rounded-xl bg-bg-primary">
                 <p className="text-sm text-text-secondary">Total Estimate</p>
                 <p className="text-3xl font-display font-bold text-text-primary">
-                  {calculateTotal().totalEstimate >= 100000 ? `₹${calculateTotal().totalEstimate / 1000}k+` : `₹${calculateTotal().totalEstimate / 1000}k`}
+                  {`₹${calculateTotal().totalEstimate / 1000}k`}
                 </p>
               </div>
             </div>
@@ -228,7 +228,7 @@ export function QuoteCalculator({
                     .join(" ");
                   return (
                     <li key={service}>
-                      {displayName}: {price >= 100000 ? `₹${price / 1000}k` : `₹${price / 1000}k`}
+                      {displayName}: {`₹${price / 1000}k`}
                     </li>
                   );
                 })}
