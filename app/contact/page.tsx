@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { SectionBar } from "../../components/SectionBar";
 import { ContactLinks } from "../../components/ContactLinks";
+import { PageHero } from "../../components/PageHero";
+import { Reveal } from "../../components/Reveal";
+import { Star } from "../../components/Star";
 import { contact } from "../../lib/site";
 
 export const metadata: Metadata = {
@@ -23,50 +25,56 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="px-5 pb-[50px] pt-10 md:pt-[67px]">
-        <h1 className="t-display font-normal">Contact</h1>
-        <p className="t-body mt-[50px] max-w-[34ch] md:ml-[10%]">
-          The quickest way to reach us is a message or a call.
-        </p>
-      </section>
+      <PageHero
+        title="Contact"
+        tone="sky"
+        intro="The quickest way to reach us is a message or a call."
+      />
 
-      <section aria-labelledby="reach-us">
-        <SectionBar label="Reach us" />
-        <div className="px-5 py-[50px]">
-          <h2 id="reach-us" className="sr-only">
+      <section aria-labelledby="reach-us" className="bg-paper px-5 py-16 md:px-10 md:py-24">
+        <Reveal className="mx-auto max-w-6xl">
+          <h2 id="reach-us" className="display-lg text-plum">
             Reach us
           </h2>
-          {hasDirectContact ? (
-            <>
-              <ContactLinks />
-              {contact.email && (
-                <p className="t-heading-lg mt-[10px]">
-                  <a href={contact.email} className="t-link break-all">
-                    {contact.emailLabel}
-                  </a>
-                </p>
-              )}
-            </>
-          ) : (
-            <p className="t-heading max-w-[20ch]">
-              Phone and WhatsApp details will be listed here shortly.
-            </p>
-          )}
-        </div>
+          <div className="mt-8">
+            {hasDirectContact ? (
+              <>
+                <ContactLinks />
+                {contact.email && (
+                  <p className="mt-6 text-xl">
+                    <a href={contact.email} className="link-underline break-all font-bold text-plum">
+                      {contact.emailLabel}
+                    </a>
+                  </p>
+                )}
+              </>
+            ) : (
+              <p className="lede">
+                Phone and WhatsApp details will be listed here shortly.
+              </p>
+            )}
+          </div>
+        </Reveal>
       </section>
 
-      <section aria-labelledby="share">
-        <SectionBar label="Helpful to tell us" />
-        <h2 id="share" className="sr-only">
-          What to include in your message
-        </h2>
-        <ul className="flex flex-col gap-[10px] px-5 py-[50px]">
-          {toShare.map((item) => (
-            <li key={item} className="t-heading">
-              {item}
-            </li>
-          ))}
-        </ul>
+      <section aria-labelledby="share" className="bg-sun px-5 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <h2 id="share" className="display-lg text-plum">
+              Helpful to tell us
+            </h2>
+          </Reveal>
+          <ul className="mt-8 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+            {toShare.map((item, i) => (
+              <li key={item}>
+                <Reveal delay={i * 80} className="flex items-center gap-4">
+                  <Star className="h-8 w-8 shrink-0 text-plum" />
+                  <span className="display-md">{item}</span>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </>
   );

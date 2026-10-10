@@ -1,14 +1,20 @@
 import "../styles/global.css";
-import { Inter } from "next/font/google";
+import { Figtree, Lobster_Two } from "next/font/google";
 import type { Metadata } from "next";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 
-/* Inter is DESIGN.md's named open-source substitute for PP Neue Montreal. Weight 400 only. */
-const sans = Inter({
+/* Lobster Two (bold italic) carries the logo's script lettering; Figtree is the readable body voice. */
+const display = Lobster_Two({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-sans",
+  weight: "700",
+  style: "italic",
+  variable: "--font-display",
+  display: "swap",
+});
+const body = Figtree({
+  subsets: ["latin"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -27,11 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={sans.variable}>
-      <body className="min-h-screen bg-paper font-sans text-ink antialiased">
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body className="min-h-screen bg-paper font-body text-ink antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-3 focus:z-50 focus:bg-ink focus:px-3 focus:py-2 focus:text-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-3 focus:z-50 focus:rounded-full focus:bg-plum focus:px-4 focus:py-2 focus:text-paper"
         >
           Skip to content
         </a>

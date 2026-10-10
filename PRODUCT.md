@@ -33,7 +33,7 @@ Local, relationship-driven service business. Prospects often decide by seeing ph
 
 ## Brand Commitments
 
-Brand name is "Make a Wish" (rebranded from Prabhav Pratishthan; do not reintroduce the old name). The owner has an existing logo and brand assets (not yet in the repo). Messaging themes from the PRD: "celebrate every moment," "creativity with responsibility," "local legacy, global standards." Tone: professional yet warm, clarity-first, no hyperbole, concrete descriptors (for example, "mandap decor with fresh-water blooms"). Emphasize sustainability and client collaboration. The PRD's design notes call for ample white space, earthy tones with festival accents, and a serif display face with a sans body.
+Brand name is "Make a Wish" (rebranded from Prabhav Pratishthan; do not reintroduce the old name). The logo (plum script wordmark in a ring of stars on a cream star, inside a yellow-to-blue line-art swirl) is in `public/logo.webp`. Brand colours sampled from it: plum `#5c2f7f`, sun yellow `#f8e23a`, amber `#fdc32e`, sky blue `#7ed2ea`, star cream `#fff9b0`. Use them as the site palette (see DESIGN.md). Messaging themes from the PRD: "celebrate every moment," "creativity with responsibility," "local legacy, global standards." Tone: professional yet warm, clarity-first, no hyperbole, concrete descriptors (for example, "mandap decor with fresh-water blooms"). Emphasize sustainability and client collaboration. The PRD's design notes call for ample white space, earthy tones with festival accents, and a serif display face with a sans body.
 
 ## Evidence on Hand
 

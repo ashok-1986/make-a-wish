@@ -7,12 +7,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "cursive"],
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
+      /* Brand colours sampled from the Make a Wish logo (public/logo.webp) */
       colors: {
-        ink: "#0c0c0c",
-        paper: "#f9f7f4",
-        stone: "#e3e1dd",
+        plum: "#5c2f7f", // lettering and stars
+        ink: "#2b1442", // deepened plum for body text
+        sun: "#f8e23a", // logo swirl, sunshine yellow
+        amber: "#fdc32e", // logo swirl, warm yellow
+        sky: "#7ed2ea", // logo swirl, blue
+        cream: "#fff9b0", // star
+        paper: "#fffce3", // lightened star, page ground
       },
     },
   },

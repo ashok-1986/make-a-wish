@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { SectionBar } from "../../components/SectionBar";
+import { Bands } from "../../components/Bands";
 import { ContactLinks } from "../../components/ContactLinks";
+import { PageHero } from "../../components/PageHero";
+import { Reveal } from "../../components/Reveal";
 import { categories } from "../../lib/site";
 
 export const metadata: Metadata = {
@@ -12,39 +14,25 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="px-5 pb-[50px] pt-10 md:pt-[67px]">
-        <h1 className="t-display font-normal">Services</h1>
-        <p className="t-body mt-[50px] max-w-[34ch] md:ml-[10%]">
-          Everything an event needs, from the flowers on the mandap to the
-          balloons at the party.
-        </p>
-      </section>
-
-      <section aria-labelledby="all-services">
-        <SectionBar label="All services" />
-        <h2 id="all-services" className="sr-only">
-          All services
-        </h2>
-        <ul className="flex flex-col gap-[50px] px-5 py-[50px]">
-          {categories.map((category) => (
-            <li key={category.slug} id={category.slug} className="scroll-mt-24">
-              <h3 className="t-heading-lg font-normal">{category.name}</h3>
-              <p className="t-body mt-[10px] max-w-[34ch]">
-                {category.description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section aria-labelledby="start">
-        <SectionBar label="Start with a message" />
-        <div className="px-5 pt-[50px]">
-          <h2 id="start" className="sr-only">
-            Get in touch
-          </h2>
-          <ContactLinks />
-        </div>
+      <PageHero
+        title="Services"
+        tone="amber"
+        intro="Everything an event needs, from the flowers on the mandap to the balloons at the party."
+      />
+      <Bands
+        items={categories.map((c) => ({
+          id: c.slug,
+          name: c.name,
+          text: c.description,
+        }))}
+      />
+      <section className="on-dark bg-plum px-5 py-16 text-paper md:px-10 md:py-24">
+        <Reveal className="mx-auto max-w-6xl">
+          <h2 className="display-lg text-sun">Start with a message</h2>
+          <div className="mt-8">
+            <ContactLinks tone="sun" />
+          </div>
+        </Reveal>
       </section>
     </>
   );

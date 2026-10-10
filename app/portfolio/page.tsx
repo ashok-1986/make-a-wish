@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { SectionBar } from "../../components/SectionBar";
+import { Bands } from "../../components/Bands";
 import { ContactLinks } from "../../components/ContactLinks";
+import { PageHero } from "../../components/PageHero";
+import { Reveal } from "../../components/Reveal";
 import { audiences } from "../../lib/site";
 
 export const metadata: Metadata = {
@@ -12,37 +14,25 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="px-5 pb-[50px] pt-10 md:pt-[67px]">
-        <h1 className="t-display font-normal">Work</h1>
-        <p className="t-body mt-[50px] max-w-[34ch] md:ml-[10%]">
-          Event photography is being added to this page. Until then, message us
-          and we will share photographs of work close to what you have in mind.
-        </p>
-      </section>
-
-      <section aria-labelledby="events-we-do">
-        <SectionBar label="Events we do" href="/services" action="All services" />
-        <h2 id="events-we-do" className="sr-only">
-          Events we do
-        </h2>
-        <ul className="flex flex-col gap-[50px] px-5 py-[50px]">
-          {audiences.map((audience) => (
-            <li key={audience.name}>
-              <p className="t-heading-lg">{audience.name}</p>
-              <p className="t-body mt-[10px] max-w-[34ch]">{audience.line}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section aria-labelledby="see-more">
-        <SectionBar label="See work close to your event" />
-        <div className="px-5 pt-[50px]">
-          <h2 id="see-more" className="sr-only">
-            Ask for photographs
-          </h2>
-          <ContactLinks />
-        </div>
+      <PageHero
+        title="Work"
+        tone="sky"
+        intro="Event photography is being added to this page. Until then, message us and we will share photographs of work close to what you have in mind."
+      />
+      <Bands
+        items={audiences.map((a) => ({
+          id: a.name.toLowerCase(),
+          name: a.name,
+          text: a.line,
+        }))}
+      />
+      <section className="on-dark bg-plum px-5 py-16 text-paper md:px-10 md:py-24">
+        <Reveal className="mx-auto max-w-6xl">
+          <h2 className="display-lg text-sun">See work close to your event</h2>
+          <div className="mt-8">
+            <ContactLinks tone="sun" />
+          </div>
+        </Reveal>
       </section>
     </>
   );

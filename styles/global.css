@@ -2,102 +2,274 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design tokens — see DESIGN.md (gallery wall on cream paper).
-   Deviations, chosen for accessibility: caption is 12px (not 10px); running body text uses a 1.35
-   line-height (not 1.0); display and heading sizes scale down on small screens. */
+/* Brand tokens sampled from the logo. See DESIGN.md. */
 :root {
-  --color-ink: #0c0c0c;
-  --color-paper: #f9f7f4;
-  --color-stone: #e3e1dd;
-
-  --page-pad: 20px;
-  --section-gap: 50px;
-  --element-gap: 10px;
+  --plum: #5c2f7f;
+  --ink: #2b1442;
+  --sun: #f8e23a;
+  --amber: #fdc32e;
+  --sky: #7ed2ea;
+  --cream: #fff9b0;
+  --paper: #fffce3;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
-  background: var(--color-paper);
-  color-scheme: light;
+  background: var(--paper);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--color-paper);
-  color: var(--color-ink);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 1.125rem;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Type scale: hierarchy comes from size alone, weight stays 400 */
 @layer components {
-  .t-caption {
-    font-size: 12px;
-    line-height: 1.3;
-    letter-spacing: -0.1px;
-  }
-  .t-body {
-    font-size: clamp(18px, 2.2vw, 22px);
-    line-height: 1.35;
+  /* Display voice: heavy italic script, echoing the logo lettering */
+  .display-xl {
+    font-family: var(--font-display), cursive;
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(3rem, 9.5vw, 6rem);
+    line-height: 0.98;
     letter-spacing: -0.01em;
+    text-wrap: balance;
   }
-  .t-sub {
-    font-size: clamp(24px, 3.4vw, 33px);
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-  }
-  .t-heading {
-    font-size: clamp(32px, 5vw, 44px);
-    line-height: 1.02;
-    letter-spacing: -0.01em;
-  }
-  .t-heading-lg {
-    font-size: clamp(40px, 7vw, 67px);
-    line-height: 1.02;
-    letter-spacing: -0.01em;
-  }
-  .t-display {
-    font-size: clamp(48px, 11.5vw, 111px);
+  .display-lg {
+    font-family: var(--font-display), cursive;
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(2.25rem, 6vw, 4rem);
     line-height: 1;
-    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .display-md {
+    font-family: var(--font-display), cursive;
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+    line-height: 1.05;
+  }
+  .lede {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.5;
+    max-width: 60ch;
   }
 
-  /* Text links: no filled or outlined controls. Underline appears on hover and focus. */
-  .t-link {
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.1;
+    background: var(--plum);
+    color: var(--paper);
+    transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out),
+      transform 220ms var(--ease-out);
+  }
+  .btn:hover {
+    background: var(--ink);
+    transform: translateY(-2px);
+  }
+  .btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+  .btn .btn-arrow {
+    transition: transform 260ms var(--ease-out);
+  }
+  .btn:hover .btn-arrow {
+    transform: translateX(5px);
+  }
+  .btn-sun {
+    background: var(--sun);
+    color: var(--ink);
+  }
+  .btn-sun:hover {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: inherit;
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+  .btn-ghost:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .link-underline {
     text-decoration: underline;
     text-decoration-color: transparent;
-    text-underline-offset: 0.12em;
-    text-decoration-thickness: 1px;
-    transition: text-decoration-color 150ms ease;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 180ms ease;
   }
-  .t-link:hover,
-  .t-link:focus-visible {
+  .link-underline:hover,
+  .link-underline:focus-visible {
     text-decoration-color: currentColor;
-  }
-  /* Inline links inside running copy stay underlined */
-  .t-inline {
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
-    text-decoration-thickness: 1px;
   }
 }
 
-/* Focus: a plain ink outline, visible on Paper and Stone */
-a:focus-visible {
-  outline: 2px solid var(--color-ink);
+/* Focus rings follow the surface: plum on light fields, cream on dark ones */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--plum);
   outline-offset: 3px;
+  border-radius: 6px;
+}
+.on-dark a:focus-visible,
+.on-dark button:focus-visible {
+  outline-color: var(--cream);
 }
 
 ::selection {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--plum);
+  color: var(--cream);
 }
 
-/* Reduced motion */
+/* ---------- Motion ---------- */
+
+@keyframes float-logo {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(2.5deg);
+  }
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.78) rotate(28deg);
+  }
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, -22px) rotate(14deg);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em) rotate(4deg);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.anim-float-logo {
+  animation: float-logo 9s ease-in-out infinite;
+}
+.anim-twinkle {
+  animation: twinkle var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
+}
+.anim-drift {
+  animation: drift var(--dur, 9s) ease-in-out var(--delay, 0s) infinite;
+}
+.anim-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Headline words arrive one after another */
+.word {
+  display: inline-block;
+  animation: word-in 900ms var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 110ms + 150ms);
+}
+
+/* Scroll reveal: content is visible by default; JS hides below-fold items then releases them */
+.reveal {
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+}
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+/* Category rows */
+.row-hover .row-star {
+  transition: transform 500ms var(--ease-out), opacity 300ms ease;
+  opacity: 0;
+  transform: scale(0.4) rotate(-90deg);
+}
+.row-hover:hover .row-star,
+.row-hover:focus-visible .row-star {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+.row-hover .row-name {
+  transition: transform 400ms var(--ease-out);
+}
+.row-hover:hover .row-name,
+.row-hover:focus-visible .row-name {
+  transform: translateX(14px);
+}
+
+/* Occasion panels */
+.panel .panel-star {
+  transition: transform 900ms var(--ease-out);
+}
+.panel:hover .panel-star {
+  transform: rotate(72deg) scale(1.08);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  * {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
     transition-duration: 0ms !important;
-    animation-duration: 0ms !important;
+  }
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+  }
+  .marquee {
+    overflow-x: auto;
   }
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { SectionBar } from "../../components/SectionBar";
+import { Bands } from "../../components/Bands";
 import { ContactLinks } from "../../components/ContactLinks";
+import { PageHero } from "../../components/PageHero";
+import { Reveal } from "../../components/Reveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -9,49 +11,39 @@ export const metadata: Metadata = {
 };
 
 const values = [
-  "Creativity with responsibility.",
-  "Local legacy, global standards.",
-  "Built with the client, not for them.",
+  {
+    id: "creativity",
+    name: "Creativity with responsibility",
+    text: "We care about the materials we use and what is left behind after the celebration.",
+  },
+  {
+    id: "legacy",
+    name: "Local legacy, global standards",
+    text: "Rooted in Navi Mumbai, and held to the standard of the best events anywhere.",
+  },
+  {
+    id: "collaboration",
+    name: "Built with the client",
+    text: "We plan, decorate and run events working closely with you, so the result feels like yours.",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="px-5 pb-[50px] pt-10 md:pt-[67px]">
-        <h1 className="t-display font-normal">About</h1>
-        <p className="t-sub mt-[50px] max-w-[24ch] md:ml-[10%]">
-          Make a Wish is an event decor and management firm rooted in Navi
-          Mumbai.
-        </p>
-        <p className="t-body mt-[36px] max-w-[34ch] md:ml-[10%]">
-          We plan, decorate and run events, working closely with each client so
-          the result feels like theirs. We care about the materials we use and
-          what is left behind after the celebration.
-        </p>
-      </section>
-
-      <section aria-labelledby="values">
-        <SectionBar label="What we hold to" />
-        <h2 id="values" className="sr-only">
-          Values
-        </h2>
-        <ul className="flex flex-col gap-[10px] px-5 py-[50px]">
-          {values.map((value) => (
-            <li key={value} className="t-heading">
-              {value}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section aria-labelledby="talk">
-        <SectionBar label="Say hello" />
-        <div className="px-5 pt-[50px]">
-          <h2 id="talk" className="sr-only">
-            Get in touch
-          </h2>
-          <ContactLinks />
-        </div>
+      <PageHero
+        title="About"
+        tone="sun"
+        intro="Make a Wish is an event decor and management firm rooted in Navi Mumbai."
+      />
+      <Bands items={values} />
+      <section className="on-dark bg-plum px-5 py-16 text-paper md:px-10 md:py-24">
+        <Reveal className="mx-auto max-w-6xl">
+          <h2 className="display-lg text-sun">Say hello</h2>
+          <div className="mt-8">
+            <ContactLinks tone="sun" />
+          </div>
+        </Reveal>
       </section>
     </>
   );
