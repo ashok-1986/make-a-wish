@@ -1,4 +1,4 @@
-import "./styles/global.css";
+import "../styles/global.css";
 
 export const metadata = {
   title: "Make a Wish | Make a Wish Event Services",

@@ -234,7 +234,7 @@ function ArticleTestimonial({
     <article className="p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
       <blockquote className="text-lg font-serif quote-yellow relative pl-8 pb-6">
         <p>{quote}</p>
-        <span className="absolute top-0 left-0 w-10 h-10 rounded-full bg-accent-primary/10 text-accent-primary flex items-center justify-center">‌</span>
+        <span className="absolute top-0 left-0 w-10 h-10 rounded-full bg-accent-primary/10 text-accent-primary flex items-center justify-center"></span>
       </blockquote>
       <div className="mt-6 flex items-center gap-4">
         <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
