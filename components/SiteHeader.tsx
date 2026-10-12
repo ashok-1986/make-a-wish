@@ -15,6 +15,7 @@ export function SiteHeader() {
             alt=""
             width={919}
             height={822}
+            sizes="64px"
             className="h-12 w-auto"
             priority
           />
@@ -26,7 +27,7 @@ export function SiteHeader() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="link-underline inline-block py-3 font-semibold text-ink"
+                className="link-underline inline-block min-w-[48px] py-3.5 text-center font-semibold text-ink"
               >
                 {link.name}
               </Link>

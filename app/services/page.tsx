@@ -21,7 +21,7 @@ export default function ServicesPage() {
       />
 
       {buckets.map((bucket) => (
-        <section key={bucket.id} id={bucket.id} aria-labelledby={`${bucket.id}-title`} className="scroll-mt-20">
+        <section key={bucket.id} id={bucket.id} aria-labelledby={`${bucket.id}-title`} className="scroll-mt-36">
           <div className="on-dark bg-plum px-5 py-10 text-paper md:px-10 md:py-14">
             <Reveal className="mx-auto max-w-6xl">
               <h2 id={`${bucket.id}-title`} className="display-lg text-sun">
@@ -31,6 +31,8 @@ export default function ServicesPage() {
             </Reveal>
           </div>
           <Bands
+            level={3}
+            enquire
             items={bucket.services.map((s) => ({
               id: s.slug,
               name: s.name,

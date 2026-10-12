@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="on-dark bg-ink px-5 py-14 text-paper md:px-10">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-10 gap-y-8">
         <div className="flex items-center gap-4">
-          <Image src="/logo.webp" alt="" width={919} height={822} className="h-16 w-auto" />
+          <Image src="/logo.webp" alt="" width={919} height={822} sizes="96px" className="h-16 w-auto" />
           <p className="max-w-[28ch] text-sm text-paper/80">
             {SITE_NAME}. Event decor and management, Navi Mumbai.
           </p>

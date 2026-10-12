@@ -12,7 +12,7 @@ export function AnnouncementBar() {
           href={whatsappLink(announcement.message)}
           target="_blank"
           rel="noopener noreferrer"
-          className="link-underline font-bold text-sun"
+          className="link-underline inline-block py-3 font-bold text-sun"
         >
           {announcement.cta} &rarr;
         </a>
