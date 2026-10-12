@@ -35,7 +35,18 @@ Local, relationship-driven service business. Prospects often decide by seeing ph
 
 Brand name is "Make a Wish" (rebranded from Prabhav Pratishthan; do not reintroduce the old name). The logo (plum script wordmark in a ring of stars on a cream star, inside a yellow-to-blue line-art swirl) is in `public/logo.webp`. Brand colours sampled from it: plum `#5c2f7f`, sun yellow `#f8e23a`, amber `#fdc32e`, sky blue `#7ed2ea`, star cream `#fff9b0`. Use them as the site palette (see DESIGN.md). Messaging themes from the PRD: "celebrate every moment," "creativity with responsibility," "local legacy, global standards." Tone: professional yet warm, clarity-first, no hyperbole, concrete descriptors (for example, "mandap decor with fresh-water blooms"). Emphasize sustainability and client collaboration. The PRD's design notes call for ample white space, earthy tones with festival accents, and a serif display face with a sans body.
 
+## Confirmed by the owner (Oct 2026)
+
+- More than 50 corporate events managed (shown as "50+").
+- Decor is eco-friendly and low-waste; fresh florals; service area Navi Mumbai and Mumbai.
+- Corporate bookings come in many shapes all year (festival-specific, event-specific). The current push is festive-season corporate gifting.
+- Corporate gifting is a real offering (brochure in `public/images/corporate-gifting-brochure.jpg`): utility gifting (home decor, handicraft, crockery, utensils, German silver, brass items, stationery, personalised products, accessories) and edible gifting (snacks, cookies, chocolate, dry fruit, seeds). Tagline: "Premium custom gifts for premium partnerships".
+- Quote requests go through a four-field form that opens WhatsApp pre-filled (no backend). Call and WhatsApp number: +91 97698 64175.
+- Do not name clients on the site for now.
+
 ## Evidence on Hand
+
+- `images/` holds seven third-party supplier catalogue shots (other brands, MRP prices, wholesale text) and one AI-watermarked paper-flower photo. They are not used on the site; see the owner before using them.
 
 - Logo and brand assets exist with the owner but are not yet added to the repo.
 - No real testimonials: the three on the homepage (TechCorp India, Royal Weddings, Navi Mumbai Festival Committee) are placeholders. Do not present them as real, and do not invent others.

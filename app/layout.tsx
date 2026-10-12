@@ -1,6 +1,7 @@
 import "../styles/global.css";
 import { Figtree, Lobster_Two } from "next/font/google";
 import type { Metadata } from "next";
+import { AnnouncementBar } from "../components/AnnouncementBar";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 
@@ -20,11 +21,11 @@ const body = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: "Make a Wish | Event decor and management in Navi Mumbai",
+    default: "Make a Wish | Corporate events, festive decor and gifting in Navi Mumbai",
     template: "%s | Make a Wish",
   },
   description:
-    "Make a Wish is an event management and decor firm in Navi Mumbai: mandap and wedding decor, real and paper flowers, festivals, exhibitions, balloons and event supplies.",
+    "Make a Wish designs and runs corporate events, festive decor, corporate gifting, weddings and mandaps across Navi Mumbai and Mumbai, with eco-conscious materials and fresh florals.",
 };
 
 export default function RootLayout({
@@ -41,6 +42,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <AnnouncementBar />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
