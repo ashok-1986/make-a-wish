@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import BrandSculptureHero from "../components/BrandSculptureHero";
 import { ContactLinks } from "../components/ContactLinks";
 import { Marquee } from "../components/Marquee";
 import { QuoteForm } from "../components/QuoteForm";
 import { Reveal } from "../components/Reveal";
 import { Star, StarField } from "../components/Star";
 import { buckets, festiveExperiences, giftingLines } from "../lib/site";
-
-const headline = ["Experiences", "worth", "remembering."];
 
 /* Bucket panels: one brand colour each, wide and narrow alternating */
 const bucketStyle = [
@@ -26,61 +25,8 @@ const trust = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero: experience-led message for corporate buyers, the logo floating beside it */}
-      <section className="relative overflow-hidden bg-sun px-5 pb-20 pt-12 md:px-10 md:pb-28 md:pt-16">
-        <StarField
-          spots={[
-            { top: "8%", left: "46%", size: 40, color: "#5c2f7f", kind: "twinkle", dur: 4, delay: 0, mobileHidden: true },
-            { top: "70%", left: "4%", size: 30, color: "#fff9b0", kind: "drift", dur: 10, delay: 1 },
-            { top: "18%", left: "3%", size: 22, color: "#7ed2ea", kind: "twinkle", dur: 5, delay: 2, mobileHidden: true },
-            { top: "84%", left: "48%", size: 54, color: "#fdc32e", kind: "drift", dur: 12, delay: 0.5 },
-            { top: "4%", right: "4%", size: 26, color: "#5c2f7f", kind: "twinkle", dur: 6, delay: 1.5 },
-          ]}
-        />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.15fr_1fr]">
-          <div>
-            <h1 className="display-xl text-plum">
-              {headline.map((word, i) => (
-                <span
-                  key={word}
-                  className="word mr-[0.25em]"
-                  style={{ "--i": i } as React.CSSProperties}
-                >
-                  {word}
-                </span>
-              ))}
-            </h1>
-            <p className="lede mt-8">
-              Corporate events, festive celebrations and premium gifting across
-              Navi Mumbai and Mumbai. We design, produce and manage every detail,
-              with eco-conscious materials and fresh florals.
-            </p>
-            <div className="mt-10">
-              <ContactLinks
-                label="Plan a corporate experience"
-                message="Hello Make a Wish, I would like to plan a corporate event or experience."
-              />
-              <p className="mt-5">
-                <Link href="/services" className="link-underline font-bold text-plum">
-                  View all services &rarr;
-                </Link>
-              </p>
-            </div>
-          </div>
-
-          <div className="mx-auto w-full max-w-[26rem] md:max-w-none">
-            <Image
-              src="/logo.webp"
-              alt="Make a Wish logo: the words in plum script inside a ring of stars on a cream star, wrapped in a yellow-to-blue swirl of fine lines"
-              width={919}
-              height={822}
-              priority
-              sizes="(min-width: 768px) 42vw, 90vw"
-              className="anim-float-logo h-auto w-full"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Hero: liquid garland sculpture, experience-led message for corporate buyers */}
+      <BrandSculptureHero />
 
       {/* Trust strip: three plain statements, no stat cards */}
       <section aria-label="Why Make a Wish" className="bg-cream px-5 py-6 md:px-10">

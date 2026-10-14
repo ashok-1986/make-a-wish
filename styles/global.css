@@ -255,6 +255,12 @@ button:focus-visible {
   transform: rotate(72deg) scale(1.08);
 }
 
+/* Liquid sculpture hero: keep its text link at a 44px touch target */
+.sh-root .sh-txt {
+  min-height: 44px;
+  align-items: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
