@@ -1,7 +1,7 @@
+import { giftingCategories } from "../lib/gifting";
 import { Star } from "./Star";
-import { categories } from "../lib/site";
 
-/* Decorative band of category names; the same information is in the list below, so it is hidden from
+/* Decorative band of category names; the same information is in the directory below, so it is hidden from
    assistive tech. Pauses on hover; static and scrollable under reduced motion. */
 export function Marquee() {
   return (
@@ -12,8 +12,8 @@ export function Marquee() {
       <div className="marquee-track">
         {[0, 1].map((copy) => (
           <ul key={copy} className="flex shrink-0 items-center">
-            {categories.map((c) => (
-              <li key={`${copy}-${c.slug}`} className="flex items-center">
+            {giftingCategories.map((c) => (
+              <li key={`${copy}-${c.id}`} className="flex items-center">
                 <span className="display-md whitespace-nowrap px-6">{c.name}</span>
                 <Star className="h-5 w-5 shrink-0 text-cream" />
               </li>

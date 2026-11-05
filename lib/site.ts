@@ -5,9 +5,11 @@ export const SITE_NAME = "Make a Wish";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919769864175"; // digits only, with country code
 const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "+919769864175";
-const email = process.env.NEXT_PUBLIC_EMAIL;
+const secondaryPhoneNumber = process.env.NEXT_PUBLIC_SECONDARY_PHONE_NUMBER || "+919987119558";
+const emailAddress = process.env.NEXT_PUBLIC_EMAIL || "makeawishsmita9@gmail.com";
 
-export const DEFAULT_MESSAGE = "Hello Make a Wish, I would like to plan an event.";
+export const DEFAULT_MESSAGE =
+  "Hello Make a Wish, I would like to enquire about corporate gifting and festive decor.";
 
 /* WhatsApp click-to-chat link with a pre-filled message */
 export function whatsappLink(message: string = DEFAULT_MESSAGE) {
@@ -15,24 +17,46 @@ export function whatsappLink(message: string = DEFAULT_MESSAGE) {
 }
 
 export const contact = {
-  /* Human-readable form for showing the number as text */
+  /* Human-readable forms for showing the numbers as text */
   display: "+91 97698 64175",
+  secondaryDisplay: "+91 99871 19558",
   whatsapp: whatsappLink(),
   phone: `tel:${phoneNumber}`,
   phoneLabel: phoneNumber,
-  email: email ? `mailto:${email}` : null,
-  emailLabel: email ?? null,
+  secondaryPhone: `tel:${secondaryPhoneNumber}`,
+  secondaryPhoneLabel: secondaryPhoneNumber,
+  email: `mailto:${emailAddress}`,
+  emailLabel: emailAddress,
 };
 
-/* Message shown in the top booking bar. Edit or remove when the season ends. */
+/* Message shown in the top bar. The catalogue is request-only, so the CTA
+   opens the request modal rather than linking to a file. */
 export const announcement = {
-  text: "Festive season: corporate gifting and festive decor bookings are open.",
-  cta: "Enquire on WhatsApp",
-  message: "Hello Make a Wish, I would like to enquire about corporate gifting and festive decor for this season.",
+  text: "Diwali 2026 corporate gifting is open: 14 categories, 13 signature hampers, catalogue on request.",
+  cta: "Request catalogue",
 };
 
-export const navLinks = [
-  { name: "Work", href: "/portfolio" },
+export type NavLink = {
+  name: string;
+  href: string;
+  /* Optional category filter to apply when the link lands on the homepage */
+  filter?: "year-round";
+};
+
+/* The five primary links from the refresh brief. */
+export const navLinks: NavLink[] = [
+  { name: "14 Categories", href: "/#gifting-categories" },
+  { name: "Diwali 2026", href: "/#diwali-lookbook" },
+  { name: "Year-Round", href: "/#gifting-categories", filter: "year-round" },
+  { name: "Decor + Hampers", href: "/#turnkey-programme" },
+  { name: "Events & Decor", href: "/#service-buckets" },
+];
+
+export const footerLinks = [
+  { name: "Corporate gifting", href: "/corporate-gifting" },
+  { name: "14 gifting categories", href: "/#gifting-categories" },
+  { name: "Diwali 2026 lookbook", href: "/#diwali-lookbook" },
+  { name: "Decor + hampers", href: "/#turnkey-programme" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
@@ -46,11 +70,37 @@ export type Bucket = {
   services: Service[];
 };
 
-/* Services grouped into four buckets. Corporate Gifting comes from the Make a Wish gifting brochure. */
+/* Five event and gifting pillars, price-free. */
 export const buckets: Bucket[] = [
   {
+    id: "gifting",
+    name: "Corporate & Festive Gifting Solutions",
+    focus:
+      "The primary pillar: 14 corporate gifting categories across festive and year-round occasions, plus 13 Diwali 2026 signature hampers in four packaging series.",
+    services: [
+      {
+        slug: "diwali-2026-hampers",
+        name: "Diwali 2026 Signature Hampers",
+        description:
+          "Thirteen curated hamper models in classic cavity, glass jar, heritage keepsake and eco jute packaging.",
+      },
+      {
+        slug: "corporate-gifting-categories",
+        name: "14 Gifting Categories",
+        description:
+          "Dry fruit, leather, crockery, German silver, brassware, copperware, candles, perfumes, lantern and ubtan, soaps, millet cookies, 999 silver, chocolates and bakery.",
+      },
+      {
+        slug: "year-round-gifting",
+        name: "Year-Round Corporate Gifting",
+        description:
+          "Onboarding kits, client appreciation, leadership recognition, wellness drives and milestone gifting outside the festive season.",
+      },
+    ],
+  },
+  {
     id: "corporate",
-    name: "Corporate & B2B Events",
+    name: "Corporate & B2B Event Production",
     focus:
       "End-to-end event management, professional staging and brand experiences for companies, institutions and administrative teams.",
     services: [
@@ -66,17 +116,11 @@ export const buckets: Bucket[] = [
         description:
           "Commercial brand pavilions, trade stalls, gallery setups and expo booth fabrication.",
       },
-      {
-        slug: "corporate-gifting",
-        name: "Corporate Gifting",
-        description:
-          "Premium custom gifts for partners, clients and teams: utility gifting and edible gifting, personalised with your brand.",
-      },
     ],
   },
   {
     id: "festive",
-    name: "Festive & Cultural Installations",
+    name: "Festive & Cultural Campus Installations",
     focus:
       "Seasonal celebrations, cultural themes and thematic venue transformations for corporate campuses and community spaces.",
     services: [
@@ -90,7 +134,13 @@ export const buckets: Bucket[] = [
         slug: "craftizner",
         name: "Craftizner",
         description:
-          "Handcrafted cultural art, thematic backdrops, traditional props and custom artisanal installations.",
+          "Handcrafted cultural art, thematic backdrops, traditional props and artisanal installations.",
+      },
+      {
+        slug: "lobby-rangolis",
+        name: "Lobby Rangolis",
+        description:
+          "Entrance, reception and atrium rangoli installations for corporate festive programmes.",
       },
     ],
   },
@@ -121,7 +171,7 @@ export const buckets: Bucket[] = [
   },
   {
     id: "decor",
-    name: "Bespoke Decor, Florals & Supplies",
+    name: "Florals, Paper Craft & Event Supplies",
     focus: "Creative craft production, floral design and equipment inventory.",
     services: [
       {
@@ -152,10 +202,10 @@ export const buckets: Bucket[] = [
           "Sculptures, balloon arches, organic installations and branded balloon decor.",
       },
       {
-        slug: "collection",
-        name: "Collection",
+        slug: "signature-props",
+        name: "Signature Props",
         description:
-          "Curated themes, cataloged prop inventory and signature styling pieces.",
+          "Curated themes, catalogued prop inventory and signature styling pieces.",
       },
     ],
   },
@@ -186,18 +236,3 @@ export const festiveExperiences = [
     text: "Modular, high-impact brand displays.",
   },
 ];
-
-export const giftingLines = {
-  utility: [
-    "Home decor",
-    "Handicraft",
-    "Crockery",
-    "Utensils",
-    "German silver",
-    "Brass items",
-    "Stationery",
-    "Personalised products",
-    "Accessories",
-  ],
-  edible: ["Snacks", "Cookies", "Chocolate", "Dry fruit", "Seeds"],
-};

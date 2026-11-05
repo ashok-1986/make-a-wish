@@ -59,6 +59,46 @@ body {
     max-width: 60ch;
   }
 
+  /* Small all-caps label above a heading or field */
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  /* Form controls: shared by the catalogue, RFQ and shortlist panels */
+  .field {
+    width: 100%;
+    min-height: 3rem;
+    border: 2px solid rgba(92, 47, 127, 0.4);
+    border-radius: 0.9rem;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+  }
+  .field::placeholder {
+    color: rgba(43, 20, 66, 0.55);
+  }
+  .field:hover {
+    border-color: rgba(92, 47, 127, 0.65);
+  }
+  .field:focus {
+    border-color: var(--plum);
+    outline: none;
+  }
+  .field:focus-visible {
+    outline: 3px solid var(--plum);
+    outline-offset: 2px;
+  }
+  textarea.field {
+    min-height: 8rem;
+  }
+
   /* Buttons */
   .btn {
     display: inline-flex;
@@ -134,6 +174,28 @@ button:focus-visible {
 ::selection {
   background: var(--plum);
   color: var(--cream);
+}
+
+/* Browser surfaces carry the design too: caret and scrollbars */
+body {
+  caret-color: var(--plum);
+}
+html {
+  scrollbar-color: var(--plum) var(--cream);
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--plum);
+  border: 3px solid var(--cream);
+  border-radius: 999px;
+}
+.tnum {
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- Motion ---------- */
@@ -255,10 +317,38 @@ button:focus-visible {
   transform: rotate(72deg) scale(1.08);
 }
 
-/* Liquid sculpture hero: keep its text link at a 44px touch target */
-.sh-root .sh-txt {
-  min-height: 44px;
-  align-items: center;
+/* Animations for the global shortlist and catalogue overlays */
+@keyframes panel-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tray-in {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.modal-panel {
+  animation: panel-up 360ms var(--ease-out) both;
+}
+.tray-panel {
+  animation: tray-in 360ms var(--ease-out) both;
+}
+
+/* Keep anchored sections clear of the sticky header */
+section[id],
+div[id="rfq-section"] {
+  scroll-margin-top: 6rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,9 +1,11 @@
 import "../styles/global.css";
 import { Figtree, Lobster_Two } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { AnnouncementBar } from "../components/AnnouncementBar";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
+import { GiftingProvider } from "../components/gifting/GiftingProvider";
+import { GiftingOverlays } from "../components/gifting/GiftingOverlays";
 
 /* Lobster Two (bold italic) carries the logo's script lettering; Figtree is the readable body voice. */
 const display = Lobster_Two({
@@ -21,11 +23,40 @@ const body = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: "Make a Wish | Corporate events, festive decor and gifting in Navi Mumbai",
+    default: "Make a Wish | Corporate gifting, Diwali 2026 hampers and event decor in Navi Mumbai",
     template: "%s | Make a Wish",
   },
   description:
-    "Make a Wish designs and runs corporate events, festive decor, corporate gifting, weddings and mandaps across Navi Mumbai and Mumbai, with eco-conscious materials and fresh florals.",
+    "Corporate gifting in Navi Mumbai and Mumbai: 14 gifting categories, 13 Diwali 2026 hamper models and turnkey festive decor. Catalogue and proposals on request.",
+  keywords: [
+    "corporate gifting Navi Mumbai",
+    "Diwali 2026 corporate gift hampers Mumbai",
+    "corporate gift vendors Navi Mumbai",
+    "999 silver corporate gifts",
+    "office Diwali decor and hampers",
+    "year-round corporate gifting",
+  ],
+  applicationName: "Make a Wish",
+  authors: [{ name: "Make a Wish" }],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Make a Wish",
+    title: "Make a Wish | Corporate gifting and Diwali 2026 hampers",
+    description:
+      "14 gifting categories and 13 Diwali 2026 hamper models, with turnkey festive decor across Navi Mumbai and Mumbai. Catalogue on request.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Make a Wish | Corporate gifting and Diwali 2026 hampers",
+    description:
+      "14 gifting categories and 13 Diwali 2026 hamper models, with turnkey festive decor across Navi Mumbai and Mumbai.",
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#5c2f7f",
 };
 
 export default function RootLayout({
@@ -42,10 +73,13 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <AnnouncementBar />
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
+        <GiftingProvider>
+          <AnnouncementBar />
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
+          <GiftingOverlays />
+        </GiftingProvider>
       </body>
     </html>
   );

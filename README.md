@@ -1,57 +1,91 @@
-# Make a Wish Website
+# Make a Wish — Corporate Gifting Website
 
-Website basis below mentioned PRD
+Price-free corporate gifting site for **Make a Wish Events & Gifting Solutions**, Navi Mumbai. It covers Diwali 2026 and year-round corporate gifting across 14 categories and 13 signature hamper models, alongside the firm's event and decor services.
 
-## Make a Wish Website — One-Page PRD
+The catalogue is **request-only**. Rates, proposals and the catalogue itself are shared by the corporate desk; nothing on the site publishes a price.
 
-### 1. Executive Summary
-This website showcases Make a Wish's event‑management portfolio, serving as a digital catalog and lead‑generation hub for Collection, Paper Flowers, Festivals, Exhibitions, Public Events, Party Organizers, Craftizner, Real Flowers Decor, Wedding Decor, Mandap Decor, Event Supplies, Balloons Supplies, and Artificial Flowers. It bridges the firm's offline expertise with online discoverability, enabling prospective clients to explore offerings, request quotes, and initiate collaborations.
+## Stack
 
-### 2. Value Proposition
-Make a Wish combines Navi Mumbai‑rooted creativity with end‑to‑end event execution, delivering bespoke experiences across 12 curated categories. The website differentiates the firm by presenting a visual, categorized showcase, transparent pricing tiers, and an intuitive inquiry flow that converts visitors into booked projects.
+- Next.js 14 (App Router), React 18, TypeScript (strict), Tailwind CSS 3
+- No backend, no database, no CMS. Forms compose a message and open WhatsApp.
+- Deploy target: Vercel (or any Node host that runs `next build` / `next start`).
 
-### 3. Target Audience (5 Primary Personas)
-1. **Corporate HR planners** seeking conference and public‑event solutions.  
-2. **Wedding families** looking for mandap and decor design.  
-3. **Festival organizers** needing thematic installations and art‑flowers.  
-4. **Party hosts** desiring balloon displays and full‑service organization.  
-5. **Non‑profits and NGOs** requiring community‑event execution.
+## Getting started
 
-### 4. Core Features (with justifications)
-- **Categorized portfolio grid** – lets users browse 12 product lines with filter tags; justifies clear category navigation.  
-- **Interactive quote calculator** – users select services and receive instant price estimates; justifies lead conversion.  
-- **High‑resolution image carousel** – showcases past projects in visual detail; justifies credibility.  
-- **Responsive contact form** – captures inquiry data and routes to sales team; justifies contact efficiency.  
-- **Testimonial carousel** – displays client feedback and case‑study snapshots; justifies social proof.
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm start
+```
 
-### 5. Information Architecture (main navigation)
-- **Home** – hero section, featured categories, quick‑links.  
-- **Portfolio** – grid view with filterable categories (Collection, Weddings, Festivals, etc.).  
-- **About** – firm story, team expertise, values.  
-- **Services** – detailed breakdown of each of the 12 offerings.  
-- **Contact** – form, phone, email, location map, social icons.
+Useful checks:
 
-### 6. Content Strategy (key messaging & tone)
-Key themes: "celebrate every moment," "creativity with responsibility," "local legacy, global standards." Tone: professional yet warm, visually inspiring, clarity‑first. Avoid hyperbole; use concrete descriptors (e.g., "mandap décor with fresh‑water blooms"). Emphasize sustainability and client collaboration.
+```bash
+npx tsc --noEmit   # strict type check
+npm run lint
+```
 
-### 7. Design Guidelines (visual style & accessibility)
-Clean layouts with ample white space; palette of earthy tones accented by vibrant festival colors. Typography: serif display font for headers paired with sans‑serif body type. Accessibility: WCAG 2.1 AA contrast ratios, keyboard‑navigable menus, alt text for all imagery, responsive breakpoints from 320px to 1440px.
+## Routes
 
-### 8. Technical Stack (recommended technologies)
-Frontend: Next.js 14 with React, TypeScript, Tailwind CSS. CMS: Sanity.io for content‑editable portfolio and blog. Hosting: Vercel for automatic deployments and edge CDN. Integrations: Calendly for meeting scheduling, SendGrid for inquiry‑confirmation emails, Google Analytics 4 for tracking.
+| Route | Purpose |
+| --- | --- |
+| `/` | Homepage: gifting hero, 14-category hub, Diwali 2026 lookbook, turnkey decor + hampers, year-round spotlight, process, service pillars, RFQ. |
+| `/corporate-gifting` | Dedicated corporate gifting landing page: buyer reasons, categories, lookbook, year-round occasions, volume tiers, turnkey planner, FAQ, RFQ. |
+| `/contact` | Contact details, hours and coverage, consolidated RFQ form (`#rfq-section`). |
+| `/services` | Event and decor service pillars. |
+| `/about` | Firm story and values. |
+| `/portfolio` | Work page; event photography is pending. |
 
-### 9. Success Metrics (measurable KPIs)
-- **Monthly unique visitors** ≥ 2,500 (baseline after launch).  
-- **Quote request conversion rate** ≥ 3 % (inquiries ÷ portfolio views).  
-- **Average session duration** ≥ 2 min (engagement).  
-- **Bounce rate** ≤ 55 % (relevance).  
-- **SEO visibility** top‑3 rankings for "Navi Mumbai event decorator" and related keywords within 3 months.
+Primary anchors: `#gifting-categories`, `#diwali-lookbook`, `#turnkey` (gifting page) / `#turnkey-programme` (home), `#service-buckets`, `#rfq-section`.
 
-### 10. Timeline (4‑week realistic schedule)
-- **Week 1**: Discovery, IA mapping, copywriting framework, UI moodboard approval.  
-- **Week 2**: Homepage & portfolio scaffold, CMS setup, design system tokens.  
-- **Week 3**: Interactive features (quote calc, filter grid, contact form), content population, accessibility QA.  
-- **Week 4**: Beta testing, performance optimization, SEO setup, final review, launch go‑live.
+## Source of truth
 
----
-/impeccable /ui-ux-pro-max
+- `lib/gifting.ts` — the 14 categories, 13 hampers in four packaging series, editions and net weights, volume tiers, filters, inquiry types, and every WhatsApp/RFQ message builder.
+- `lib/site.ts` — site name, contact details, announcement copy, navigation, service pillars and footer links.
+
+Both files are deliberately price-free. Do not add price fields, currency symbols, rate strings, discount copy or price-bearing WhatsApp messages.
+
+## Conversion model
+
+There is no cart or checkout. A buyer can:
+
+1. **Shortlist** a category, hamper or turnkey configuration, with a quantity tier.
+2. **Request the catalogue** through a modal that opens WhatsApp with a pre-filled request.
+3. **Request a proposal** from the shortlist tray. This seeds the RFQ form with the shortlisted items; if the current page has no form, the buyer is sent to `/contact#rfq-section` and the seed is carried in `sessionStorage`.
+4. **Send an RFQ** from the homepage, gifting page or contact page. The form opens WhatsApp with all details pre-filled.
+
+State keys:
+
+- `maw-corporate-shortlist-v1` — shortlist items in `localStorage`.
+- `maw-rfq-seed-v1` — one-shot shortlist-to-RFQ seed in `sessionStorage`.
+- `maw-category-filter` — category filter carried across pages in `sessionStorage`.
+
+## Content rules
+
+- **No public pricing.** No `₹`, `Rs.`, `INR`, MRP, price filters, price totals or price metadata anywhere.
+- **No website customisation.** The catalogue is pre-curated: no logo stamping, cavity swaps, dietary swaps, "build your own" or personalisation flows.
+- **No promotions.** No bundle discounts, complimentary decor, free add-ons or "100+ hampers" perks. Volume tiers describe commercial bands only.
+- **Request-only catalogue.** Never link directly to a PDF or expose the source catalogues.
+- **Use the real contact details** in `lib/site.ts`: +91 97698 64175 (primary), +91 99871 19558 (secondary), makeawishsmita9@gmail.com (pending final confirmation with the owner).
+- Do not invent clients, testimonials, case studies or event photography.
+
+## Imagery
+
+Product photography is cropped from the 2026 hamper catalogue and the Patra brass and copper catalogues. Embedded price text must never be visible.
+
+- `public/images/hampers/` — 13 hamper photos plus the close-up used on the homepage.
+- `public/images/categories/` — photography for dry fruit, crockery, brassware, copperware and lantern & ubtan.
+- The remaining nine categories use the illustrated `CategoryArt` plates, since no matching photography exists.
+- `public/images/hero-diwali.jpg` and `hero-year-round.jpg` lead the homepage hero.
+
+## Accessibility
+
+Target WCAG 2.1 AA: keyboard-navigable menus and overlays, visible focus states, 44px minimum touch targets, alt text on meaningful imagery, `aria-pressed` filter chips, reduced-motion handling, and layouts from 320px upward.
+
+## Repository notes
+
+- `README.md` (this file) is the developer guide.
+- `PRODUCT.md` records product context, users and confirmed constraints.
+- `DESIGN.md` records the palette, type, components and motion rules.
+- Source brief: `make_a_wish_events_website_refresh_brief_and_prd.md` (PRD v2.0, price-free direction).

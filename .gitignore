@@ -1,4 +1,11 @@
 node_modules/
 .next/
+out/
 *.local
 *.env
+*.tsbuildinfo
+
+# Working artefacts, not part of the site
+.review/
+/images/
+.zed/

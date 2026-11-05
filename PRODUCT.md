@@ -8,58 +8,67 @@ web
 
 ## Users
 
-Prospective clients of an event-management firm in Navi Mumbai, India. Five personas from the PRD: corporate HR planners (conferences, public events), wedding families (mandap and decor), festival organizers (thematic installations, art flowers), party hosts (balloon displays, full-service organization), and NGOs/non-profits (community events). They are comparing decorators and want to see past work, judge fit, and get in touch quickly.
+Corporate buyers in Navi Mumbai and Greater Mumbai: HR and people teams, procurement and admin heads, founders' offices and executive assistants. They are planning Diwali 2026 gifting or year-round programmes such as onboarding kits, client appreciation and recognition, usually for 25–500+ recipients. They need to judge range and quality quickly, shortlist without committing, and get a rate card from a person.
+
+Secondary audiences are wedding families, festival organisers and community teams looking for decor and event production. They arrive through the services, about and work pages.
 
 ## Product Purpose
 
-Digital catalog and lead-generation hub for Make a Wish. It bridges the firm's offline expertise with online discoverability so visitors can browse offerings, see credibility, and start a conversation. Success: visitors contact the firm. The primary conversion is a WhatsApp message or phone call. The PRD also lists a quote request form, quote calculator, and Calendly scheduling as secondary paths.
+A price-free corporate gifting catalogue and lead-generation hub. It presents the full range — 14 categories, 13 Diwali 2026 hamper models, four packaging series — and turns interest into a conversation rather than a transaction. There is no cart or checkout. Success is a catalogue request, a shortlist sent for proposal, an RFQ, or a WhatsApp/call to the corporate desk.
 
 ## Positioning
 
-Navi Mumbai-rooted creativity with end-to-end execution across a wide range of event categories, from fresh-flower mandap decor to paper flowers, balloons, exhibitions, and supplies, all from one firm.
+One corporate desk for festive and year-round gifting, backed by an events and decor team that can dress the same office. Range without the runaround: dry fruit and gourmet edibles through brassware, 999 silver, leather and wellness, plus turnkey festive installations if the brief needs them. Navi Mumbai-rooted, working across Mumbai.
 
 ## Operating Context
 
-Local, relationship-driven service business. Prospects often decide by seeing photos of comparable past events and then talk directly with the team. Content is expected to be managed in Sanity.io per the PRD; hosting on Vercel.
+Local, relationship-driven service business. Buyers shortlist online, then negotiate rates and delivery directly with the corporate desk. Quantities and editions are published; rates, proposals and the catalogue itself are shared on request. The site is a static Next.js build with no backend, CMS or database.
 
 ## Capabilities and Constraints
 
-- Stack in place: Next.js 14 (App Router), React, TypeScript, Tailwind CSS.
-- Planned per PRD: Sanity CMS, Calendly, SendGrid for inquiry confirmation, GA4. Pages: Home, Portfolio, About, Services, Contact.
-- Category list: Collection, Paper Flowers, Festivals, Exhibitions, Public Events, Party Organizers, Craftizner, Real Flowers Decor, Wedding Decor, Mandap Decor, Event Supplies, Balloons Supplies, Artificial Flowers. Open decision: the PRD and site copy say "12 categories" but list 13. Reconcile before publishing counts.
-- Open decision: the Calendly link in the CTA still uses the old name (`prabhav-pratishthan`). Confirm the correct URL.
-- Open decision: real phone number and WhatsApp number are not yet in the repo.
-- Open decision: pricing tiers for the quote calculator are not confirmed.
+- Next.js 14 App Router, React 18, TypeScript strict mode, Tailwind CSS. Deployed as a standard Next.js app.
+- No Sanity CMS, Calendly, SendGrid or GA4 integration. Enquiry forms compose a WhatsApp message; there is no server-side submission.
+- Catalogue data lives in `lib/gifting.ts`: 14 categories, 13 hampers across classic cavity, glass jar, heritage keepsake and eco jute series, each with editions and net weights; four volume tiers from 25–49 to 250–500+ units.
+- Site content and contacts live in `lib/site.ts`.
+- **No public pricing.** No currency symbols, rates, MRP, price filters or price-bearing messages. Catalogues must be requested; no direct PDF download.
+- **No website customisation.** No logo stamping, centre-cavity swaps, dietary swaps, "build your own" or personalisation flows. The catalogue is pre-curated.
+- **No promotions.** No bundle discounts, complimentary decor, free add-ons or high-volume perks.
+- Contact details in use: +91 97698 64175 (primary/WhatsApp), +91 99871 19558 (secondary), makeawishsmita9@gmail.com. The email is from the old brochure and still needs the owner's final confirmation.
+- Photography exists for five categories. The other nine use illustrated brand plates rather than borrowed or fabricated product shots.
+- Event photography is still missing from the Work page. Do not fill the gap with stock or invented case studies.
 
 ## Brand Commitments
 
-Brand name is "Make a Wish" (rebranded from Prabhav Pratishthan; do not reintroduce the old name). The logo (plum script wordmark in a ring of stars on a cream star, inside a yellow-to-blue line-art swirl) is in `public/logo.webp`. Brand colours sampled from it: plum `#5c2f7f`, sun yellow `#f8e23a`, amber `#fdc32e`, sky blue `#7ed2ea`, star cream `#fff9b0`. Use them as the site palette (see DESIGN.md). Messaging themes from the PRD: "celebrate every moment," "creativity with responsibility," "local legacy, global standards." Tone: professional yet warm, clarity-first, no hyperbole, concrete descriptors (for example, "mandap decor with fresh-water blooms"). Emphasize sustainability and client collaboration. The PRD's design notes call for ample white space, earthy tones with festival accents, and a serif display face with a sans body.
+Brand name is "Make a Wish" (rebranded from Prabhav Pratishthan; do not reintroduce the old name). The logo — a plum script wordmark in a ring of stars on a cream star, inside a yellow-to-blue line-art swirl — is `public/logo.webp`. Palette: plum `#5c2f7f`, ink `#2b1442`, sun `#f8e23a`, amber `#fdc32e`, sky `#7ed2ea`, cream `#fff9b0`, paper `#fffce3`. See `DESIGN.md`.
 
-## Confirmed by the owner (Oct 2026)
+Voice: professional and warm, clarity first, no hyperbole. Prefer concrete descriptors ("a six-cavity chevron box with anjeer and walnut") over grand claims. Sustainability and collaboration remain themes across events and packaging.
+
+## Confirmed by the owner
 
 - More than 50 corporate events managed (shown as "50+").
 - Decor is eco-friendly and low-waste; fresh florals; service area Navi Mumbai and Mumbai.
-- Corporate bookings come in many shapes all year (festival-specific, event-specific). The current push is festive-season corporate gifting.
-- Corporate gifting is a real offering (brochure in `public/images/corporate-gifting-brochure.jpg`): utility gifting (home decor, handicraft, crockery, utensils, German silver, brass items, stationery, personalised products, accessories) and edible gifting (snacks, cookies, chocolate, dry fruit, seeds). Tagline: "Premium custom gifts for premium partnerships".
-- Quote requests go through a four-field form that opens WhatsApp pre-filled (no backend). Call and WhatsApp number: +91 97698 64175.
+- Corporate gifting is a core offering, not a seasonal add-on, and the current push is Diwali 2026 plus year-round programmes.
 - Do not name clients on the site for now.
+- Do not publish rates or promotions; proposals are shared by the desk.
+- Do not offer product customisation through the website.
 
 ## Evidence on Hand
 
-- `images/` holds seven third-party supplier catalogue shots (other brands, MRP prices, wholesale text) and one AI-watermarked paper-flower photo. They are not used on the site; see the owner before using them.
-
-- Logo and brand assets exist with the owner but are not yet added to the repo.
-- No real testimonials: the three on the homepage (TechCorp India, Royal Weddings, Navi Mumbai Festival Committee) are placeholders. Do not present them as real, and do not invent others.
-- No confirmed event photography, client names, case studies, or pricing in the repo. Do not fabricate them.
+- 13 hamper photographs cropped from `Make A Wish 2026 Hampers Catelogue 1.pdf`.
+- Brassware and copperware photography from `PATRA BRASS CATALOGUE (5).pdf` and `PATRA CATALOGUE.pdf`.
+- Category photography for dry fruit, crockery, lantern & ubtan, plus the brass and copper shots.
+- `public/logo.webp` and `app/icon.png`.
+- No real testimonials, client names, case studies or event photography in the repo. Do not invent them.
+- No rate card in the repo. Rates stay with the corporate desk.
 
 ## Product Principles
 
-1. Contact is the point: a WhatsApp or call action is reachable from every page.
-2. Show real work over claiming it; where evidence is missing, leave it visibly pending rather than inventing it.
-3. Concrete over grand: name the actual decor, flowers, and event types.
-4. Respect local context: Navi Mumbai, Indian celebrations (weddings, mandaps, festivals), mobile-first browsing.
+1. Contact is the point: catalogue, shortlist and RFQ actions are reachable from every gifting page.
+2. Publish what is stable — range, contents, editions, weights, quantity tiers — and keep negotiable rates with the desk.
+3. Show real product photography where it exists; use clearly illustrated plates where it does not.
+4. Respect the buyer's context: mobile-first, Indian festive calendar, multi-location offices, procurement-grade clarity.
 5. Warm and professional, never hyperbolic.
 
 ## Accessibility & Inclusion
 
-Target WCAG 2.1 AA: contrast ratios, keyboard-navigable menus, alt text on all imagery, responsive from 320px to 1440px.
+Target WCAG 2.1 AA: contrast ratios, keyboard-navigable menus, filters and overlays, visible focus states, 44px touch targets, alt text on meaningful imagery, reduced-motion support, and responsive layouts from 320px to 1440px and beyond.
