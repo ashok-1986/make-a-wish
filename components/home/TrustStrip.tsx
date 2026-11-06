@@ -1,19 +1,21 @@
-import { Star } from "../Star";
 import { trustHighlights } from "../../lib/home-data";
 
 export function TrustStrip() {
   return (
-    <section aria-label="Key trust highlights" className="border-y border-plum/10 bg-cream px-5 py-5 md:px-10">
-      <ul className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-7 gap-y-2 text-center text-sm font-bold md:text-base">
+    <section
+      aria-label="Key trust highlights"
+      className="border-y border-white/10 bg-[#0E0C14] px-5 py-4 text-zinc-300 md:px-10"
+    >
+      <ul className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2.5 text-center text-xs sm:text-sm font-semibold tracking-wide">
         {trustHighlights.map((item, i) => (
-          <li key={item} className="flex items-center gap-7">
+          <li key={item} className="flex items-center gap-8">
             {i > 0 && (
-              <Star
+              <span
                 aria-hidden="true"
-                className="hidden h-3.5 w-3.5 shrink-0 text-plum md:block"
+                className="hidden h-1.5 w-1.5 shrink-0 rounded-full bg-purple-400 md:block"
               />
             )}
-            <span>{item}</span>
+            <span className="text-zinc-200">{item}</span>
           </li>
         ))}
       </ul>

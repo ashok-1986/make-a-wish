@@ -1,4 +1,4 @@
-import { Star, StarField } from "../Star";
+import Image from "next/image";
 import { whatsappLink } from "../../lib/site";
 
 function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -14,133 +14,42 @@ function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-function BriefcaseIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-    </svg>
-  );
-}
-
-function CopperwareIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M6 3h12l1 7a5 5 0 0 1-5 5h-4a5 5 0 0 1-5-5L6 3z" />
-      <path d="M9 15v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4" />
-      <line x1="4" y1="3" x2="20" y2="3" />
-    </svg>
-  );
-}
-
-function TechDiaryIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-      <polyline points="13 7 11 11 15 11 13 15" stroke="currentColor" fill="none" />
-    </svg>
-  );
-}
-
-function TurnkeyIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="3" y="8" width="18" height="13" rx="2" />
-      <path d="M12 8v13" />
-      <path d="M19 12H5" />
-      <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 4.8 0 0 1 12 8a4.8 4.8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-    </svg>
-  );
-}
-
-interface SpotlightCard {
-  id: string;
-  title: string;
-  badge: string;
-  subtitle: string;
-  description: string;
-  href: string;
-  icon: (props: { className?: string }) => JSX.Element;
-  ctaText: string;
-}
-
-const spotlightCards: SpotlightCard[] = [
+const spotlightCards = [
   {
     id: "joining-kits",
-    title: "Joining Kits & Combos",
-    badge: "B2B Bulk Ready",
-    subtitle: "H989, 5-in-1 & 6-in-1 onboarding kits",
-    description: "Welcome sets with laptop bag, A5 diary, stainless bottle, metal pen & mobile stand.",
+    number: "01",
+    title: "Joining Kits & Executive Combos",
+    badge: "B2B BULK READY",
+    subtitle: "H989, 5-in-1 & 6-in-1 Employee Welcome Sets",
+    description: "Executive boxes with laptop bag, A5 diary, stainless bottle, metal pen & mobile stand.",
     href: "#pillar-showcase",
-    icon: BriefcaseIcon,
-    ctaText: "View kits",
   },
   {
     id: "patra-heritage",
+    number: "02",
     title: "PATRA Pure Copper & Brassware",
-    badge: "Pure Artisanal",
-    subtitle: "Artisanal drinkware & heritage sets",
+    badge: "PURE ARTISANAL",
+    subtitle: "PT-C & PT-B Authentic Ayurvedic Sets",
     description: "Ayurveda water bottles, table pots, South Indian brass dabaras & Kalai tin-lined cookware.",
     href: "#pillar-showcase",
-    icon: CopperwareIcon,
-    ctaText: "View copperware",
   },
   {
     id: "diaries-tech",
-    title: "Executive Diaries & Tech",
-    badge: "Smart Utility",
+    number: "03",
+    title: "Executive Tech Diaries & Desk Utility",
+    badge: "SMART TECH",
     subtitle: "8000mAh Power Bank Diary & Desk Stands",
     description: "Integrated charging cables, 16GB USB pendrive lock diaries & metallic roller pens.",
     href: "#pillar-showcase",
-    icon: TechDiaryIcon,
-    ctaText: "View diaries & tech",
   },
   {
     id: "turnkey-bundle",
+    number: "04",
     title: "Turnkey Event Decor + Gifting",
-    badge: "5%–10% Bundle Perk",
-    subtitle: "Bundled packages with 5%–10% discount",
-    description: "Turnkey solution combining campus festive installations with customized bulk employee gifting.",
+    badge: "5%–10% BUNDLE PERK",
+    subtitle: "Campus Installations + 100+ Gift Sets",
+    description: "Single-window procurement combining corporate event decor with bulk gifting under one GST invoice.",
     href: "#rfq-section",
-    icon: TurnkeyIcon,
-    ctaText: "Inquire bundle",
   },
 ];
 
@@ -152,146 +61,152 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-paper px-5 pb-14 pt-10 md:px-10 md:pb-20 md:pt-16"
+      className="relative overflow-hidden bg-[#0B090E] border-b border-white/10 px-5 pb-16 pt-12 md:px-10 md:pb-24 md:pt-16"
     >
-      <StarField
-        spots={[
-          { top: "8%", right: "46%", size: 30, color: "#f8e23a", kind: "twinkle", dur: 4, delay: 0, mobileHidden: true },
-          { top: "72%", right: "4%", size: 44, color: "#7ed2ea", kind: "drift", dur: 10, delay: 1, mobileHidden: true },
-          { top: "38%", right: "2%", size: 20, color: "#fdc32e", kind: "twinkle", dur: 5, delay: 2, mobileHidden: true },
-        ]}
+      {/* Background architectural glow */}
+      <div
+        className="pointer-events-none absolute -top-40 left-1/4 h-[500px] w-[600px] rounded-full bg-purple-900/20 blur-[130px]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute top-1/2 right-10 h-[400px] w-[500px] rounded-full bg-purple-950/25 blur-[120px]"
+        aria-hidden="true"
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-        {/* Left Column: Brand Narrative & Primary CTAs */}
-        <div>
-          <p className="eyebrow text-plum/80">
-            365-Day B2B Corporate Gifting Flagship · Navi Mumbai &amp; Mumbai
-          </p>
+      <div className="relative mx-auto max-w-6xl">
+        {/* Top Split Hero Grid */}
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+          {/* Left Column: Bold Architectural Value Proposition */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-[0.7rem] sm:text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-purple-400 animate-pulse" />
+              <span>B2B Corporate Flagship · Navi Mumbai &amp; Mumbai</span>
+            </div>
 
-          <h1
-            id="hero-title"
-            className="mt-4 font-display text-4xl italic font-bold leading-[1.08] tracking-tight text-plum sm:text-5xl lg:text-[3.5rem]"
-          >
-            Elevate Employee Onboarding, Client Relations &amp; Corporate Milestones.
-          </h1>
-
-          <p className="lede mt-6 text-ink/85">
-            Curated 2-in-1 to 6-in-1 Joining Kits, Executive Diaries, Laptop Backpacks, PATRA Pure Copper &amp; Brassware, and Luxury Gourmet Hampers. Pre-packaged and customized with your corporate logo.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#pillar-showcase" className="btn">
-              Explore Corporate Pillars &amp; SKUs{" "}
-              <span className="btn-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-            <a
-              href={directWhatsAppHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost text-plum"
+            <h1
+              id="hero-title"
+              className="mt-5 font-sans text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.035em] text-white"
             >
-              <WhatsAppIcon className="h-4 w-4" />
-              <span>Direct WhatsApp Desk</span>
-            </a>
+              Corporate Gifting &amp; Turnkey Production. Built for Enterprise Teams.
+            </h1>
+
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-zinc-300 max-w-[58ch]">
+              Curated 2-in-1 to 6-in-1 Employee Joining Kits, Executive Power Bank Diaries, PATRA Pure Copperware, and Luxury Gourmet Hampers. Pre-packaged and customized with your corporate logo under a single GST invoice.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3.5">
+              <a href="#pillar-showcase" className="btn">
+                <span>Explore 5 Corporate Pillars</span>
+                <span className="btn-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+              <a
+                href={directWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+              >
+                <WhatsAppIcon className="h-4 w-4 text-emerald-400" />
+                <span>Direct WhatsApp Desk</span>
+              </a>
+            </div>
+
+            <p className="mt-4 text-xs font-medium text-zinc-400 tracking-wide">
+              Price-free B2B showcase. Tiered rate cards and custom mockups shared on request by our corporate sales desk.
+            </p>
           </div>
 
-          <p className="mt-4 max-w-[48ch] text-xs sm:text-sm leading-relaxed text-ink/70">
-            Customized bulk proposals and tiered pricing shared on request by our corporate desk. No public retail pricing.
-          </p>
+          {/* Right Column: Real Cinematic Boardroom Photography */}
+          <div className="relative">
+            <div className="group relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-2xl border border-white/15 bg-[#131019] shadow-2xl shadow-purple-950/30">
+              <Image
+                src="/images/hero-corporate.png"
+                alt="Executive luxury gift boxes and corporate hampers on a boardroom table with glass walls"
+                fill
+                priority
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
 
-          <dl
-            aria-label="Catalogue summary statistics"
-            className="mt-8 grid max-w-md grid-cols-3 gap-3 border-t-2 border-plum/15 pt-5 sm:gap-4 sm:pt-6"
-          >
-            <div>
-              <dt className="text-[0.68rem] sm:text-xs font-black uppercase tracking-[0.14em] text-plum/70">
-                B2B Pillars
-              </dt>
-              <dd className="mt-1 font-display text-3xl sm:text-4xl italic leading-none text-plum">
-                5
-              </dd>
+              {/* Sleek Gradient Overlay & Floating Badge */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+
+              <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/15 bg-black/60 p-3.5 backdrop-blur-md">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-purple-300 font-bold">
+                      Executive Showcase
+                    </p>
+                    <p className="text-sm font-bold text-white">
+                      Boardroom Ready Hampers &amp; Joining Kits
+                    </p>
+                  </div>
+                  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/20 px-2.5 py-1 text-[0.65rem] font-bold text-emerald-300">
+                    25 MOQ
+                  </span>
+                </div>
+              </div>
             </div>
-            <div>
-              <dt className="text-[0.68rem] sm:text-xs font-black uppercase tracking-[0.14em] text-plum/70">
-                Catalog SKUs
-              </dt>
-              <dd className="mt-1 font-display text-3xl sm:text-4xl italic leading-none text-plum">
-                49+
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[0.68rem] sm:text-xs font-black uppercase tracking-[0.14em] text-plum/70">
-                Bundle Perk
-              </dt>
-              <dd className="mt-1 font-display text-2xl sm:text-3xl italic leading-none text-plum">
-                5%–10%
-              </dd>
-            </div>
-          </dl>
+          </div>
         </div>
 
-        {/* Right Column: 4-Card Visual Spotlight Grid */}
-        <div className="relative">
-          <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4">
-            {spotlightCards.map((card) => {
-              const IconComponent = card.icon;
-              return (
-                <a
-                  key={card.id}
-                  href={card.href}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-plum/15 bg-paper/95 p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-plum hover:bg-paper hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="grid h-10 w-10 place-items-center rounded-xl border border-plum/20 bg-cream/70 text-plum transition-colors group-hover:bg-plum group-hover:text-paper">
-                        <IconComponent className="h-5 w-5" />
-                      </div>
-                      <span className="rounded-full border border-plum/15 bg-cream/50 px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider text-plum">
-                        {card.badge}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-3 font-display text-lg sm:text-xl italic leading-tight text-plum group-hover:text-ink">
-                      {card.title}
-                    </h3>
-                    <p className="mt-1 text-xs font-semibold text-plum/80">
-                      {card.subtitle}
-                    </p>
-                    <p className="mt-2 text-xs leading-relaxed text-ink/75">
-                      {card.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 flex items-center gap-1.5 text-xs font-bold text-plum transition-transform group-hover:translate-x-1">
-                    <span>{card.ctaText}</span>
-                    <span aria-hidden="true">&rarr;</span>
-                  </div>
-                </a>
-              );
-            })}
+        {/* 4 Architectural Metric Blocks (8gnc.io grid style) */}
+        <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 border-y border-white/10 py-6">
+          <div className="border-l-2 border-purple-500/40 pl-4">
+            <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">01 / Scope</p>
+            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">5 B2B Pillars</p>
+            <p className="text-xs text-zinc-400">Joining Kits to PATRA Copper</p>
           </div>
-
-          {/* Quick Features Strip */}
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-plum/15 bg-cream/40 px-3.5 py-2.5 text-[0.72rem] sm:text-xs font-bold text-plum/85">
-            <div className="flex items-center gap-1.5">
-              <span className="text-emerald-700 font-black">✓</span>
-              <span>Low 25 Unit MOQ</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-emerald-700 font-black">✓</span>
-              <span>Custom Logo Branding</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-emerald-700 font-black">✓</span>
-              <span>Pan-India Dispatch</span>
-            </div>
+          <div className="border-l-2 border-purple-500/40 pl-4">
+            <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">02 / Portfolio</p>
+            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">49+ SKUs</p>
+            <p className="text-xs text-zinc-400">H-Series, PT-C &amp; PT-B</p>
           </div>
+          <div className="border-l-2 border-purple-500/40 pl-4">
+            <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">03 / Customization</p>
+            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">100% Branded</p>
+            <p className="text-xs text-zinc-400">Laser, UV &amp; Embossing</p>
+          </div>
+          <div className="border-l-2 border-purple-500/40 pl-4">
+            <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">04 / Turnkey Perk</p>
+            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">5%–10% Off</p>
+            <p className="text-xs text-zinc-400">Decor + Gifting Bundles</p>
+          </div>
+        </div>
 
-          <Star
-            aria-hidden="true"
-            className="anim-spin-slow pointer-events-none absolute -right-3 -top-5 h-12 w-12 text-sun hidden sm:block"
-          />
+        {/* 4 Spotlight Focus Cards */}
+        <div className="mt-8">
+          <h2 className="sr-only">Core Corporate Gifting Pillars</h2>
+          <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
+            {spotlightCards.map((card) => (
+              <a
+                key={card.id}
+                href={card.href}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-[#131019] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:bg-[#1a1624] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+              >
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                    <span>{card.number}</span>
+                    <span className="rounded-full bg-white/5 border border-white/10 px-2 py-0.5 text-[0.65rem] font-bold text-purple-300">
+                      {card.badge}
+                    </span>
+                  </div>
+                  <h3 className="mt-3 text-base font-bold text-white group-hover:text-purple-300 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="mt-1 text-xs font-medium text-zinc-400">
+                    {card.subtitle}
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-400 line-clamp-2">
+                    {card.description}
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center gap-1.5 text-xs font-bold text-purple-400 transition-transform group-hover:translate-x-1">
+                  <span>Explore items</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

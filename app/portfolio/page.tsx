@@ -26,9 +26,9 @@ export default function PortfolioPage() {
           text: a.line,
         }))}
       />
-      <section className="on-dark bg-plum px-5 py-16 text-paper md:px-10 md:py-24">
+      <section className="border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
         <Reveal className="mx-auto max-w-6xl">
-          <h2 className="display-lg text-sun">See work close to your event</h2>
+          <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">See Work Close to Your Event</h2>
           <div className="mt-8">
             <ContactLinks tone="sun" />
           </div>

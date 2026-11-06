@@ -36,16 +36,16 @@ function PillarFallbackGraphic({
   sku: string;
 }) {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center">
-      <div className="grid h-16 w-16 place-items-center rounded-2xl border-2 border-plum/20 bg-cream/70 text-plum shadow-inner">
+    <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center bg-[#1A1624]">
+      <div className="grid h-14 w-14 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-purple-400">
         {pillarId === "joining-kits" && (
-          <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
             <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
           </svg>
         )}
         {pillarId === "diaries-tech" && (
-          <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
             <line x1="12" y1="6" x2="16" y2="6" />
@@ -53,7 +53,7 @@ function PillarFallbackGraphic({
           </svg>
         )}
         {pillarId === "bags-drinkware" && (
-          <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
             <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
             <line x1="6" y1="2" x2="6" y2="4" />
@@ -62,12 +62,12 @@ function PillarFallbackGraphic({
           </svg>
         )}
         {pillarId === "patra-heritage" && (
-          <svg className="h-8 w-8 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-7 w-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
           </svg>
         )}
         {pillarId === "gourmet-lifestyle" && (
-          <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 12v10H4V12" />
             <path d="M2 7h20v5H2z" />
             <path d="M12 22V7" />
@@ -76,11 +76,11 @@ function PillarFallbackGraphic({
           </svg>
         )}
       </div>
-      <p className="mt-3 font-mono text-xs font-bold tracking-widest text-plum/80 uppercase">
+      <p className="mt-3 font-mono text-xs font-bold tracking-widest text-purple-400 uppercase">
         {sku}
       </p>
-      <p className="mt-0.5 text-[0.7rem] font-semibold text-ink/70">
-        B2B Catalogue Sample
+      <p className="mt-0.5 text-[0.7rem] font-medium text-zinc-400">
+        B2B Enterprise Sample
       </p>
     </div>
   );
@@ -99,14 +99,6 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
   function handleTierChange(tier: QuantityTier) {
     setSelectedTier(tier);
-    if (isShortlisted) {
-      addItem({
-        key: shortlistKey,
-        kind: "product",
-        name: `${product.sku} · ${product.name}`,
-        detail: `${product.categoryName} · Tier: ${tier}`,
-      });
-    }
   }
 
   function handleToggleShortlist() {
@@ -127,10 +119,10 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
   return (
     <article
-      className={`group flex h-full flex-col overflow-hidden rounded-[2rem] border-2 border-plum/15 bg-paper p-5 shadow-sm transition-all duration-300 hover:border-plum/40 hover:shadow-lg ${className}`}
+      className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#131019] p-5 shadow-lg transition-all duration-300 hover:border-purple-500/40 hover:shadow-purple-950/20 ${className}`}
     >
       {/* Aspect Ratio Card Header with Badges & Fallback Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-plum/10 bg-gradient-to-br from-paper via-cream to-amber/20">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-white/10 bg-[#1A1624]">
         {!imgError && product.image ? (
           <Image
             src={product.image}
@@ -144,23 +136,25 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
           <PillarFallbackGraphic pillarId={product.pillarId} sku={product.sku} />
         )}
 
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+
         {/* Top Badges */}
         <div className="pointer-events-none absolute left-3 top-3 flex flex-wrap gap-1.5 z-10">
-          <span className="rounded-full bg-plum/90 px-3 py-1 font-mono text-xs font-black tracking-wider text-paper shadow-sm backdrop-blur-sm">
+          <span className="rounded-full border border-purple-500/40 bg-purple-500/25 px-2.5 py-0.5 font-mono text-[0.7rem] font-bold tracking-wider text-purple-300 backdrop-blur-md">
             SKU: {product.sku}
           </span>
         </div>
 
         <div className="pointer-events-none absolute right-3 top-3 z-10">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-plum/20 bg-paper/95 px-2.5 py-1 text-[0.7rem] font-bold text-ink shadow-sm backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/70 px-2.5 py-0.5 text-[0.68rem] font-medium text-zinc-300 backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
             {product.statusBadge || "B2B Bulk Ready"}
           </span>
         </div>
 
         {/* Bottom Category Badge */}
         <div className="pointer-events-none absolute bottom-3 left-3 z-10 max-w-[85%]">
-          <span className="inline-block truncate rounded-lg border border-plum/15 bg-paper/95 px-2.5 py-1 text-[0.7rem] font-bold uppercase tracking-wider text-plum shadow-sm backdrop-blur-sm">
+          <span className="inline-block truncate rounded-md border border-white/15 bg-black/75 px-2 py-0.5 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-zinc-300 backdrop-blur-md">
             {product.categoryName}
           </span>
         </div>
@@ -168,31 +162,31 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
       {/* Body Content */}
       <div className="mt-4 flex flex-1 flex-col">
-        <h3 className="font-display text-xl sm:text-2xl italic leading-tight text-plum transition-colors group-hover:text-ink">
+        <h3 className="font-sans text-lg sm:text-xl font-bold tracking-tight text-white transition-colors group-hover:text-purple-300">
           {product.name}
         </h3>
 
         {product.highlights && (
-          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-ink/85 line-clamp-2">
+          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-300 line-clamp-2">
             {product.highlights}
           </p>
         )}
 
         {/* Specifications / Dimensions / Finishes */}
         {(product.dimensions || product.capacities || product.colors || product.finishes) && (
-          <div className="mt-3 flex flex-wrap gap-1.5 text-[0.72rem] text-ink/75">
+          <div className="mt-3 flex flex-wrap gap-1.5 text-[0.72rem] text-zinc-300">
             {product.dimensions && (
-              <span className="rounded-md border border-plum/15 bg-cream/40 px-2 py-0.5 font-medium">
+              <span className="rounded-md border border-white/10 bg-[#1A1624] px-2 py-0.5 font-medium">
                 📐 {product.dimensions}
               </span>
             )}
             {product.capacities && product.capacities.length > 0 && (
-              <span className="rounded-md border border-plum/15 bg-cream/40 px-2 py-0.5 font-medium">
+              <span className="rounded-md border border-white/10 bg-[#1A1624] px-2 py-0.5 font-medium">
                 ⚡ {product.capacities.join(" · ")}
               </span>
             )}
             {product.colors && product.colors.length > 0 && (
-              <span className="rounded-md border border-plum/15 bg-cream/40 px-2 py-0.5 font-medium">
+              <span className="rounded-md border border-white/10 bg-[#1A1624] px-2 py-0.5 font-medium">
                 🎨 {product.colors.slice(0, 2).join(", ")}
                 {product.colors.length > 2 ? ` +${product.colors.length - 2}` : ""}
               </span>
@@ -202,26 +196,26 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
         {/* Kit Inclusions List */}
         {product.inclusions && product.inclusions.length > 0 && (
-          <div className="mt-3.5 rounded-xl border border-plum/10 bg-cream/50 p-3">
+          <div className="mt-3.5 rounded-xl border border-white/10 bg-white/[0.02] p-3">
             <div className="flex items-center justify-between">
-              <p className="text-[0.68rem] font-black uppercase tracking-wider text-plum/80">
+              <p className="font-mono text-[0.68rem] font-bold uppercase tracking-wider text-purple-400">
                 Kit Inclusions
               </p>
-              <span className="text-[0.68rem] font-bold text-ink/60">
+              <span className="font-mono text-[0.68rem] font-medium text-zinc-400">
                 {product.inclusions.length} {product.inclusions.length === 1 ? "item" : "items"}
               </span>
             </div>
-            <ul className="mt-1.5 space-y-1 text-xs text-ink/90">
+            <ul className="mt-1.5 space-y-1 text-xs text-zinc-300">
               {product.inclusions.slice(0, 4).map((item, idx) => (
                 <li key={idx} className="flex items-start gap-1.5">
-                  <span className="mt-0.5 grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-plum/15 text-[9px] font-black text-plum">
+                  <span className="mt-0.5 grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-purple-500/20 text-[9px] font-bold text-purple-300">
                     ✓
                   </span>
                   <span className="truncate leading-tight">{item}</span>
                 </li>
               ))}
               {product.inclusions.length > 4 && (
-                <li className="pt-0.5 text-[0.72rem] font-bold text-plum">
+                <li className="pt-0.5 text-[0.72rem] font-semibold text-purple-400">
                   +{product.inclusions.length - 4} more items included
                 </li>
               )}
@@ -231,37 +225,37 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
       </div>
 
       {/* Footer Controls: Volume Tier & CTAs */}
-      <div className="mt-auto pt-4 border-t border-plum/15">
+      <div className="mt-auto pt-4 border-t border-white/10">
         {/* Volume Tier Dropdown */}
         <div className="mb-3">
           <div className="flex items-center justify-between">
             <label
               htmlFor={`tier-${product.sku}`}
-              className="text-xs font-bold text-ink/80"
+              className="text-xs font-semibold text-zinc-300"
             >
               Volume Tier:
             </label>
-            <span className="text-[0.68rem] font-semibold text-plum/70">
+            <span className="text-[0.68rem] font-mono text-purple-400 font-semibold">
               {selectedTier.includes("Bundle Perk")
-                ? "⭐ 5%–10% Bundle Perk"
+                ? "5%–10% Bundle Perk"
                 : "MOQ: 25 units"}
             </span>
           </div>
 
-          <div className="relative mt-1">
+          <div className="relative mt-1.5">
             <select
               id={`tier-${product.sku}`}
               value={selectedTier}
               onChange={(e) => handleTierChange(e.target.value as QuantityTier)}
-              className="w-full appearance-none rounded-xl border-2 border-plum/25 bg-paper px-3 py-2 pr-8 text-xs font-bold text-ink transition-colors hover:border-plum focus:border-plum focus:outline-none focus:ring-2 focus:ring-plum/20"
+              className="w-full appearance-none rounded-xl border border-white/15 bg-[#1A1624] px-3 py-2 pr-8 text-xs font-semibold text-white transition-colors hover:border-white/30 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
             >
               {QUANTITY_TIERS.map((tier) => (
-                <option key={tier} value={tier}>
+                <option key={tier} value={tier} className="bg-[#131019] text-white">
                   {tier} units
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-plum">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-zinc-400">
               <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path
                   fillRule="evenodd"
@@ -279,15 +273,15 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             type="button"
             onClick={handleToggleShortlist}
             aria-pressed={isShortlisted}
-            className={`btn !min-h-[44px] !px-3 !py-2.5 !text-xs font-bold transition-all flex-1 justify-center ${
+            className={`btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold transition-all flex-1 justify-center ${
               isShortlisted
-                ? "!bg-plum !text-paper border-2 border-plum shadow-sm"
-                : "btn-ghost !text-plum !shadow-none border-2 border-plum/30 hover:!border-plum"
+                ? "!bg-purple-600 !text-white border border-purple-500 shadow-sm"
+                : "btn-ghost !text-zinc-200 hover:!text-white"
             }`}
           >
             {isShortlisted ? (
               <>
-                <span className="text-amber">✓</span> Shortlisted
+                <span className="text-emerald-400">✓</span> Shortlisted
               </>
             ) : (
               <>+ Shortlist</>
@@ -298,10 +292,10 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-sun !min-h-[44px] !px-3 !py-2.5 !text-xs font-bold flex-1 justify-center transition-all hover:brightness-105 shadow-sm"
+            className="btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold flex-1 justify-center !bg-white !text-black hover:!bg-zinc-200 transition-all shadow-sm"
           >
-            <WhatsAppIcon className="h-3.5 w-3.5 shrink-0 fill-current" />
-            <span>WhatsApp Quote</span>
+            <WhatsAppIcon className="h-3.5 w-3.5 shrink-0 fill-current text-emerald-600" />
+            <span>WhatsApp</span>
           </a>
         </div>
 
@@ -309,7 +303,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
         <p
           role="status"
           aria-live="polite"
-          className="mt-2 min-h-[1rem] text-[0.7rem] font-bold text-plum transition-opacity text-center"
+          className="mt-2 min-h-[1rem] text-[0.7rem] font-medium text-emerald-400 transition-opacity text-center"
         >
           {addedFeedback ? `${product.sku} added to your proposal shortlist.` : ""}
         </p>

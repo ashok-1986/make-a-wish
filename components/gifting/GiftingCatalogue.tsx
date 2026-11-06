@@ -11,13 +11,11 @@ import { CategoryCard } from "./CategoryCard";
 import { GIFTING_FILTER_EVENT, GIFTING_FILTER_STORAGE_KEY } from "./filterNavigation";
 
 const chipBase =
-  "inline-flex min-h-[44px] shrink-0 items-center rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-plum";
-const chipOn = "border-plum bg-plum text-paper";
-const chipOff = "border-plum/25 bg-paper text-ink hover:border-plum";
+  "inline-flex min-h-[40px] shrink-0 items-center rounded-full border px-4 py-1.5 text-xs font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500";
+const chipOn = "border-purple-500 bg-purple-500/20 text-white shadow-sm font-bold";
+const chipOff = "border-white/10 bg-[#1A1624] text-zinc-300 hover:border-white/25 hover:text-white";
 
-/* Filterable directory of all 14 categories. The filter can also be set from the
-   header's Year-Round link, either on this page or carried over through session
-   storage when arriving from another page. */
+/* Filterable directory of all 14 categories with 8gnc.io dark executive aesthetics */
 export function GiftingCatalogue() {
   const [filter, setFilter] = useState<CategoryFilterId>("all");
 
@@ -53,7 +51,7 @@ export function GiftingCatalogue() {
       <div
         role="group"
         aria-label="Filter the 14 gifting categories"
-        className="flex flex-nowrap gap-2 overflow-x-auto rounded-[2rem] border-2 border-plum/15 bg-cream p-4 sm:flex-wrap sm:overflow-visible md:p-5"
+        className="flex flex-nowrap gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#131019] p-3.5 sm:flex-wrap sm:overflow-visible"
       >
         {categoryFilters.map((entry) => {
           const active = filter === entry.id;
@@ -71,15 +69,22 @@ export function GiftingCatalogue() {
         })}
       </div>
 
-      <p className="mt-5 text-sm font-bold uppercase tracking-[0.16em] text-plum/80" aria-live="polite">
-        Showing {results.length} of {giftingCategories.length} categories
+      <p
+        className="mt-5 font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400"
+        aria-live="polite"
+      >
+        Showing {results.length} of {giftingCategories.length} Categories
       </p>
 
       {results.length === 0 ? (
-        <div className="mt-6 rounded-[2rem] bg-paper p-8">
-          <p className="text-lg">No category matches that filter.</p>
-          <button type="button" onClick={() => setFilter("all")} className="btn mt-4 !min-h-[44px]">
-            Show all 14 categories
+        <div className="mt-6 rounded-2xl border border-white/10 bg-[#131019] p-8 text-center">
+          <p className="text-base text-zinc-300">No categories match that filter.</p>
+          <button
+            type="button"
+            onClick={() => setFilter("all")}
+            className="btn mt-4 !min-h-[40px] !text-xs"
+          >
+            Show All 14 Categories
           </button>
         </div>
       ) : (

@@ -1,31 +1,48 @@
+import Image from "next/image";
 import { Reveal } from "../Reveal";
-import { StarField } from "../Star";
 import { ContactLinks } from "../ContactLinks";
 
 export function ClosingSection() {
   return (
     <section
       aria-labelledby="closing-title"
-      className="on-dark relative overflow-hidden bg-plum px-5 py-20 text-paper md:px-10 md:py-28"
+      className="relative overflow-hidden border-b border-white/10 bg-[#0B090E] px-5 py-24 text-white md:px-10 md:py-32"
     >
-      <StarField
-        spots={[
-          { top: "14%", right: "10%", size: 70, color: "#f8e23a", kind: "twinkle", dur: 5, delay: 0 },
-          { top: "62%", right: "26%", size: 34, color: "#7ed2ea", kind: "drift", dur: 9, delay: 1, mobileHidden: true },
-          { top: "20%", right: "36%", size: 22, color: "#fff9b0", kind: "twinkle", dur: 4, delay: 2, mobileHidden: true },
-          { top: "78%", right: "6%", size: 44, color: "#fdc32e", kind: "drift", dur: 12, delay: 0.5 },
-        ]}
-      />
+      {/* Background Cinematic Boardroom Photography */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/images/cta-corporate.png"
+          alt="Executive boardroom table with luxury gifts and evening city view"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B090E] via-[#0B090E]/90 to-[#0B090E]/75" />
+      </div>
+
       <Reveal className="relative mx-auto max-w-6xl">
-        <h2 id="closing-title" className="display-xl text-sun">
-          Make a wish.
+        <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+          <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+          <span>Elevate Your Brand</span>
+        </div>
+
+        <h2
+          id="closing-title"
+          className="mt-5 font-sans text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.035em] text-white leading-[1.08] max-w-[20ch]"
+        >
+          Elevate Your Next Corporate Gifting Rollout.
         </h2>
-        <p className="lede mt-6 text-paper">
-          Tell us the occasion, the date and the city. We will reply with the catalogue, ideas
-          and a proposal.
+
+        <p className="mt-6 max-w-[60ch] text-base sm:text-xl leading-relaxed text-zinc-300">
+          Tell us your head-count, delivery date, and corporate branding preferences. Our sales desk will deliver a comprehensive presentation, sample kit, and GST-compliant proposal within hours.
         </p>
+
         <div className="mt-10">
-          <ContactLinks tone="sun" />
+          <ContactLinks
+            tone="sun"
+            label="Inquire via WhatsApp Desk"
+            message="Hello Make a Wish Corporate Desk, I would like to inquire about bulk corporate gifting, joining kits, and proposals for our team."
+          />
         </div>
       </Reveal>
     </section>

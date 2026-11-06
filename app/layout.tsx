@@ -1,5 +1,5 @@
 import "../styles/global.css";
-import { Figtree, Lobster_Two } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { AnnouncementBar } from "../components/AnnouncementBar";
 import { SiteHeader } from "../components/SiteHeader";
@@ -7,33 +7,29 @@ import { SiteFooter } from "../components/SiteFooter";
 import { GiftingProvider } from "../components/gifting/GiftingProvider";
 import { GiftingOverlays } from "../components/gifting/GiftingOverlays";
 
-/* Lobster Two (bold italic) carries the logo's script lettering; Figtree is the readable body voice. */
-const display = Lobster_Two({
+/* High-contrast architectural grotesque sans echoing 8gnc.io enterprise aesthetic */
+const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: "700",
-  style: "italic",
-  variable: "--font-display",
-  display: "swap",
-});
-const body = Figtree({
-  subsets: ["latin"],
-  variable: "--font-body",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Make a Wish | Corporate gifting, Diwali 2026 hampers and event decor in Navi Mumbai",
+    default: "Make a Wish | 365-Day Corporate Gifting, Joining Kits & Turnkey Decor in Navi Mumbai",
     template: "%s | Make a Wish",
   },
   description:
-    "Corporate gifting in Navi Mumbai and Mumbai: 14 gifting categories, 13 Diwali 2026 hamper models and turnkey festive decor. Catalogue and proposals on request.",
+    "B2B corporate gifting portal in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, PATRA Pure Copper & Brassware, Tech Diaries, and Luxury Gourmet Hampers. Tiered B2B proposals on request.",
   keywords: [
     "corporate gifting Navi Mumbai",
-    "Diwali 2026 corporate gift hampers Mumbai",
-    "corporate gift vendors Navi Mumbai",
+    "employee onboarding joining kits Mumbai",
+    "PATRA pure copper water bottles bulk",
+    "executive power bank diary corporate gift",
+    "corporate gift vendors Navi Mumbai Mumbai",
     "999 silver corporate gifts",
-    "office Diwali decor and hampers",
+    "office event decor and corporate hampers",
     "year-round corporate gifting",
   ],
   applicationName: "Make a Wish",
@@ -42,21 +38,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Make a Wish",
-    title: "Make a Wish | Corporate gifting and Diwali 2026 hampers",
+    title: "Make a Wish | 365-Day B2B Corporate Gifting Flagship",
     description:
-      "14 gifting categories and 13 Diwali 2026 hamper models, with turnkey festive decor across Navi Mumbai and Mumbai. Catalogue on request.",
+      "Curated 2-in-1 to 6-in-1 Joining Kits, Executive Diaries, PATRA Copperware, and Luxury Gourmet Hampers with turnkey office decor in Navi Mumbai and Mumbai.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Make a Wish | Corporate gifting and Diwali 2026 hampers",
+    title: "Make a Wish | 365-Day B2B Corporate Gifting Flagship",
     description:
-      "14 gifting categories and 13 Diwali 2026 hamper models, with turnkey festive decor across Navi Mumbai and Mumbai.",
+      "Curated 2-in-1 to 6-in-1 Joining Kits, Executive Diaries, PATRA Copperware, and Luxury Gourmet Hampers with turnkey office decor in Navi Mumbai and Mumbai.",
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5c2f7f",
+  themeColor: "#0b090e",
 };
 
 export default function RootLayout({
@@ -65,11 +61,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="min-h-screen bg-paper font-body text-ink antialiased">
+    <html lang="en" className={`${sans.variable} dark`}>
+      <body className="min-h-screen bg-[#0b090e] font-sans text-zinc-100 antialiased selection:bg-purple-600 selection:text-white">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-3 focus:z-50 focus:rounded-full focus:bg-plum focus:px-4 focus:py-2 focus:text-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-3 focus:z-50 focus:rounded-full focus:bg-purple-600 focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to content
         </a>

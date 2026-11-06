@@ -27,8 +27,8 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-plum/10 bg-paper/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-2.5 md:px-10">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0B090E]/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3 md:px-10">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5"
@@ -41,14 +41,14 @@ export function SiteHeader() {
             width={919}
             height={822}
             sizes="52px"
-            className="h-11 w-auto"
+            className="h-10 w-auto"
             priority
           />
-          <span className="display-md hidden text-plum sm:inline">{SITE_NAME}</span>
+          <span className="font-sans text-lg font-black tracking-tight text-white hidden sm:inline">{SITE_NAME}</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-0">
+          <ul className="flex items-center gap-1">
             {navLinks.map((link) => (
               <li key={link.name} className="shrink-0">
                 {link.filter ? (
@@ -58,7 +58,7 @@ export function SiteHeader() {
                       applyGiftingFilter(link.filter as string);
                       closeMenu();
                     }}
-                    className="whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8125rem] font-bold text-ink transition-colors hover:bg-cream"
+                    className="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
                   >
                     {link.name}
                   </button>
@@ -66,7 +66,7 @@ export function SiteHeader() {
                   <Link
                     href={navHref(link)}
                     onClick={closeMenu}
-                    className="whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8125rem] font-bold text-ink transition-colors hover:bg-cream"
+                    className="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
                   >
                     {link.name}
                   </Link>
@@ -77,8 +77,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <ShortlistButton className="btn btn-ghost whitespace-nowrap !min-h-[44px] !px-3 !py-2 !text-sm text-plum" />
-          <CatalogueButton className="btn !hidden !min-h-[44px] !whitespace-nowrap !px-4 !py-2 !text-sm xl:!inline-flex">
+          <ShortlistButton className="btn btn-ghost whitespace-nowrap !min-h-[38px] !px-3 !py-1.5 !text-xs text-white" />
+          <CatalogueButton className="btn !hidden !min-h-[38px] !whitespace-nowrap !px-4 !py-1.5 !text-xs xl:!inline-flex">
             Request catalogue
           </CatalogueButton>
           <button
@@ -86,15 +86,15 @@ export function SiteHeader() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
-            className="grid h-11 w-11 place-items-center rounded-full border-2 border-plum/25 text-sm font-black text-plum lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-lg border border-white/20 text-xs font-bold text-white hover:bg-white/10 lg:hidden"
           >
-            {menuOpen ? "Close" : "Menu"}
+            {menuOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
 
       {menuOpen && (
-        <div id="mobile-menu" className="border-t border-plum/15 bg-paper px-5 pb-5 pt-3 lg:hidden">
+        <div id="mobile-menu" className="border-t border-white/10 bg-[#131019] px-5 pb-5 pt-3 lg:hidden">
           <nav aria-label="Mobile primary">
             <ul className="grid gap-1">
               {navLinks.map((link) => (

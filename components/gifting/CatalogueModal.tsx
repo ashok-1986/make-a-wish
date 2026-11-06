@@ -7,14 +7,13 @@ import { useGifting } from "./GiftingProvider";
 import { Overlay } from "./Overlay";
 
 const baseInterests = [
-  "All 14 categories",
-  "Diwali 2026 signature hampers",
-  "Year-round corporate gifting",
-  "Dry fruit & gourmet edibles",
-  "Precious metals & heritage",
-  "Leather & executive accessories",
-  "Wellness, candles & artisanal",
-  "Turnkey decor + hampers",
+  "All 5 B2B Pillars",
+  "Employee Joining & Onboarding Kits",
+  "PATRA Pure Copper & Brassware",
+  "Executive Tech Diaries & Sets",
+  "Laptop Bags & Tumbler Combos",
+  "Festive Luxury Hampers",
+  "Turnkey Office Decor + Hampers",
 ];
 
 export function CatalogueModal() {
@@ -49,33 +48,34 @@ export function CatalogueModal() {
 
   return (
     <Overlay open={catalogueOpen} onClose={closeCatalogue} labelledBy="catalogue-title">
-      <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-plum/15 bg-paper px-6 py-5">
+      <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/10 bg-[#131019] px-6 py-5">
         <div>
-          <p className="eyebrow text-plum/75">Catalogue request</p>
-          <h2 id="catalogue-title" className="mt-1 font-display text-3xl italic leading-tight text-plum">
-            The 2026 corporate gifting catalogue
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+            Catalog Request
+          </p>
+          <h2 id="catalogue-title" className="mt-1 font-sans text-xl font-bold text-white">
+            The 2026 Corporate Gifting Catalogue
           </h2>
         </div>
         <button
           type="button"
           onClick={closeCatalogue}
           aria-label="Close catalogue request"
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-plum/20 text-xl font-bold text-plum transition-colors hover:bg-plum hover:text-paper"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-white/10 text-lg font-bold text-zinc-400 transition-colors hover:bg-white/10 hover:text-white"
         >
           &times;
         </button>
       </div>
 
       <div className="px-6 py-6">
-        <p className="text-sm leading-relaxed text-ink/85">
-          Share your details and the collection you are interested in. The catalogue and commercial
-          details are sent by our corporate desk on WhatsApp.
+        <p className="text-xs sm:text-sm leading-relaxed text-zinc-300">
+          Share your details and the collection you are interested in. The complete PDF catalogue and tiered rate card will be transmitted by our corporate desk directly on WhatsApp.
         </p>
 
         <form onSubmit={onSubmit} className="mt-5 grid gap-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="cat-name" className="mb-1.5 block text-sm font-bold">
+              <label htmlFor="cat-name" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
                 Full name
               </label>
               <input
@@ -89,7 +89,7 @@ export function CatalogueModal() {
               />
             </div>
             <div>
-              <label htmlFor="cat-company" className="mb-1.5 block text-sm font-bold">
+              <label htmlFor="cat-company" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
                 Company
               </label>
               <input
@@ -106,7 +106,7 @@ export function CatalogueModal() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="cat-email" className="mb-1.5 block text-sm font-bold">
+              <label htmlFor="cat-email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
                 Work email
               </label>
               <input
@@ -121,7 +121,7 @@ export function CatalogueModal() {
               />
             </div>
             <div>
-              <label htmlFor="cat-phone" className="mb-1.5 block text-sm font-bold">
+              <label htmlFor="cat-phone" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
                 WhatsApp number
               </label>
               <input
@@ -131,17 +131,17 @@ export function CatalogueModal() {
                 inputMode="tel"
                 autoComplete="tel"
                 pattern="[0-9+\s\-]{8,16}"
-                title="Enter a phone number, for example +91 98765 43210"
+                title="Enter a phone number, for example +91 97734 11805"
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
                 className="field"
-                placeholder="+91 98765 43210"
+                placeholder="+91 97734 11805"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="cat-interest" className="mb-1.5 block text-sm font-bold">
+            <label htmlFor="cat-interest" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
               Collection of interest
             </label>
             <select
@@ -151,30 +151,31 @@ export function CatalogueModal() {
               className="field"
             >
               {options.map((option) => (
-                <option key={option} value={option}>
+                <option key={option} value={option} className="bg-[#131019] text-white">
                   {option}
                 </option>
               ))}
             </select>
           </div>
 
-          <button type="submit" className="btn w-full">
-            Request catalogue on WhatsApp <span className="btn-arrow" aria-hidden="true">&rarr;</span>
+          <button type="submit" className="btn w-full justify-center !min-h-[42px] !text-sm mt-2">
+            <span>Request Catalogue on WhatsApp</span>
+            <span className="btn-arrow" aria-hidden="true">&rarr;</span>
           </button>
         </form>
 
-        <p role="status" aria-live="polite" className="mt-3 min-h-[1.5rem] text-sm font-bold text-plum">
+        <p role="status" aria-live="polite" className="mt-3 min-h-[1.5rem] text-xs font-medium text-emerald-400">
           {sent ? "WhatsApp opened with your catalogue request." : ""}
         </p>
 
         {sent && (
-          <p className="mt-1 text-sm">
+          <p className="mt-1 text-xs text-zinc-300">
             If the new tab did not open,{" "}
             <a
               href={whatsappLink(message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-underline font-bold text-plum"
+              className="font-bold text-purple-300 underline"
             >
               open the request on WhatsApp
             </a>
@@ -182,9 +183,9 @@ export function CatalogueModal() {
           </p>
         )}
 
-        <p className="mt-4 border-t border-plum/15 pt-4 text-xs leading-relaxed text-ink/75">
-          Prefer email? Write to{" "}
-          <a href={contact.email} className="link-underline font-bold text-plum">
+        <p className="mt-4 border-t border-white/10 pt-4 text-xs leading-relaxed text-zinc-500">
+          Prefer email? Write directly to{" "}
+          <a href={contact.email} className="font-semibold text-purple-300 hover:text-white">
             {contact.emailLabel}
           </a>
           .

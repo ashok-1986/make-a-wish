@@ -23,23 +23,25 @@ export function ShortlistTray() {
 
   return (
     <Overlay open={trayOpen} onClose={closeTray} labelledBy="shortlist-title" variant="tray">
-      <div className="flex items-start justify-between gap-4 border-b border-plum/15 px-5 py-5">
+      <div className="flex items-start justify-between gap-4 border-b border-white/10 px-5 py-5">
         <div>
-          <p className="eyebrow text-plum/75">For your proposal</p>
-          <h2 id="shortlist-title" className="mt-1 font-display text-3xl italic leading-tight text-plum">
-            Your shortlist
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+            For Your Proposal
+          </p>
+          <h2 id="shortlist-title" className="mt-1 font-sans text-2xl font-bold text-white">
+            Your Shortlist Tray
           </h2>
-          <p className="mt-1 text-sm text-ink/75">
+          <p className="mt-1 text-xs text-zinc-400">
             {items.length === 0
-              ? "Nothing added yet."
-              : `${items.length} ${items.length === 1 ? "item" : "items"} ready to send.`}
+              ? "No items added yet."
+              : `${items.length} ${items.length === 1 ? "item" : "items"} ready to transmit.`}
           </p>
         </div>
         <button
           type="button"
           onClick={closeTray}
           aria-label="Close shortlist"
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-plum/20 text-xl font-bold text-plum transition-colors hover:bg-plum hover:text-paper"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-white/10 text-lg font-bold text-zinc-400 transition-colors hover:bg-white/10 hover:text-white"
         >
           &times;
         </button>
@@ -47,35 +49,42 @@ export function ShortlistTray() {
 
       <div className="flex-1 overflow-y-auto px-5 py-5">
         {items.length === 0 ? (
-          <div className="rounded-2xl bg-cream p-5">
-            <p className="font-bold text-plum">Build a shortlist as you browse.</p>
-            <p className="mt-2 text-sm leading-relaxed text-ink/85">
-              Add the categories and hamper models you like, and we will turn the list into a
-              proposal for your team.
+          <div className="rounded-xl border border-white/10 bg-[#131019] p-5 text-center">
+            <p className="font-sans font-bold text-white">Build a shortlist as you browse.</p>
+            <p className="mt-2 text-xs leading-relaxed text-zinc-400">
+              Add the 5 B2B pillar items and hamper models you like, and we will turn the list into an itemized proposal with custom logo mockups.
             </p>
-            <button type="button" onClick={closeTray} className="btn mt-4 !min-h-[44px] !text-sm">
-              Browse the catalogue
+            <button
+              type="button"
+              onClick={closeTray}
+              className="btn mt-4 !min-h-[40px] !text-xs"
+            >
+              Browse 5 Pillars
             </button>
           </div>
         ) : (
           <ul className="grid gap-3">
             {items.map((item) => {
               return (
-                <li key={item.key} className="rounded-2xl border-2 border-plum/15 bg-paper p-4">
+                <li key={item.key} className="rounded-xl border border-white/10 bg-[#131019] p-4">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <p className="text-[0.7rem] font-black uppercase tracking-[0.18em] text-plum/70">
-                        {shortlistKindLabels[item.kind]}
+                      <p className="font-mono text-[0.68rem] font-bold uppercase tracking-wider text-purple-400">
+                        {shortlistKindLabels[item.kind] || item.kind}
                       </p>
-                      <h3 className="mt-1 font-bold leading-snug text-ink">{item.name}</h3>
+                      <h3 className="mt-1 font-sans text-sm font-bold text-white leading-snug">
+                        {item.name}
+                      </h3>
                       {item.detail && (
-                        <p className="mt-1 text-sm leading-relaxed text-ink/75">{item.detail}</p>
+                        <p className="mt-1 text-xs leading-relaxed text-zinc-400">
+                          {item.detail}
+                        </p>
                       )}
                     </div>
                     <button
                       type="button"
                       onClick={() => removeItem(item.key)}
-                      className="link-underline shrink-0 text-sm font-bold text-plum"
+                      className="shrink-0 text-xs font-semibold text-zinc-400 hover:text-white transition-colors"
                       aria-label={`Remove ${item.name} from shortlist`}
                     >
                       Remove
@@ -88,37 +97,33 @@ export function ShortlistTray() {
         )}
       </div>
 
-      <div className="border-t border-plum/15 px-5 py-5">
-        <p className="text-sm leading-relaxed text-ink/75">
-          Your shortlist is shared with the corporate desk so we can send the catalogue and a
-          tailored proposal.
+      <div className="border-t border-white/10 px-5 py-5 bg-[#0B090E]">
+        <p className="text-xs leading-relaxed text-zinc-400">
+          Your shortlist is transmitted to our corporate desk to generate a consolidated rate card and delivery schedule.
         </p>
         <button
           type="button"
           disabled={items.length === 0}
           onClick={() => seedRFQ({ notes: shortlistNotes(items) })}
-          className="btn mt-4 w-full disabled:cursor-not-allowed disabled:opacity-40"
+          className="btn mt-4 w-full justify-center !min-h-[42px] !text-xs disabled:cursor-not-allowed disabled:opacity-40"
         >
-          Request a proposal <span className="btn-arrow" aria-hidden="true">&rarr;</span>
+          Send to RFQ Form &rarr;
         </button>
         <a
-          href={items.length === 0 ? undefined : whatsappLink(message)}
+          href={whatsappLink(message)}
           target="_blank"
           rel="noopener noreferrer"
-          aria-disabled={items.length === 0}
-          className={`btn btn-ghost mt-2 w-full !min-h-[44px] !text-base text-plum ${
-            items.length === 0 ? "pointer-events-none opacity-40" : ""
-          }`}
+          className="btn btn-ghost mt-2 w-full justify-center !min-h-[42px] !text-xs"
         >
-          Send shortlist on WhatsApp
+          Send Directly on WhatsApp &rarr;
         </a>
         {items.length > 0 && (
           <button
             type="button"
             onClick={clearItems}
-            className="link-underline mt-3 block w-full py-2 text-center text-sm font-bold text-ink/70"
+            className="mt-3 block w-full text-center font-mono text-[0.7rem] uppercase tracking-wider text-zinc-500 hover:text-zinc-300 transition-colors"
           >
-            Clear shortlist
+            Clear Shortlist
           </button>
         )}
       </div>

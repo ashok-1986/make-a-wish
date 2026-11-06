@@ -13,9 +13,9 @@ import {
 import { HamperCard } from "./HamperCard";
 
 const chipBase =
-  "inline-flex min-h-[44px] shrink-0 items-center rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-plum";
-const chipOn = "border-plum bg-plum text-paper";
-const chipOff = "border-plum/25 bg-paper text-ink hover:border-plum";
+  "inline-flex min-h-[38px] shrink-0 items-center rounded-full border px-3.5 py-1 text-xs font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500";
+const chipOn = "border-purple-500 bg-purple-500/20 text-white font-bold shadow-sm";
+const chipOff = "border-white/10 bg-[#1A1624] text-zinc-300 hover:border-white/25 hover:text-white";
 
 export function HamperLookbook() {
   const [series, setSeries] = useState<SeriesId | "all">("all");
@@ -32,10 +32,16 @@ export function HamperLookbook() {
 
   return (
     <div>
-      <div className="grid gap-5 rounded-[2rem] border-2 border-plum/15 bg-cream p-4 md:p-5">
+      <div className="grid gap-5 rounded-2xl border border-white/10 bg-[#131019] p-4 md:p-6">
         <div className="min-w-0">
-          <p className="eyebrow mb-2 text-plum/75">Packaging series</p>
-          <div role="group" aria-label="Filter hampers by packaging series" className="flex flex-nowrap gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400 mb-2.5">
+            Packaging Series
+          </p>
+          <div
+            role="group"
+            aria-label="Filter hampers by packaging series"
+            className="flex flex-nowrap gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0"
+          >
             <button
               type="button"
               aria-pressed={series === "all"}
@@ -58,9 +64,15 @@ export function HamperLookbook() {
           </div>
         </div>
 
-        <div className="min-w-0">
-          <p className="eyebrow mb-2 text-plum/75">Net weight</p>
-          <div role="group" aria-label="Filter hampers by net weight" className="flex flex-nowrap gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
+        <div className="min-w-0 border-t border-white/10 pt-4">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400 mb-2.5">
+            Net Weight Category
+          </p>
+          <div
+            role="group"
+            aria-label="Filter hampers by net weight"
+            className="flex flex-nowrap gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0"
+          >
             {weightBands.map((entry) => (
               <button
                 key={entry.id}
@@ -76,22 +88,25 @@ export function HamperLookbook() {
         </div>
       </div>
 
-      <p className="mt-5 text-sm font-bold uppercase tracking-[0.16em] text-plum/80" aria-live="polite">
-        Showing {results.length} of {hampers.length} hamper models
+      <p
+        className="mt-5 font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400"
+        aria-live="polite"
+      >
+        Showing {results.length} of {hampers.length} Hamper Models
       </p>
 
       {results.length === 0 ? (
-        <div className="mt-6 rounded-[2rem] bg-paper p-8">
-          <p className="text-lg">No hamper matches that combination.</p>
+        <div className="mt-6 rounded-2xl border border-white/10 bg-[#131019] p-8 text-center">
+          <p className="text-base text-zinc-300">No hamper matches that filter combination.</p>
           <button
             type="button"
             onClick={() => {
               setSeries("all");
               setBand("all");
             }}
-            className="btn mt-4 !min-h-[44px]"
+            className="btn mt-4 !min-h-[40px] !text-xs"
           >
-            Show all 13 models
+            Show All 13 Models
           </button>
         </div>
       ) : (

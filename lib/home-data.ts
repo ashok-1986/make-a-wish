@@ -31,10 +31,10 @@ export interface BucketStyle {
  * Trust signals displayed in the top trust strip beneath the Hero.
  */
 export const trustHighlights: string[] = [
-  "Diwali 2026 & year-round gifting",
-  "14 categories · 13 hamper models",
-  "GST invoicing for corporate orders",
-  "Navi Mumbai & Greater Mumbai delivery",
+  "5 B2B Pillars · 49+ Signature SKUs",
+  "Low 25 Unit MOQ · Custom Logo Branding",
+  "GST Invoicing for Corporate Orders",
+  "Navi Mumbai, Mumbai & Pan-India Dispatch",
 ];
 
 /**
@@ -100,12 +100,12 @@ export const turnkeyFeatures: TurnkeyFeature[] = [
 ];
 
 /**
- * Visual presentation styles for the 5 service bucket panels.
+ * Visual presentation styles for the 5 service bucket panels in 8gnc.io enterprise dark mode.
  */
 export const serviceBucketStyles: BucketStyle[] = [
-  { span: "md:col-span-4", tone: "bg-plum text-paper", star: "#f8e23a", link: "text-sun" },
-  { span: "md:col-span-2", tone: "bg-sky text-ink", star: "#5c2f7f", link: "text-ink" },
-  { span: "md:col-span-2", tone: "bg-sun text-ink", star: "#5c2f7f", link: "text-ink" },
-  { span: "md:col-span-4", tone: "bg-amber text-ink", star: "#5c2f7f", link: "text-ink" },
-  { span: "md:col-span-6", tone: "border-2 border-plum/20 bg-cream text-ink", star: "#5c2f7f", link: "text-plum" },
+  { span: "md:col-span-4", tone: "border border-white/10 bg-[#131019] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
+  { span: "md:col-span-2", tone: "border border-white/10 bg-[#161320] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
+  { span: "md:col-span-2", tone: "border border-white/10 bg-[#161320] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
+  { span: "md:col-span-4", tone: "border border-white/10 bg-[#131019] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
+  { span: "md:col-span-6", tone: "border border-white/10 bg-[#131019] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
 ];

@@ -5,46 +5,75 @@ import { yearRoundHighlights } from "../../lib/home-data";
 
 export function YearRoundSection() {
   return (
-    <section aria-labelledby="year-round-title" className="bg-sky px-5 py-16 md:px-10 md:py-24">
+    <section
+      aria-labelledby="year-round-title"
+      className="border-b border-white/10 bg-[#0E0C14] px-5 py-16 text-white md:px-10 md:py-24"
+    >
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+        {/* Left Column: Real Corporate Corridor & Gifting Photography */}
         <Reveal>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-cream shadow-lg">
+          <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/15 bg-[#131019] shadow-2xl shadow-purple-950/20">
             <Image
-              src="/images/hero-year-round.jpg"
-              alt="A hammered copper water bottle on a sunlit cream cloth with leaf shadows"
+              src="/images/why-corporate.png"
+              alt="Modern corporate glass corridor and executive corporate gift sets"
               fill
               sizes="(min-width: 1024px) 38vw, 92vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+
+            <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/15 bg-black/60 p-3.5 backdrop-blur-md">
+              <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-purple-300 font-bold">
+                Year-Round Corporate Infrastructure
+              </p>
+              <p className="text-sm font-bold text-white">
+                Employee Welcomes · Milestone Awards · Festive Despatch
+              </p>
+            </div>
           </div>
         </Reveal>
 
+        {/* Right Column: Narrative & Occasion Cards */}
         <Reveal delay={100}>
-          <p className="eyebrow text-plum/75">Year-round corporate gifting</p>
-          <h2 id="year-round-title" className="display-lg mt-2 text-plum">
-            The calendar does not stop after Diwali.
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+            <span>365-Day Corporate Gifting Calendar</span>
+          </div>
+
+          <h2
+            id="year-round-title"
+            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+          >
+            The Corporate Calendar Doesn&rsquo;t Stop After Diwali.
           </h2>
-          <p className="lede mt-4">
-            The same fourteen categories cover onboarding, recognition, wellness and client
-            appreciation through the year. Start with the occasion, and we will map the
-            categories and volumes to it.
+
+          <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-300">
+            Our 5 B2B pillars cover onboarding kits, partner appreciation, quarterly leadership awards, and employee wellness throughout the financial year. Tell us your date and head-count; our desk maps the optimal SKUs and tier rates.
           </p>
 
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {yearRoundHighlights.map((item) => (
-              <li key={item.name} className="rounded-2xl border-2 border-plum/15 bg-paper p-4">
-                <h3 className="font-bold leading-snug text-plum">{item.name}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-ink/80">{item.text}</p>
+              <li
+                key={item.name}
+                className="rounded-xl border border-white/10 bg-[#131019] p-5 transition-colors hover:border-purple-500/30"
+              >
+                <h3 className="font-sans text-base font-bold text-white">
+                  {item.name}
+                </h3>
+                <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">
+                  {item.text}
+                </p>
               </li>
             ))}
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <YearRoundButton className="btn text-paper">
-              See year-round categories <span className="btn-arrow" aria-hidden="true">&rarr;</span>
+            <YearRoundButton className="btn">
+              <span>See Year-Round Pillars</span>
+              <span className="btn-arrow" aria-hidden="true">&rarr;</span>
             </YearRoundButton>
-            <a href="#rfq-section" className="btn btn-ghost text-plum">
-              Plan a year-round programme
+            <a href="#rfq-section" className="btn btn-ghost">
+              Plan Corporate Calendar
             </a>
           </div>
         </Reveal>

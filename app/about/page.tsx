@@ -37,9 +37,9 @@ export default function AboutPage() {
         intro="Make a Wish is an event decor and management firm rooted in Navi Mumbai."
       />
       <Bands items={values} />
-      <section className="on-dark bg-plum px-5 py-16 text-paper md:px-10 md:py-24">
+      <section className="border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
         <Reveal className="mx-auto max-w-6xl">
-          <h2 className="display-lg text-sun">Say hello</h2>
+          <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">Say Hello to Our Team</h2>
           <div className="mt-8">
             <ContactLinks tone="sun" />
           </div>

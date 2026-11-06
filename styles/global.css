@@ -2,122 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Brand tokens sampled from the logo. See DESIGN.md. */
+/* 8gnc.io enterprise executive dark tokens */
 :root {
-  --plum: #5c2f7f;
-  --ink: #2b1442;
-  --sun: #f8e23a;
-  --amber: #fdc32e;
-  --sky: #7ed2ea;
-  --cream: #fff9b0;
-  --paper: #fffce3;
+  --plum: #7c3aed;
+  --plum-dark: #5c2f7f;
+  --ink: #ffffff;
+  --sun: #e5c178;
+  --amber: #d97706;
+  --sky: #38bdf8;
+  --cream: #131019;
+  --paper: #0b090e;
+  --card: #131019;
+  --card-elevated: #1a1624;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(124, 58, 237, 0.5);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   background: var(--paper);
+  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
 body {
   background: var(--paper);
-  color: var(--ink);
-  font-size: 1.125rem;
-  line-height: 1.55;
+  color: #f4f2f7;
+  font-size: 1rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 @layer components {
-  /* Display voice: heavy italic script, echoing the logo lettering */
+  /* Architectural display typography: bold, tight tracking, zero cursive */
   .display-xl {
-    font-family: var(--font-display), cursive;
-    font-weight: 700;
-    font-style: italic;
-    font-size: clamp(3rem, 9.5vw, 6rem);
-    line-height: 0.98;
-    letter-spacing: -0.01em;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     text-wrap: balance;
   }
   .display-lg {
-    font-family: var(--font-display), cursive;
-    font-weight: 700;
-    font-style: italic;
-    font-size: clamp(2.25rem, 6vw, 4rem);
-    line-height: 1;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(1.85rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
   .display-md {
-    font-family: var(--font-display), cursive;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
     font-weight: 700;
-    font-style: italic;
-    font-size: clamp(1.75rem, 3.6vw, 2.75rem);
-    line-height: 1.05;
+    font-style: normal;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
   .lede {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    line-height: 1.5;
-    max-width: 60ch;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    line-height: 1.6;
+    max-width: 62ch;
+    color: #a1a1aa;
   }
 
-  /* Small all-caps label above a heading or field */
+  /* Micro-labels & headers */
   .eyebrow {
+    font-family: var(--font-sans), monospace;
     font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 0.2em;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     line-height: 1.4;
     text-transform: uppercase;
   }
 
-  /* Form controls: shared by the catalogue, RFQ and shortlist panels */
+  /* Form controls: shared dark glassmorphic styling */
   .field {
     width: 100%;
     min-height: 3rem;
-    border: 2px solid rgba(92, 47, 127, 0.4);
-    border-radius: 0.9rem;
-    background: var(--paper);
-    color: var(--ink);
-    padding: 0.7rem 0.9rem;
-    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
     line-height: 1.4;
-    transition: border-color 180ms ease, box-shadow 180ms ease;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
   }
   .field::placeholder {
-    color: rgba(43, 20, 66, 0.55);
+    color: rgba(255, 255, 255, 0.4);
   }
   .field:hover {
-    border-color: rgba(92, 47, 127, 0.65);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.06);
   }
   .field:focus {
     border-color: var(--plum);
+    background: rgba(255, 255, 255, 0.08);
     outline: none;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
   }
   .field:focus-visible {
-    outline: 3px solid var(--plum);
+    outline: 2px solid var(--plum);
     outline-offset: 2px;
   }
   textarea.field {
     min-height: 8rem;
   }
 
-  /* Buttons */
+  /* Executive high-contrast buttons */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    min-height: 3.25rem;
-    padding: 0.85rem 2rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.75rem;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 0.95rem;
     line-height: 1.1;
-    background: var(--plum);
-    color: var(--paper);
-    transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out),
-      transform 220ms var(--ease-out);
+    background: #ffffff;
+    color: #0b090e;
+    transition: all 200ms var(--ease-out);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
   .btn:hover {
-    background: var(--ink);
-    transform: translateY(-2px);
+    background: #e4e4e7;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
   }
   .btn:active {
     transform: translateY(0) scale(0.98);
@@ -126,31 +140,34 @@ body {
     transition: transform 260ms var(--ease-out);
   }
   .btn:hover .btn-arrow {
-    transform: translateX(5px);
+    transform: translateX(4px);
   }
   .btn-sun {
     background: var(--sun);
-    color: var(--ink);
+    color: #0b090e;
   }
   .btn-sun:hover {
-    background: var(--cream);
-    color: var(--ink);
+    background: #f0d59b;
+    box-shadow: 0 4px 14px rgba(229, 193, 120, 0.25);
   }
   .btn-ghost {
-    background: transparent;
-    color: inherit;
-    box-shadow: inset 0 0 0 2px currentColor;
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: none;
   }
   .btn-ghost:hover {
-    background: var(--ink);
-    color: var(--paper);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    transform: translateY(-1px);
   }
 
   .link-underline {
     text-decoration: underline;
     text-decoration-color: transparent;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
     transition: text-decoration-color 180ms ease;
   }
   .link-underline:hover,
@@ -159,40 +176,41 @@ body {
   }
 }
 
-/* Focus rings follow the surface: plum on light fields, cream on dark ones */
+/* Dark mode focus & selection */
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--plum);
-  outline-offset: 3px;
+  outline: 2px solid var(--plum);
+  outline-offset: 2px;
   border-radius: 6px;
 }
 .on-dark a:focus-visible,
 .on-dark button:focus-visible {
-  outline-color: var(--cream);
+  outline-color: #ffffff;
 }
 
 ::selection {
   background: var(--plum);
-  color: var(--cream);
+  color: #ffffff;
 }
 
-/* Browser surfaces carry the design too: caret and scrollbars */
 body {
   caret-color: var(--plum);
 }
 html {
-  scrollbar-color: var(--plum) var(--cream);
+  scrollbar-color: rgba(255, 255, 255, 0.2) #0b090e;
 }
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--cream);
+  background: #0b090e;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--plum);
-  border: 3px solid var(--cream);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 .tnum {
   font-variant-numeric: tabular-nums;

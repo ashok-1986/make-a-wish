@@ -2,17 +2,13 @@ import { Reveal } from "./Reveal";
 import { whatsappLink } from "../lib/site";
 
 const palette = [
-  { tone: "bg-sun text-ink", link: "text-plum" },
-  { tone: "bg-sky text-ink", link: "text-plum" },
-  { tone: "bg-amber text-ink", link: "text-plum" },
-  { tone: "bg-cream text-ink", link: "text-plum" },
-  { tone: "bg-plum text-paper on-dark", link: "text-sun" },
+  { tone: "bg-[#0B090E] border-b border-white/10 text-white", link: "text-purple-400 hover:text-purple-300" },
+  { tone: "bg-[#0E0C14] border-b border-white/10 text-white", link: "text-purple-400 hover:text-purple-300" },
+  { tone: "bg-[#131019] border-b border-white/10 text-white", link: "text-purple-400 hover:text-purple-300" },
+  { tone: "bg-[#0E0C14] border-b border-white/10 text-white", link: "text-purple-400 hover:text-purple-300" },
 ];
 
-/* Full-width colour bands, one per item, cycling through the brand colours.
-   Title and description sit side by side on wide screens and stack on narrow ones.
-   `level` sets the heading element so the page outline stays correct (h2 by default, h3 under a section heading).
-   `enquire` adds a WhatsApp link per band with that service named in the message. */
+/* Full-width dark architectural bands, one per item, with clean borders and high-contrast typography. */
 export function Bands({
   items,
   level = 2,
@@ -34,9 +30,11 @@ export function Bands({
             className={`${p.tone} scroll-mt-36 px-5 py-12 md:px-10 md:py-16`}
           >
             <Reveal className="mx-auto grid max-w-6xl items-baseline gap-4 md:grid-cols-[1.1fr_1fr] md:gap-12">
-              <Heading className="display-lg">{item.name}</Heading>
+              <Heading className="font-sans text-2xl sm:text-4xl font-extrabold tracking-[-0.03em] text-white">
+                {item.name}
+              </Heading>
               <div>
-                <p className="lede">{item.text}</p>
+                <p className="text-base sm:text-lg leading-relaxed text-zinc-300">{item.text}</p>
                 {enquire && (
                   <p className="mt-4">
                     <a
@@ -45,9 +43,10 @@ export function Bands({
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`link-underline inline-block py-2.5 font-bold ${p.link}`}
+                      className={`inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider font-semibold ${p.link}`}
                     >
-                      Enquire about {item.name} <span aria-hidden="true">&rarr;</span>
+                      <span>Enquire about {item.name}</span>
+                      <span aria-hidden="true">&rarr;</span>
                     </a>
                   </p>
                 )}

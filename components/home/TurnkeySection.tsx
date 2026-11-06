@@ -1,5 +1,4 @@
 import { Reveal } from "../Reveal";
-import { StarField } from "../Star";
 import { TurnkeyPlanner } from "../gifting/TurnkeyPlanner";
 import { contact } from "../../lib/site";
 import { turnkeyFeatures } from "../../lib/home-data";
@@ -9,39 +8,54 @@ export function TurnkeySection() {
     <section
       id="turnkey-programme"
       aria-labelledby="turnkey-title"
-      className="on-dark relative scroll-mt-24 overflow-hidden bg-plum px-5 py-16 text-paper md:px-10 md:py-24"
+      className="relative scroll-mt-24 overflow-hidden border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24"
     >
-      <StarField
-        spots={[
-          { top: "10%", right: "6%", size: 56, color: "#f8e23a", kind: "twinkle", dur: 5, delay: 0, mobileHidden: true },
-          { top: "70%", right: "40%", size: 26, color: "#7ed2ea", kind: "drift", dur: 9, delay: 1, mobileHidden: true },
-        ]}
+      {/* Ambient background glow */}
+      <div
+        className="pointer-events-none absolute -top-40 right-1/4 h-[450px] w-[500px] rounded-full bg-purple-950/20 blur-[130px]"
+        aria-hidden="true"
       />
+
       <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-14">
         <Reveal>
-          <p className="eyebrow text-sun">Turnkey · one window</p>
-          <h2 id="turnkey-title" className="display-lg mt-2 text-sun">
-            The office, and the gift.
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+            <span>Turnkey Production · One Window</span>
+          </div>
+
+          <h2
+            id="turnkey-title"
+            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+          >
+            The Office Venue, and the Gift.
           </h2>
-          <p className="lede mt-4 text-paper">
-            Reception, atrium and floor-bay installations planned alongside the hamper dispatch,
-            so HR, admin and procurement coordinate with one team instead of three.
+
+          <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-300">
+            Reception, atrium, and floor-bay installations scheduled simultaneously with your bulk hamper delivery. HR, admin, and leadership coordinate with one dedicated team under a single GST invoice.
           </p>
 
           <ul className="mt-8 grid gap-4">
             {turnkeyFeatures.map((feature) => (
-              <li key={feature.name} className="border-t border-paper/20 pt-4">
-                <h3 className="font-display text-2xl italic text-paper">{feature.name}</h3>
-                <p className="mt-1 max-w-[44ch] text-sm leading-relaxed text-paper/80">{feature.text}</p>
+              <li
+                key={feature.name}
+                className="rounded-xl border border-white/10 bg-[#131019] p-4 transition-colors hover:border-purple-500/30"
+              >
+                <h3 className="font-sans text-base font-bold text-white">
+                  {feature.name}
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-zinc-400">
+                  {feature.text}
+                </p>
               </li>
             ))}
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#rfq-section" className="btn btn-sun">
-              Plan decor + hampers <span className="btn-arrow" aria-hidden="true">&rarr;</span>
+            <a href="#rfq-section" className="btn">
+              <span>Plan Decor + Hampers</span>
+              <span className="btn-arrow" aria-hidden="true">&rarr;</span>
             </a>
-            <a href={contact.phone} className="btn btn-ghost text-paper">
+            <a href={contact.phone} className="btn btn-ghost">
               Call {contact.display}
             </a>
           </div>

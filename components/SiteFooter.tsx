@@ -4,27 +4,43 @@ import { SITE_NAME, contact, footerLinks } from "../lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark bg-ink px-5 py-14 text-paper md:px-10">
+    <footer className="border-t border-white/10 bg-[#07060A] px-5 py-14 text-zinc-300 md:px-10">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.3fr_0.8fr_1fr]">
         <div>
-          <div className="flex items-center gap-4">
-            <Image src="/logo.webp" alt="" width={919} height={822} sizes="88px" className="h-16 w-auto" />
-            <p className="max-w-[24ch] text-sm text-paper/80">
-              {SITE_NAME}. Corporate gifting, festive decor and event production in Navi Mumbai.
-            </p>
+          <div className="flex items-center gap-3.5">
+            <Image
+              src="/logo.webp"
+              alt={`${SITE_NAME} Logo`}
+              width={919}
+              height={822}
+              sizes="88px"
+              className="h-12 w-auto"
+            />
+            <div>
+              <p className="font-sans text-base font-bold text-white">
+                {SITE_NAME}
+              </p>
+              <p className="text-xs text-zinc-400">
+                Corporate Gifting &amp; Turnkey Production Flagship
+              </p>
+            </div>
           </div>
-          <p className="mt-5 max-w-[38ch] text-sm leading-relaxed text-paper/70">
-            Fourteen gifting categories and thirteen Diwali 2026 hamper models, backed by a
-            turnkey events and decor team.
+          <p className="mt-4 max-w-[38ch] text-xs sm:text-sm leading-relaxed text-zinc-400">
+            Employee Joining Kits, Executive Tech Diaries, PATRA Pure Copperware, and Luxury Hampers with turnkey campus decor in Navi Mumbai and Greater Mumbai.
           </p>
         </div>
 
-        <nav aria-label="Footer">
-          <h2 className="text-xs font-black uppercase tracking-[0.2em] text-sun">Explore</h2>
-          <ul className="mt-4 grid gap-1">
+        <nav aria-label="Footer navigation">
+          <h2 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+            Explore
+          </h2>
+          <ul className="mt-4 grid gap-1.5">
             {footerLinks.map((link) => (
               <li key={link.name}>
-                <Link href={link.href} className="link-underline inline-block py-1.5 text-sm text-paper/85">
+                <Link
+                  href={link.href}
+                  className="inline-block py-1 text-xs sm:text-sm text-zinc-400 transition-colors hover:text-white"
+                >
                   {link.name}
                 </Link>
               </li>
@@ -33,29 +49,42 @@ export function SiteFooter() {
         </nav>
 
         <div>
-          <h2 className="text-xs font-black uppercase tracking-[0.2em] text-sun">Corporate desk</h2>
-          <address className="mt-4 grid gap-2 text-sm not-italic text-paper/85">
-            <a href={contact.phone} className="link-underline">
+          <h2 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+            Corporate Sales Desk
+          </h2>
+          <address className="mt-4 grid gap-2 text-xs sm:text-sm not-italic text-zinc-300">
+            <a
+              href={contact.phone}
+              className="font-semibold text-white hover:text-purple-300 transition-colors"
+            >
               {contact.display}
             </a>
-            <a href={contact.secondaryPhone} className="link-underline">
+            <a
+              href={contact.secondaryPhone}
+              className="font-semibold text-white hover:text-purple-300 transition-colors"
+            >
               {contact.secondaryDisplay}
             </a>
-            <a href={contact.email} className="link-underline break-all">
+            <a
+              href={contact.email}
+              className="break-all text-purple-300 hover:text-white transition-colors"
+            >
               {contact.emailLabel}
             </a>
-            <span className="mt-2 text-paper/65">Navi Mumbai &amp; Greater Mumbai</span>
-            <span className="text-paper/65">Mon–Sat, 10:00–19:00</span>
+            <span className="mt-1 text-zinc-400">Navi Mumbai &amp; Greater Mumbai</span>
+            <span className="text-zinc-500">Mon–Sat, 10:00–19:00</span>
           </address>
-          <p className="mt-5 max-w-[32ch] text-xs leading-relaxed text-paper/55">
-            The 2026 catalogue and commercial details are shared on request by the corporate desk.
+          <p className="mt-4 max-w-[32ch] text-[0.72rem] leading-relaxed text-zinc-500">
+            Full PDF catalog and tiered commercial proposals are shared on request by the corporate sales desk.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-6xl flex-wrap items-center justify-between gap-3 border-t border-paper/15 pt-5 text-xs text-paper/55">
+      <div className="mx-auto mt-12 flex max-w-6xl flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-zinc-500">
         <p>© {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
-        <p>Diwali 2026 · Year-round corporate gifting · Turnkey decor</p>
+        <p className="font-mono text-[0.7rem]">
+          5 B2B Pillars · Year-Round Corporate Gifting · Single-Window GST Invoicing
+        </p>
       </div>
     </footer>
   );
