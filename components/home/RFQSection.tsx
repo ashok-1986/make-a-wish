@@ -11,13 +11,12 @@ export function RFQSection() {
     >
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
         <Reveal>
-          <p className="eyebrow text-plum/75">Corporate desk</p>
+          <p className="eyebrow text-plum/75">B2B Corporate Sales Desk</p>
           <h2 id="rfq-title" className="display-lg mt-2 text-plum">
-            Request the catalogue and a proposal.
+            Request a B2B Volume Quote &amp; Custom Presentation.
           </h2>
           <p className="lede mt-4">
-            Tell us the occasion, the quantity and the delivery city. The corporate desk replies
-            with the catalogue, the rate card for your requirement and the next steps.
+            Direct corporate desk for HR, procurement, and leadership teams. Quick turnaround for samples, custom logo mockups, and tiered volume proposals.
           </p>
 
           <div className="mt-8 rounded-2xl bg-paper/80 p-5 shadow-sm">
@@ -46,7 +45,9 @@ export function RFQSection() {
               </a>
             </address>
             <p className="mt-3 text-sm text-ink/75">Monday to Saturday, 10:00–19:00.</p>
-            <p className="mt-1 text-sm text-ink/75">Navi Mumbai &amp; Greater Mumbai.</p>
+            <p className="mt-1 text-sm font-medium text-ink/85">
+              Navi Mumbai (Panvel, Kharghar, Belapur, Nerul, Vashi, Airoli), Thane &amp; Greater Mumbai.
+            </p>
           </div>
 
           <p className="mt-4 text-sm leading-relaxed text-ink/75">

@@ -758,6 +758,18 @@ export function shortlistNotes(items: ShortlistItem[]): string {
 
 /* ---------- Enquiry content ---------- */
 
+export const corporateGiftingPurposes = [
+  "Employee Joining Kits & Onboarding",
+  "Annual Town Hall & Conference Giveaways",
+  "Client Appreciation & Executive Keepsakes",
+  "New Year 2027 Diaries, Calendars & Desk Tech",
+  "PATRA Copper & Artisanal Brassware Sourcing",
+  "Turnkey Event Decor + Bulk Gifting Bundle (5%–10% Off)",
+  "Other Corporate Requirement",
+] as const;
+
+export type CorporateGiftingPurpose = (typeof corporateGiftingPurposes)[number];
+
 export const inquiryTypes = [
   "Corporate gifting (Diwali 2026 & year-round)",
   "Diwali 2026 corporate gifting catalogue",
@@ -795,29 +807,93 @@ export type RFQDetails = {
   company: string;
   email: string;
   phone: string;
-  inquiryType: string;
-  quantity: string;
-  target: string;
-  location: string;
-  requirements: string;
+  giftingPurpose?: string;
+  inquiryType?: string;
+  quantityTier?: string;
+  quantity?: string;
+  target?: string;
+  location?: string;
+  requirements?: string;
+  items?: ShortlistItem[];
 };
 
 export function rfqMessage(details: RFQDetails): string {
-  return [
-    "Hello Make a Wish, I would like to request a corporate gifting proposal.",
+  const purpose = details.giftingPurpose || details.inquiryType || "Corporate Gifting Requirement";
+  const qty = details.quantityTier || details.quantity;
+
+  const lines = [
+    "Hello Make A Wish, I would like to request a B2B corporate volume quote & presentation.",
     "",
-    `Name: ${details.name}`,
-    `Company: ${details.company}`,
-    `Email: ${details.email}`,
-    `Phone: ${details.phone}`,
-    `Inquiry type: ${details.inquiryType}`,
-    details.quantity ? `Quantity: ${details.quantity}` : "",
-    details.target ? `Target date: ${details.target}` : "",
-    details.location ? `Location: ${details.location}` : "",
-    details.requirements ? `Requirements: ${details.requirements}` : "",
+    `• Name: ${details.name.trim()}`,
+    `• Company: ${details.company.trim()}`,
+    `• Work Email: ${details.email.trim()}`,
+    `• WhatsApp / Phone: ${details.phone.trim()}`,
+    `• Gifting Purpose: ${purpose}`,
+    qty ? `• Estimated Quantity Tier: ${qty}` : "",
+    details.location?.trim() ? `• Delivery Location: ${details.location.trim()}` : "",
+    details.target?.trim() ? `• Target Date: ${details.target.trim()}` : "",
+  ].filter(Boolean);
+
+  if (details.items && details.items.length > 0) {
+    lines.push("");
+    lines.push(`• Shortlisted Items / SKUs (${details.items.length}):`);
+    details.items.forEach((item, index) => {
+      const detail = item.detail ? ` — ${item.detail}` : "";
+      lines.push(`  ${index + 1}. ${item.name} (${shortlistKindLabels[item.kind] || item.kind})${detail}`);
+    });
+  }
+
+  if (details.requirements?.trim()) {
+    lines.push("");
+    lines.push(`• Specifications & Requirements:`);
+    lines.push(`  ${details.requirements.trim()}`);
+  }
+
+  lines.push("");
+  lines.push("Please share the rate card, sample dispatch options, and logo mockup details.");
+
+  return lines.join("\n");
+}
+
+export function rfqEmailBody(details: RFQDetails): string {
+  const purpose = details.giftingPurpose || details.inquiryType || "Corporate Gifting Requirement";
+  const qty = details.quantityTier || details.quantity;
+
+  const lines = [
+    "Hello Make A Wish B2B Sales Desk,",
     "",
-    "Please share the catalogue and the next steps.",
-  ]
-    .filter(Boolean)
-    .join("\n");
+    "Please provide a corporate volume quote and custom presentation for our organization:",
+    "",
+    `• Company: ${details.company.trim()}`,
+    `• Contact Name: ${details.name.trim()}`,
+    `• Work Email: ${details.email.trim()}`,
+    `• WhatsApp / Phone: ${details.phone.trim()}`,
+    `• Gifting Purpose: ${purpose}`,
+    qty ? `• Estimated Quantity Tier: ${qty}` : "",
+    details.location?.trim() ? `• Delivery Location: ${details.location.trim()}` : "",
+    details.target?.trim() ? `• Target Date: ${details.target.trim()}` : "",
+  ].filter(Boolean);
+
+  if (details.items && details.items.length > 0) {
+    lines.push("");
+    lines.push(`Shortlisted Items / SKUs (${details.items.length}):`);
+    details.items.forEach((item, index) => {
+      const detail = item.detail ? ` — ${item.detail}` : "";
+      lines.push(`${index + 1}. ${item.name} (${shortlistKindLabels[item.kind] || item.kind})${detail}`);
+    });
+  }
+
+  if (details.requirements?.trim()) {
+    lines.push("");
+    lines.push(`Additional Specifications & Requirements:\n${details.requirements.trim()}`);
+  }
+
+  lines.push("");
+  lines.push("We look forward to receiving your proposal, sample options, and logo mockup details.");
+  lines.push("");
+  lines.push("Best regards,");
+  lines.push(details.name.trim());
+  lines.push(details.company.trim());
+
+  return lines.join("\n");
 }
