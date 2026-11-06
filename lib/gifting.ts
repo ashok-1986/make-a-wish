@@ -88,7 +88,7 @@ export type WeightBand = {
   max?: number;
 };
 
-export type ShortlistKind = "category" | "hamper" | "turnkey";
+export type ShortlistKind = "category" | "hamper" | "turnkey" | "product";
 
 export type ShortlistItem = {
   key: string;
@@ -727,6 +727,7 @@ export const shortlistKindLabels: Record<ShortlistKind, string> = {
   category: "Category",
   hamper: "Hamper",
   turnkey: "Turnkey",
+  product: "Product",
 };
 
 export function shortlistWhatsAppMessage(items: ShortlistItem[]): string {

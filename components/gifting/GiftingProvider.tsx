@@ -23,6 +23,8 @@ type GiftingContextValue = {
   items: ShortlistItem[];
   addItem: (item: ShortlistItem) => void;
   removeItem: (key: string) => void;
+  toggleShortlist: (item: ShortlistItem) => void;
+  isShortlisted: (key: string) => boolean;
   clearItems: () => void;
   trayOpen: boolean;
   openTray: () => void;
@@ -81,6 +83,21 @@ export function GiftingProvider({ children }: { children: React.ReactNode }) {
     setItems((current) => current.filter((item) => item.key !== key));
   }, []);
 
+  const isShortlisted = useCallback(
+    (key: string) => items.some((item) => item.key === key),
+    [items]
+  );
+
+  const toggleShortlist = useCallback((item: ShortlistItem) => {
+    setItems((current) => {
+      const exists = current.some((entry) => entry.key === item.key);
+      if (exists) {
+        return current.filter((entry) => entry.key !== item.key);
+      }
+      return [...current, item];
+    });
+  }, []);
+
   const clearItems = useCallback(() => setItems([]), []);
 
   const openTray = useCallback(() => setTrayOpen(true), []);
@@ -128,6 +145,8 @@ export function GiftingProvider({ children }: { children: React.ReactNode }) {
       items,
       addItem,
       removeItem,
+      toggleShortlist,
+      isShortlisted,
       clearItems,
       trayOpen,
       openTray,
@@ -143,6 +162,8 @@ export function GiftingProvider({ children }: { children: React.ReactNode }) {
       items,
       addItem,
       removeItem,
+      toggleShortlist,
+      isShortlisted,
       clearItems,
       trayOpen,
       openTray,
