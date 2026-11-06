@@ -3,13 +3,13 @@
 
 export const SITE_NAME = "Make a Wish";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919769864175"; // digits only, with country code
-const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "+919769864175";
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919773411805"; // digits only, with country code
+const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "+919773411805";
 const secondaryPhoneNumber = process.env.NEXT_PUBLIC_SECONDARY_PHONE_NUMBER || "+919987119558";
-const emailAddress = process.env.NEXT_PUBLIC_EMAIL || "makeawishsmita9@gmail.com";
+const emailAddress = process.env.NEXT_PUBLIC_EMAIL || "makeawishevents@gmail.com";
 
 export const DEFAULT_MESSAGE =
-  "Hello Make a Wish, I would like to enquire about corporate gifting and festive decor.";
+  "Hello Make a Wish, I would like to enquire about Year-Round Corporate Gifting, Employee Joining Kits and Turnkey Solutions.";
 
 /* WhatsApp click-to-chat link with a pre-filled message */
 export function whatsappLink(message: string = DEFAULT_MESSAGE) {
@@ -18,38 +18,41 @@ export function whatsappLink(message: string = DEFAULT_MESSAGE) {
 
 export const contact = {
   /* Human-readable forms for showing the numbers as text */
-  display: "+91 97698 64175",
+  display: "+91 97734 11805",
   secondaryDisplay: "+91 99871 19558",
   whatsapp: whatsappLink(),
   phone: `tel:${phoneNumber}`,
-  phoneLabel: phoneNumber,
+  phoneLabel: "+91 97734 11805",
   secondaryPhone: `tel:${secondaryPhoneNumber}`,
-  secondaryPhoneLabel: secondaryPhoneNumber,
+  secondaryPhoneLabel: "+91 99871 19558",
   email: `mailto:${emailAddress}`,
   emailLabel: emailAddress,
+  locations: "Navi Mumbai (Panvel, Kharghar, Belapur, Nerul, Vashi, Airoli), Thane & Mumbai",
 };
 
 /* Message shown in the top bar. The catalogue is request-only, so the CTA
    opens the request modal rather than linking to a file. */
 export const announcement = {
-  text: "Diwali 2026 corporate gifting is open: 14 categories, 13 signature hampers, catalogue on request.",
-  cta: "Request catalogue",
+  text: "Corporate Gifting Solutions | Employee Joining Kits • Executive Combos • PATRA Copper & Brassware • Bulk Event + Gifting Bundles (5%–10% Off)",
+  cta: "Request B2B Quote",
 };
 
 export type NavLink = {
   name: string;
   href: string;
   /* Optional category filter to apply when the link lands on the homepage */
-  filter?: "year-round";
+  filter?: string;
+  pillarId?: string;
 };
 
-/* The five primary links from the refresh brief. */
+/* The 5 B2B Pillars + Inquire link */
 export const navLinks: NavLink[] = [
-  { name: "14 Categories", href: "/#gifting-categories" },
-  { name: "Diwali 2026", href: "/#diwali-lookbook" },
-  { name: "Year-Round", href: "/#gifting-categories", filter: "year-round" },
-  { name: "Decor + Hampers", href: "/#turnkey-programme" },
-  { name: "Events & Decor", href: "/#service-buckets" },
+  { name: "Joining Kits & Combos", href: "/#pillar-showcase", pillarId: "joining-kits" },
+  { name: "Diaries & Tech", href: "/#pillar-showcase", pillarId: "diaries-tech" },
+  { name: "Bags & Drinkware", href: "/#pillar-showcase", pillarId: "bags-drinkware" },
+  { name: "PATRA Copper & Brass", href: "/#pillar-showcase", pillarId: "patra-heritage" },
+  { name: "Gourmet Hampers", href: "/#pillar-showcase", pillarId: "gourmet-lifestyle" },
+  { name: "Inquire / WhatsApp", href: "/#rfq-section" },
 ];
 
 export const footerLinks = [

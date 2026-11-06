@@ -11,7 +11,7 @@ export function AnnouncementBar() {
       <p className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1">
         <Star className="h-4 w-4 shrink-0 text-sun" />
         <span className="sm:hidden">
-          Diwali 2026 corporate gifting is open. Catalogue on request.
+          Corporate Gifting & Joining Kits. B2B Quote on request.
         </span>
         <span className="hidden sm:inline">{announcement.text}</span>
         <CatalogueButton className="link-underline inline-flex min-h-[44px] items-center py-2 font-bold text-sun">

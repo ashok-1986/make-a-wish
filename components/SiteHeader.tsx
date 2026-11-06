@@ -16,17 +16,10 @@ export function SiteHeader() {
   /* On the dedicated gifting page, keep hub links on that page so the buyer does
      not lose their place; everything else points at the homepage sections. */
   function navHref(link: (typeof navLinks)[number]) {
-    if (!onGiftingPage) return link.href;
-    switch (link.name) {
-      case "14 Categories":
-        return "#gifting-categories";
-      case "Diwali 2026":
-        return "#diwali-lookbook";
-      case "Decor + Hampers":
-        return "#turnkey";
-      default:
-        return link.href;
+    if (onGiftingPage && link.href.startsWith("/#")) {
+      return link.href.slice(1);
     }
+    return link.href;
   }
 
   function closeMenu() {
