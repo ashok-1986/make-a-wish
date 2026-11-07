@@ -12,10 +12,10 @@ import { GIFTING_FILTER_EVENT, GIFTING_FILTER_STORAGE_KEY } from "./filterNaviga
 
 const chipBase =
   "inline-flex min-h-[40px] shrink-0 items-center rounded-full border px-4 py-1.5 text-xs font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500";
-const chipOn = "border-purple-500 bg-purple-500/20 text-white shadow-sm font-bold";
-const chipOff = "border-white/10 bg-[#1A1624] text-zinc-300 hover:border-white/25 hover:text-white";
+const chipOn = "border-purple-600 bg-purple-600 text-white shadow-sm font-bold";
+const chipOff = "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-zinc-300 hover:text-zinc-900";
 
-/* Filterable directory of all 14 categories with 8gnc.io dark executive aesthetics */
+/* Filterable directory of all 14 categories with 8gnc.io light studio aesthetics */
 export function GiftingCatalogue() {
   const [filter, setFilter] = useState<CategoryFilterId>("all");
 
@@ -51,7 +51,7 @@ export function GiftingCatalogue() {
       <div
         role="group"
         aria-label="Filter the 14 gifting categories"
-        className="flex flex-nowrap gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#131019] p-3.5 sm:flex-wrap sm:overflow-visible"
+        className="flex flex-nowrap gap-2 overflow-x-auto rounded-2xl border border-zinc-200/90 bg-white p-3.5 shadow-sm sm:flex-wrap sm:overflow-visible"
       >
         {categoryFilters.map((entry) => {
           const active = filter === entry.id;
@@ -70,15 +70,15 @@ export function GiftingCatalogue() {
       </div>
 
       <p
-        className="mt-5 font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400"
+        className="mt-5 font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700"
         aria-live="polite"
       >
         Showing {results.length} of {giftingCategories.length} Categories
       </p>
 
       {results.length === 0 ? (
-        <div className="mt-6 rounded-2xl border border-white/10 bg-[#131019] p-8 text-center">
-          <p className="text-base text-zinc-300">No categories match that filter.</p>
+        <div className="mt-6 rounded-2xl border border-zinc-200/90 bg-white p-8 text-center shadow-sm">
+          <p className="text-base text-zinc-600">No categories match that filter.</p>
           <button
             type="button"
             onClick={() => setFilter("all")}

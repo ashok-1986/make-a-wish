@@ -126,11 +126,13 @@ body {
     line-height: 1.1;
     background: #111111;
     color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.16);
     transition: all 220ms var(--ease-out);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   }
   .btn:hover {
     background: #27272a;
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-1.5px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   }
@@ -143,6 +145,25 @@ body {
   .btn:hover .btn-arrow {
     transform: translateX(4px);
   }
+
+  /* Dark-section primary button variant for dark backgrounds (#0B090E) */
+  .btn-dark-section,
+  .btn-on-dark,
+  .dark-section .btn:not(.btn-ghost):not(.btn-sun) {
+    background: #7c3aed;
+    color: #ffffff;
+    border: 1px solid #8b5cf6;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);
+  }
+  .btn-dark-section:hover,
+  .btn-on-dark:hover,
+  .dark-section .btn:not(.btn-ghost):not(.btn-sun):hover {
+    background: #6d28d9;
+    border-color: #a855f7;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+    transform: translateY(-1.5px);
+  }
+
   .btn-sun {
     background: var(--sun);
     color: #111111;

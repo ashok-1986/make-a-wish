@@ -135,14 +135,14 @@ export default function CorporateGiftingPage() {
       {/* Hero */}
       <section
         aria-labelledby="gifting-hero-title"
-        className="relative overflow-hidden border-b border-white/10 bg-[#0B090E] px-5 pb-16 pt-12 text-white md:px-10 md:pb-24 md:pt-16"
+        className="dark-section relative overflow-hidden border-b border-white/10 bg-[#0B090E] px-5 pb-16 pt-12 text-white md:px-10 md:pb-24 md:pt-16"
       >
         <div
           className="pointer-events-none absolute -top-40 left-1/4 h-[500px] w-[600px] rounded-full bg-purple-900/20 blur-[130px]"
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
@@ -161,7 +161,7 @@ export default function CorporateGiftingPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#pillar-showcase" className="btn">
+              <a href="#pillar-showcase" className="btn btn-dark-section">
                 <span>Explore 5 Corporate Pillars</span>
                 <span className="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -241,7 +241,7 @@ export default function CorporateGiftingPage() {
         aria-labelledby="turnkey-title"
         className="relative overflow-hidden scroll-mt-24 border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24"
       >
-        <div className="relative mx-auto max-w-6xl">
+        <div className="relative mx-auto max-w-7xl">
           <div className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#161320] via-[#131019] to-[#0E0C14] p-8 md:p-12 shadow-2xl">
             <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-14">
               <Reveal>
@@ -309,7 +309,7 @@ export default function CorporateGiftingPage() {
 
       {/* Section 3: Value Proposition & Why Buy Through One Desk */}
       <section aria-labelledby="desk-title" className="border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <Reveal className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
@@ -359,7 +359,7 @@ export default function CorporateGiftingPage() {
         aria-labelledby="categories-title"
         className="scroll-mt-24 border-b border-white/10 bg-[#0E0C14] px-5 py-16 text-white md:px-10 md:py-24"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <Reveal className="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-end">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
@@ -396,7 +396,7 @@ export default function CorporateGiftingPage() {
         aria-labelledby="lookbook-title"
         className="scroll-mt-24 border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <Reveal className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
@@ -425,7 +425,7 @@ export default function CorporateGiftingPage() {
         aria-labelledby="year-round-title"
         className="scroll-mt-24 border-b border-white/10 bg-[#0E0C14] px-5 py-16 text-white md:px-10 md:py-24"
       >
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-14">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-14">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
@@ -491,7 +491,7 @@ export default function CorporateGiftingPage() {
 
       {/* Section 5: FAQs with PRD Details */}
       <section aria-labelledby="faq-title" className="border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
@@ -512,7 +512,7 @@ export default function CorporateGiftingPage() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn mt-6"
+              className="btn btn-dark-section mt-6"
             >
               <span>Ask on WhatsApp</span>
               <span className="btn-arrow" aria-hidden="true">&rarr;</span>
@@ -538,7 +538,7 @@ export default function CorporateGiftingPage() {
         aria-labelledby="rfq-title"
         className="scroll-mt-24 border-b border-white/10 bg-[#0E0C14] px-5 py-16 text-white md:px-10 md:py-24"
       >
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
@@ -586,7 +586,7 @@ export default function CorporateGiftingPage() {
 
       {/* Closing CTA */}
       <section aria-labelledby="closing-title" className="bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />

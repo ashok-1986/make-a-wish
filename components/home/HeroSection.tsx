@@ -61,7 +61,7 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-[#0B090E] border-b border-white/10 px-5 pb-16 pt-12 md:px-10 md:pb-24 md:pt-16"
+      className="dark-section relative overflow-hidden bg-[#0B090E] border-b border-white/10 px-5 pb-16 pt-12 md:px-10 md:pb-24 md:pt-16"
     >
       {/* Background architectural glow */}
       <div
@@ -95,7 +95,7 @@ export function HeroSection() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
-              <a href="#pillar-showcase" className="btn">
+              <a href="#pillar-showcase" className="btn btn-dark-section">
                 <span>Explore 5 Corporate Pillars</span>
                 <span className="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>

@@ -427,13 +427,13 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
       )}
 
       {/* PRD Section 5.3 Direct Desk Footer Bar */}
-      <div className="mt-6 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-center text-xs text-zinc-400">
-        <span className="font-mono font-bold uppercase tracking-wider text-purple-400">Direct B2B Desk:</span>{" "}
-        <a href={contact.phone} className="font-semibold text-white hover:text-purple-300 hover:underline">
+      <div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-center text-xs text-zinc-600">
+        <span className="font-mono font-bold uppercase tracking-wider text-purple-700">Direct B2B Desk:</span>{" "}
+        <a href={contact.phone} className="font-semibold text-zinc-900 hover:text-purple-700 hover:underline">
           {contact.display}
         </a>{" "}
         |{" "}
-        <a href={contact.email} className="font-semibold text-purple-300 hover:text-white hover:underline">
+        <a href={contact.email} className="font-semibold text-purple-700 hover:text-purple-900 hover:underline">
           {contact.emailLabel}
         </a>{" "}
         | <span>Panvel, Navi Mumbai &amp; Greater Mumbai</span>

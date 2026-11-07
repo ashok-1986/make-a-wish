@@ -270,10 +270,10 @@ export function PillarShowcase({
         )}
 
         {/* Active Results Summary Indicator */}
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
-          <p className="text-xs sm:text-sm font-medium text-zinc-400">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-b border-zinc-200 pb-4">
+          <p className="text-xs sm:text-sm font-medium text-zinc-600">
             Showing{" "}
-            <span className="font-bold text-white">{filteredProducts.length}</span>{" "}
+            <span className="font-bold text-zinc-900">{filteredProducts.length}</span>{" "}
             {filteredProducts.length === 1 ? "product" : "products"}{" "}
             {selectedPillar !== "all"
               ? `in ${currentPillarMeta?.shortName}`
@@ -282,7 +282,7 @@ export function PillarShowcase({
               <>
                 {" "}
                 matching &ldquo;
-                <span className="font-bold text-purple-300">{searchQuery.trim()}</span>
+                <span className="font-bold text-purple-700">{searchQuery.trim()}</span>
                 &rdquo;
               </>
             )}
@@ -292,7 +292,7 @@ export function PillarShowcase({
             <button
               type="button"
               onClick={handleResetFilters}
-              className="text-xs font-semibold text-purple-400 hover:text-purple-300 underline underline-offset-4 transition-colors"
+              className="text-xs font-semibold text-purple-700 hover:text-purple-900 underline underline-offset-4 transition-colors"
             >
               Reset filters &amp; view all
             </button>
@@ -308,16 +308,16 @@ export function PillarShowcase({
           </div>
         ) : (
           /* Informative Empty State */
-          <div className="mx-auto mt-12 max-w-xl rounded-2xl border border-dashed border-white/20 bg-[#131019] p-8 sm:p-12 text-center">
-            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#1A1624] text-purple-400">
+          <div className="mx-auto mt-12 max-w-xl rounded-2xl border border-dashed border-zinc-300 bg-white p-8 sm:p-12 text-center shadow-xs">
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-purple-50 text-purple-700">
               <SearchIcon className="h-6 w-6" />
             </div>
-            <h3 className="mt-4 font-sans text-xl font-bold text-white">
+            <h3 className="mt-4 font-sans text-xl font-bold text-zinc-900">
               No matching products found
             </h3>
-            <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-400">
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-600">
               We couldn&rsquo;t find any products matching &ldquo;
-              <span className="font-bold text-white">{searchQuery}</span>&rdquo;{" "}
+              <span className="font-bold text-zinc-900">{searchQuery}</span>&rdquo;{" "}
               {selectedPillar !== "all" ? `in ${currentPillarMeta?.shortName}` : ""}.
               Try searching with another SKU code (e.g. H989, PT-C, D01) or broader keyword.
             </p>
