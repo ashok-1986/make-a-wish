@@ -10,16 +10,16 @@ test("corporate-gifting page metadata and structure conforms to PRD v3.0 specifi
   // Metadata
   assert.ok(
     content.includes(
-      'title: "Corporate Gifting Solutions | Joining Kits, PATRA Copper & Tech Sets | Make a Wish"'
+      'title: "Corporate Gifting Solutions | Joining Kits, Pure Copper & Tech Sets | Make a Wish"'
     ),
     "Metadata title must match PRD specification"
   );
   assert.ok(
     content.includes(
-      'description:\n    "365-Day Corporate Gifting in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, PATRA Pure Copper & Brassware, Tech Diaries, and Gourmet Hampers. Tiered B2B quotes on request."'
+      'description:\n    "365-Day Corporate Gifting in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, Pure Copper & Heritage Brassware, Tech Diaries, and Gourmet Hampers. Tiered B2B quotes on request."'
     ) ||
     content.includes(
-      "365-Day Corporate Gifting in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, PATRA Pure Copper & Brassware, Tech Diaries, and Gourmet Hampers. Tiered B2B quotes on request."
+      "365-Day Corporate Gifting in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, Pure Copper & Heritage Brassware, Tech Diaries, and Gourmet Hampers. Tiered B2B quotes on request."
     ),
     "Metadata description must match PRD specification"
   );
@@ -36,7 +36,7 @@ test("corporate-gifting page metadata and structure conforms to PRD v3.0 specifi
   );
   assert.ok(
     content.includes(
-      "From new-hire joining kits and conference giveaways to PATRA heritage copperware, executive tech diaries, and festive hampers. Direct corporate sales desk with custom logo branding and volume discounts."
+      "From new-hire joining kits and conference giveaways to pure heritage copperware, executive tech diaries, and festive hampers. Direct corporate sales desk with custom logo branding and volume discounts."
     ),
     "Hero subhead must match PRD"
   );

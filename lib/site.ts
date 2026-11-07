@@ -33,7 +33,7 @@ export const contact = {
 /* Message shown in the top bar. The catalogue is request-only, so the CTA
    opens the request modal rather than linking to a file. */
 export const announcement = {
-  text: "Corporate Gifting Solutions | Employee Joining Kits • Executive Combos • PATRA Copper & Brassware • Bulk Event + Gifting Bundles (5%–10% Off)",
+  text: "Corporate Gifting Solutions | Employee Joining Kits • Executive Combos • Pure Copper & Brassware • Bulk Event + Gifting Bundles (5%–10% Off)",
   cta: "Request B2B Quote",
 };
 
@@ -50,7 +50,7 @@ export const navLinks: NavLink[] = [
   { name: "Joining Kits & Combos", href: "/#pillar-showcase", pillarId: "joining-kits" },
   { name: "Diaries & Tech", href: "/#pillar-showcase", pillarId: "diaries-tech" },
   { name: "Bags & Drinkware", href: "/#pillar-showcase", pillarId: "bags-drinkware" },
-  { name: "PATRA Copper & Brass", href: "/#pillar-showcase", pillarId: "patra-heritage" },
+  { name: "Pure Copper & Brass", href: "/#pillar-showcase", pillarId: "patra-heritage" },
   { name: "Gourmet Hampers", href: "/#pillar-showcase", pillarId: "gourmet-lifestyle" },
   { name: "Inquire / WhatsApp", href: "/#rfq-section" },
 ];

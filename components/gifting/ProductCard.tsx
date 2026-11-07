@@ -36,8 +36,8 @@ function PillarFallbackGraphic({
   sku: string;
 }) {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center bg-[#1A1624]">
-      <div className="grid h-14 w-14 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-purple-400">
+    <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center bg-zinc-100 text-zinc-800">
+      <div className="grid h-14 w-14 place-items-center rounded-xl border border-zinc-200 bg-white text-purple-600 shadow-xs">
         {pillarId === "joining-kits" && (
           <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
@@ -62,7 +62,7 @@ function PillarFallbackGraphic({
           </svg>
         )}
         {pillarId === "patra-heritage" && (
-          <svg className="h-7 w-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-7 w-7 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
           </svg>
         )}
@@ -76,10 +76,10 @@ function PillarFallbackGraphic({
           </svg>
         )}
       </div>
-      <p className="mt-3 font-mono text-xs font-bold tracking-widest text-purple-400 uppercase">
+      <p className="mt-3 font-mono text-xs font-bold tracking-widest text-purple-700 uppercase">
         {sku}
       </p>
-      <p className="mt-0.5 text-[0.7rem] font-medium text-zinc-400">
+      <p className="mt-0.5 text-[0.7rem] font-medium text-zinc-500">
         B2B Enterprise Sample
       </p>
     </div>
@@ -119,10 +119,10 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
   return (
     <article
-      className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#131019] p-5 shadow-lg transition-all duration-300 hover:border-purple-500/40 hover:shadow-purple-950/20 ${className}`}
+      className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-sm transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:-translate-y-1.5 ${className}`}
     >
       {/* Aspect Ratio Card Header with Badges & Fallback Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-white/10 bg-[#1A1624]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100">
         {!imgError && product.image ? (
           <Image
             src={product.image}
@@ -136,25 +136,25 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
           <PillarFallbackGraphic pillarId={product.pillarId} sku={product.sku} />
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
         {/* Top Badges */}
         <div className="pointer-events-none absolute left-3 top-3 flex flex-wrap gap-1.5 z-10">
-          <span className="rounded-full border border-purple-500/40 bg-purple-500/25 px-2.5 py-0.5 font-mono text-[0.7rem] font-bold tracking-wider text-purple-300 backdrop-blur-md">
+          <span className="rounded-full border border-purple-500/30 bg-purple-50/90 px-2.5 py-0.5 font-mono text-[0.7rem] font-bold tracking-wider text-purple-700 backdrop-blur-md">
             SKU: {product.sku}
           </span>
         </div>
 
         <div className="pointer-events-none absolute right-3 top-3 z-10">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/70 px-2.5 py-0.5 text-[0.68rem] font-medium text-zinc-300 backdrop-blur-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white/90 px-2.5 py-0.5 text-[0.68rem] font-medium text-zinc-800 backdrop-blur-md shadow-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             {product.statusBadge || "B2B Bulk Ready"}
           </span>
         </div>
 
         {/* Bottom Category Badge */}
         <div className="pointer-events-none absolute bottom-3 left-3 z-10 max-w-[85%]">
-          <span className="inline-block truncate rounded-md border border-white/15 bg-black/75 px-2 py-0.5 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-zinc-300 backdrop-blur-md">
+          <span className="inline-block truncate rounded-md border border-zinc-200 bg-white/95 px-2 py-0.5 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-zinc-800 backdrop-blur-md shadow-xs">
             {product.categoryName}
           </span>
         </div>
@@ -162,31 +162,31 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
       {/* Body Content */}
       <div className="mt-4 flex flex-1 flex-col">
-        <h3 className="font-sans text-lg sm:text-xl font-bold tracking-tight text-white transition-colors group-hover:text-purple-300">
+        <h3 className="font-sans text-lg sm:text-xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-purple-700">
           {product.name}
         </h3>
 
         {product.highlights && (
-          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-300 line-clamp-2">
+          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-600 line-clamp-2">
             {product.highlights}
           </p>
         )}
 
         {/* Specifications / Dimensions / Finishes */}
         {(product.dimensions || product.capacities || product.colors || product.finishes) && (
-          <div className="mt-3 flex flex-wrap gap-1.5 text-[0.72rem] text-zinc-300">
+          <div className="mt-3 flex flex-wrap gap-1.5 text-[0.72rem] text-zinc-700">
             {product.dimensions && (
-              <span className="rounded-md border border-white/10 bg-[#1A1624] px-2 py-0.5 font-medium">
+              <span className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 font-medium">
                 📐 {product.dimensions}
               </span>
             )}
             {product.capacities && product.capacities.length > 0 && (
-              <span className="rounded-md border border-white/10 bg-[#1A1624] px-2 py-0.5 font-medium">
+              <span className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 font-medium">
                 ⚡ {product.capacities.join(" · ")}
               </span>
             )}
             {product.colors && product.colors.length > 0 && (
-              <span className="rounded-md border border-white/10 bg-[#1A1624] px-2 py-0.5 font-medium">
+              <span className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 font-medium">
                 🎨 {product.colors.slice(0, 2).join(", ")}
                 {product.colors.length > 2 ? ` +${product.colors.length - 2}` : ""}
               </span>
@@ -196,26 +196,26 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
         {/* Kit Inclusions List */}
         {product.inclusions && product.inclusions.length > 0 && (
-          <div className="mt-3.5 rounded-xl border border-white/10 bg-white/[0.02] p-3">
+          <div className="mt-3.5 rounded-xl border border-zinc-200/90 bg-zinc-50/70 p-3">
             <div className="flex items-center justify-between">
-              <p className="font-mono text-[0.68rem] font-bold uppercase tracking-wider text-purple-400">
+              <p className="font-mono text-[0.68rem] font-bold uppercase tracking-wider text-purple-700">
                 Kit Inclusions
               </p>
-              <span className="font-mono text-[0.68rem] font-medium text-zinc-400">
+              <span className="font-mono text-[0.68rem] font-medium text-zinc-500">
                 {product.inclusions.length} {product.inclusions.length === 1 ? "item" : "items"}
               </span>
             </div>
-            <ul className="mt-1.5 space-y-1 text-xs text-zinc-300">
+            <ul className="mt-1.5 space-y-1 text-xs text-zinc-700">
               {product.inclusions.slice(0, 4).map((item, idx) => (
                 <li key={idx} className="flex items-start gap-1.5">
-                  <span className="mt-0.5 grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-purple-500/20 text-[9px] font-bold text-purple-300">
+                  <span className="mt-0.5 grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-purple-100 text-[9px] font-bold text-purple-700">
                     ✓
                   </span>
                   <span className="truncate leading-tight">{item}</span>
                 </li>
               ))}
               {product.inclusions.length > 4 && (
-                <li className="pt-0.5 text-[0.72rem] font-semibold text-purple-400">
+                <li className="pt-0.5 text-[0.72rem] font-semibold text-purple-700">
                   +{product.inclusions.length - 4} more items included
                 </li>
               )}
@@ -225,17 +225,17 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
       </div>
 
       {/* Footer Controls: Volume Tier & CTAs */}
-      <div className="mt-auto pt-4 border-t border-white/10">
+      <div className="mt-auto pt-4 border-t border-zinc-100">
         {/* Volume Tier Dropdown */}
         <div className="mb-3">
           <div className="flex items-center justify-between">
             <label
               htmlFor={`tier-${product.sku}`}
-              className="text-xs font-semibold text-zinc-300"
+              className="text-xs font-semibold text-zinc-700"
             >
               Volume Tier:
             </label>
-            <span className="text-[0.68rem] font-mono text-purple-400 font-semibold">
+            <span className="text-[0.68rem] font-mono text-purple-700 font-semibold">
               {selectedTier.includes("Bundle Perk")
                 ? "5%–10% Bundle Perk"
                 : "MOQ: 25 units"}
@@ -247,15 +247,15 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
               id={`tier-${product.sku}`}
               value={selectedTier}
               onChange={(e) => handleTierChange(e.target.value as QuantityTier)}
-              className="w-full appearance-none rounded-xl border border-white/15 bg-[#1A1624] px-3 py-2 pr-8 text-xs font-semibold text-white transition-colors hover:border-white/30 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+              className="w-full appearance-none rounded-xl border border-zinc-300 bg-zinc-50/80 px-3 py-2 pr-8 text-xs font-semibold text-zinc-800 transition-colors hover:border-zinc-400 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/20"
             >
               {QUANTITY_TIERS.map((tier) => (
-                <option key={tier} value={tier} className="bg-[#131019] text-white">
+                <option key={tier} value={tier} className="bg-white text-zinc-900">
                   {tier} units
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-zinc-400">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-zinc-500">
               <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path
                   fillRule="evenodd"
@@ -275,13 +275,13 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             aria-pressed={isShortlisted}
             className={`btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold transition-all flex-1 justify-center ${
               isShortlisted
-                ? "!bg-purple-600 !text-white border border-purple-500 shadow-sm"
-                : "btn-ghost !text-zinc-200 hover:!text-white"
+                ? "!bg-purple-600 !text-white border border-purple-600 shadow-sm"
+                : "btn-ghost !text-zinc-800 border-zinc-300 hover:!bg-zinc-100"
             }`}
           >
             {isShortlisted ? (
               <>
-                <span className="text-emerald-400">✓</span> Shortlisted
+                <span className="text-white">✓</span> Shortlisted
               </>
             ) : (
               <>+ Shortlist</>
@@ -292,9 +292,9 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold flex-1 justify-center !bg-white !text-black hover:!bg-zinc-200 transition-all shadow-sm"
+            className="btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold flex-1 justify-center !bg-zinc-900 !text-white hover:!bg-zinc-800 transition-all shadow-sm"
           >
-            <WhatsAppIcon className="h-3.5 w-3.5 shrink-0 fill-current text-emerald-600" />
+            <WhatsAppIcon className="h-3.5 w-3.5 shrink-0 fill-current text-emerald-400" />
             <span>WhatsApp</span>
           </a>
         </div>
@@ -303,7 +303,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
         <p
           role="status"
           aria-live="polite"
-          className="mt-2 min-h-[1rem] text-[0.7rem] font-medium text-emerald-400 transition-opacity text-center"
+          className="mt-2 min-h-[1rem] text-[0.7rem] font-medium text-emerald-600 transition-opacity text-center"
         >
           {addedFeedback ? `${product.sku} added to your proposal shortlist.` : ""}
         </p>

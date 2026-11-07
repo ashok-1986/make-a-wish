@@ -77,7 +77,7 @@ export function Overlay({ open, onClose, labelledBy, variant = "modal", children
         aria-label="Close dialog"
         tabIndex={-1}
         onClick={onClose}
-        className="absolute inset-0 h-full w-full cursor-default bg-black/80 backdrop-blur-md"
+        className="absolute inset-0 h-full w-full cursor-default bg-black/60 backdrop-blur-sm"
       />
       <div
         ref={panelRef}
@@ -86,8 +86,8 @@ export function Overlay({ open, onClose, labelledBy, variant = "modal", children
         aria-labelledby={labelledBy}
         className={
           variant === "tray"
-            ? "tray-panel relative flex h-full w-full max-w-md flex-col border-l border-white/10 bg-[#0E0C14] text-white shadow-2xl"
-            : "modal-panel relative max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-2xl border border-white/10 bg-[#131019] text-white shadow-2xl sm:rounded-2xl"
+            ? "tray-panel relative flex h-full w-full max-w-md flex-col border-l border-zinc-200 bg-white text-zinc-900 shadow-2xl"
+            : "modal-panel relative max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-2xl border border-zinc-200 bg-white text-zinc-900 shadow-2xl sm:rounded-2xl"
         }
       >
         {children}

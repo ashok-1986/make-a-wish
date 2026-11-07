@@ -1,5 +1,5 @@
 /* Make a Wish — corporate gifting catalogue.
-   Source: the 2026 hamper catalogue and the Patra brass and copper catalogues.
+   Source: the 2026 hamper catalogue and the pure brass and copper collections.
    The catalogue is deliberately price-free: quantities, editions and packaging are
    published here, while rate cards and proposals are shared by the sales desk. */
 
@@ -763,7 +763,7 @@ export const corporateGiftingPurposes = [
   "Annual Town Hall & Conference Giveaways",
   "Client Appreciation & Executive Keepsakes",
   "New Year 2027 Diaries, Calendars & Desk Tech",
-  "PATRA Copper & Artisanal Brassware Sourcing",
+  "Pure Copper & Artisanal Brassware Sourcing",
   "Turnkey Event Decor + Bulk Gifting Bundle (5%–10% Off)",
   "Other Corporate Requirement",
 ] as const;

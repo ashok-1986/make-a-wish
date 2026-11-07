@@ -13,7 +13,7 @@ test("corporateGiftingPurposes includes all PRD v3.0 purpose options", () => {
     "Annual Town Hall & Conference Giveaways",
     "Client Appreciation & Executive Keepsakes",
     "New Year 2027 Diaries, Calendars & Desk Tech",
-    "PATRA Copper & Artisanal Brassware Sourcing",
+    "Pure Copper & Artisanal Brassware Sourcing",
     "Turnkey Event Decor + Bulk Gifting Bundle (5%–10% Off)",
     "Other Corporate Requirement",
   ];

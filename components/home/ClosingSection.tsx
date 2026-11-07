@@ -6,7 +6,7 @@ export function ClosingSection() {
   return (
     <section
       aria-labelledby="closing-title"
-      className="relative overflow-hidden border-b border-white/10 bg-[#0B090E] px-5 py-24 text-white md:px-10 md:py-32"
+      className="relative overflow-hidden border-b border-zinc-800 bg-[#111111] px-5 py-24 text-white md:px-10 md:py-32"
     >
       {/* Background Cinematic Boardroom Photography */}
       <div className="absolute inset-0 pointer-events-none">
@@ -17,10 +17,10 @@ export function ClosingSection() {
           sizes="100vw"
           className="object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B090E] via-[#0B090E]/90 to-[#0B090E]/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/75" />
       </div>
 
-      <Reveal className="relative mx-auto max-w-6xl">
+      <Reveal className="relative mx-auto max-w-7xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
           <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
           <span>Elevate Your Brand</span>

@@ -27,7 +27,7 @@ const spotlightCards = [
   {
     id: "patra-heritage",
     number: "02",
-    title: "PATRA Pure Copper & Brassware",
+    title: "Pure Copper & Heritage Brassware",
     badge: "PURE ARTISANAL",
     subtitle: "PT-C & PT-B Authentic Ayurvedic Sets",
     description: "Ayurveda water bottles, table pots, South Indian brass dabaras & Kalai tin-lined cookware.",
@@ -73,7 +73,7 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative mx-auto max-w-7xl">
         {/* Top Split Hero Grid */}
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           {/* Left Column: Bold Architectural Value Proposition */}
@@ -91,7 +91,7 @@ export function HeroSection() {
             </h1>
 
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-zinc-300 max-w-[58ch]">
-              Curated 2-in-1 to 6-in-1 Employee Joining Kits, Executive Power Bank Diaries, PATRA Pure Copperware, and Luxury Gourmet Hampers. Pre-packaged and customized with your corporate logo under a single GST invoice.
+              Curated 2-in-1 to 6-in-1 Employee Joining Kits, Executive Power Bank Diaries, Pure Copperware, and Luxury Gourmet Hampers. Pre-packaged and customized with your corporate logo under a single GST invoice.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
@@ -154,7 +154,7 @@ export function HeroSection() {
           <div className="border-l-2 border-purple-500/40 pl-4">
             <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">01 / Scope</p>
             <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">5 B2B Pillars</p>
-            <p className="text-xs text-zinc-400">Joining Kits to PATRA Copper</p>
+            <p className="text-xs text-zinc-400">Joining Kits to Pure Copper</p>
           </div>
           <div className="border-l-2 border-purple-500/40 pl-4">
             <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">02 / Portfolio</p>

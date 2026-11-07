@@ -75,11 +75,11 @@ export const PILLARS: PillarMeta[] = [
   },
   {
     id: "patra-heritage",
-    name: "PATRA Pure Copperware & Artisanal Brassware Collections",
-    shortName: "PATRA Copper & Brass",
+    name: "Pure Copper & Heritage Brassware Collections",
+    shortName: "Pure Copperware & Brass",
     description:
-      "Handcrafted copper water bottles, table pots, matkas, South Indian brass coffee dabara sets, and Kalai cookware.",
-    brochureSource: "PATRA Copper & Brass Catalogues",
+      "Handcrafted pure copper water bottles, table pots, matkas, South Indian brass coffee dabara sets, and Kalai cookware.",
+    brochureSource: "Make a Wish Heritage Metalcraft Collection",
     iconName: "sparkles",
   },
   {

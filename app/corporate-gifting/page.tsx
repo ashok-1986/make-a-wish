@@ -11,9 +11,9 @@ import { TurnkeyPlanner } from "../../components/gifting/TurnkeyPlanner";
 import { contact, whatsappLink } from "../../lib/site";
 
 export const metadata: Metadata = {
-  title: "Corporate Gifting Solutions | Joining Kits, PATRA Copper & Tech Sets | Make a Wish",
+  title: "Corporate Gifting Solutions | Joining Kits, Pure Copper & Tech Sets | Make a Wish",
   description:
-    "365-Day Corporate Gifting in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, PATRA Pure Copper & Brassware, Tech Diaries, and Gourmet Hampers. Tiered B2B quotes on request.",
+    "365-Day Corporate Gifting in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, Pure Copper & Heritage Brassware, Tech Diaries, and Gourmet Hampers. Tiered B2B quotes on request.",
 };
 
 const heroImages = [
@@ -45,7 +45,7 @@ const reasons = [
   {
     name: "Executive keepsakes & client appreciation",
     tag: "Pillars D & E",
-    text: "PATRA certified pure copper bottles, table pots, authentic South Indian brass coffee dabaras, 999 pure silver, and luxury gourmet hampers. Meaningful, lasting recognition for board members, VIP clients, and long-service milestones.",
+    text: "Pure copper bottles, table pots, authentic South Indian brass coffee dabaras, 999 pure silver, and luxury gourmet hampers. Meaningful, lasting recognition for board members, VIP clients, and long-service milestones.",
   },
   {
     name: "Turnkey single invoice & managed dispatch",
@@ -157,7 +157,7 @@ export default function CorporateGiftingPage() {
             </h1>
 
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-zinc-300">
-              From new-hire joining kits and conference giveaways to PATRA heritage copperware, executive tech diaries, and festive hampers. Direct corporate sales desk with custom logo branding and volume discounts.
+              From new-hire joining kits and conference giveaways to pure heritage copperware, executive tech diaries, and festive hampers. Direct corporate sales desk with custom logo branding and volume discounts.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -552,7 +552,7 @@ export default function CorporateGiftingPage() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-zinc-300">
               Submit your corporate requirement for employee joining kits, executive hampers,
-              PATRA copperware, or a turnkey decor bundle. Receive an itemized quote, branding
+              pure copperware, or a turnkey decor bundle. Receive an itemized quote, branding
               mockups, and tiered rate card via WhatsApp or Email.
             </p>
 

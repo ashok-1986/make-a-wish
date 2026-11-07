@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     template: "%s | Make a Wish",
   },
   description:
-    "B2B corporate gifting portal in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, PATRA Pure Copper & Brassware, Tech Diaries, and Luxury Gourmet Hampers. Tiered B2B proposals on request.",
+    "B2B corporate gifting portal in Navi Mumbai & Mumbai: Employee Joining Kits, Executive Combos, Pure Copper & Heritage Brassware, Tech Diaries, and Luxury Gourmet Hampers. Tiered B2B proposals on request.",
   keywords: [
     "corporate gifting Navi Mumbai",
     "employee onboarding joining kits Mumbai",
-    "PATRA pure copper water bottles bulk",
+    "pure copper water bottles bulk corporate",
     "executive power bank diary corporate gift",
     "corporate gift vendors Navi Mumbai Mumbai",
     "999 silver corporate gifts",
@@ -40,19 +40,19 @@ export const metadata: Metadata = {
     siteName: "Make a Wish",
     title: "Make a Wish | 365-Day B2B Corporate Gifting Flagship",
     description:
-      "Curated 2-in-1 to 6-in-1 Joining Kits, Executive Diaries, PATRA Copperware, and Luxury Gourmet Hampers with turnkey office decor in Navi Mumbai and Mumbai.",
+      "Curated 2-in-1 to 6-in-1 Joining Kits, Executive Diaries, Pure Copperware, and Luxury Gourmet Hampers with turnkey office decor in Navi Mumbai and Mumbai.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Make a Wish | 365-Day B2B Corporate Gifting Flagship",
     description:
-      "Curated 2-in-1 to 6-in-1 Joining Kits, Executive Diaries, PATRA Copperware, and Luxury Gourmet Hampers with turnkey office decor in Navi Mumbai and Mumbai.",
+      "Curated 2-in-1 to 6-in-1 Joining Kits, Executive Diaries, Pure Copperware, and Luxury Gourmet Hampers with turnkey office decor in Navi Mumbai and Mumbai.",
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b090e",
+  themeColor: "#F9F8F6",
 };
 
 export default function RootLayout({
@@ -61,8 +61,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sans.variable} dark`}>
-      <body className="min-h-screen bg-[#0b090e] font-sans text-zinc-100 antialiased selection:bg-purple-600 selection:text-white">
+    <html lang="en" className={sans.variable}>
+      <body className="min-h-screen bg-[#F9F8F6] font-sans text-zinc-900 antialiased selection:bg-purple-600 selection:text-white">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-3 focus:z-50 focus:rounded-full focus:bg-purple-600 focus:px-4 focus:py-2 focus:text-white"

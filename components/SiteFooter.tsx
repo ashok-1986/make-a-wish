@@ -4,8 +4,8 @@ import { SITE_NAME, contact, footerLinks } from "../lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-[#07060A] px-5 py-14 text-zinc-300 md:px-10">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.3fr_0.8fr_1fr]">
+    <footer className="border-t border-zinc-800 bg-[#111111] px-5 py-14 text-zinc-300 md:px-10">
+      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.3fr_0.8fr_1fr]">
         <div>
           <div className="flex items-center gap-3.5">
             <Image
@@ -26,7 +26,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-4 max-w-[38ch] text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Employee Joining Kits, Executive Tech Diaries, PATRA Pure Copperware, and Luxury Hampers with turnkey campus decor in Navi Mumbai and Greater Mumbai.
+            Employee Joining Kits, Executive Tech Diaries, Pure Copper &amp; Heritage Brassware, and Luxury Hampers with turnkey campus decor in Navi Mumbai and Greater Mumbai.
           </p>
         </div>
 

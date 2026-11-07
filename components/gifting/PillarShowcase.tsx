@@ -114,26 +114,26 @@ export function PillarShowcase({
   return (
     <section
       id="pillar-showcase"
-      className={`relative scroll-mt-20 border-b border-white/10 bg-[#0B090E] py-16 text-white md:py-24 ${className}`}
+      className={`relative scroll-mt-20 border-b border-zinc-200 bg-[#F9F8F6] py-16 text-zinc-900 md:py-24 ${className}`}
       aria-labelledby="showcase-heading"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         {/* Showcase Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+            <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>5 Core B2B Gifting Pillars</span>
           </div>
 
           <h2
             id="showcase-heading"
-            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
           >
             Year-Round Utility &amp; Executive Combos.
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-300">
-            Explore 49+ bulk-ready employee onboarding kits, executive tech desk suites, anti-theft backpacks, handcrafted PATRA copperware, and luxury hampers. Fully customizable with your corporate logo branding under a single GST invoice.
+          <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-600">
+            Explore 49+ bulk-ready employee onboarding kits, executive tech desk suites, anti-theft backpacks, handcrafted pure copperware, and luxury hampers. Fully customizable with your corporate logo branding under a single GST invoice.
           </p>
         </div>
 
@@ -153,7 +153,7 @@ export function PillarShowcase({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by SKU (e.g. H989, PT-C), Diary, Copper, Backpack, Tumbler..."
-              className="w-full rounded-2xl border border-white/15 bg-[#131019] py-3.5 pl-11 pr-11 text-sm sm:text-base text-white placeholder:text-zinc-500 transition-colors focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/20"
+              className="w-full rounded-2xl border border-zinc-300 bg-white py-3.5 pl-11 pr-11 text-sm sm:text-base text-zinc-900 placeholder:text-zinc-400 shadow-sm transition-colors focus:border-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-600/20"
             />
 
             {searchQuery && (
@@ -161,9 +161,9 @@ export function PillarShowcase({
                 type="button"
                 onClick={() => setSearchQuery("")}
                 aria-label="Clear search"
-                className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-zinc-400 hover:text-white transition-colors"
+                className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-zinc-400 hover:text-zinc-700 transition-colors"
               >
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-[#1A1624] text-xs font-bold text-zinc-300 hover:text-white">
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-600 hover:text-zinc-900">
                   ✕
                 </span>
               </button>
@@ -171,8 +171,8 @@ export function PillarShowcase({
           </div>
 
           {/* Quick SKU Chips */}
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs text-zinc-400">
-            <span className="font-mono text-purple-400 font-semibold">Popular:</span>
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs text-zinc-500">
+            <span className="font-mono text-purple-700 font-semibold">Popular:</span>
             {["H989 (5-in-1)", "H930 (6-in-1)", "D01 (Power Bank)", "PT-C (Copper)", "B901 (Laptop Bag)"].map(
               (chip) => {
                 const skuCode = chip.split(" ")[0];
@@ -181,7 +181,7 @@ export function PillarShowcase({
                     key={chip}
                     type="button"
                     onClick={() => setSearchQuery(skuCode)}
-                    className="rounded-full border border-white/10 bg-[#1A1624] px-2.5 py-0.5 font-mono text-[0.72rem] text-zinc-300 transition-colors hover:border-purple-500/40 hover:text-white"
+                    className="rounded-full border border-zinc-200 bg-white px-2.5 py-0.5 font-mono text-[0.72rem] text-zinc-700 transition-colors hover:border-purple-500/40 hover:text-purple-700 shadow-xs"
                   >
                     {chip}
                   </button>
@@ -206,16 +206,16 @@ export function PillarShowcase({
               onClick={() => setSelectedPillar("all")}
               className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
                 selectedPillar === "all"
-                  ? "border-purple-500 bg-purple-500/20 text-white font-bold shadow-md"
-                  : "border-white/10 bg-[#1A1624] text-zinc-300 hover:border-white/25 hover:text-white"
+                  ? "border-purple-600 bg-purple-600 text-white font-bold shadow-md"
+                  : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:text-zinc-900"
               }`}
             >
               <span>All Products</span>
               <span
                 className={`rounded-full px-2 py-0.5 font-mono text-[0.7rem] font-bold ${
                   selectedPillar === "all"
-                    ? "bg-purple-500 text-white"
-                    : "bg-[#131019] text-zinc-400"
+                    ? "bg-white/20 text-white"
+                    : "bg-zinc-100 text-zinc-600"
                 }`}
               >
                 {getPillarCount("all")}
@@ -235,14 +235,14 @@ export function PillarShowcase({
                   onClick={() => setSelectedPillar(pillar.id)}
                   className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
                     isActive
-                      ? "border-purple-500 bg-purple-500/20 text-white font-bold shadow-md"
-                      : "border-white/10 bg-[#1A1624] text-zinc-300 hover:border-white/25 hover:text-white"
+                      ? "border-purple-600 bg-purple-600 text-white font-bold shadow-md"
+                      : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:text-zinc-900"
                   }`}
                 >
                   <span>{pillar.shortName}</span>
                   <span
                     className={`rounded-full px-2 py-0.5 font-mono text-[0.7rem] font-bold ${
-                      isActive ? "bg-purple-500 text-white" : "bg-[#131019] text-zinc-400"
+                      isActive ? "bg-white/20 text-white" : "bg-zinc-100 text-zinc-600"
                     }`}
                   >
                     {count}
@@ -255,14 +255,14 @@ export function PillarShowcase({
 
         {/* Active Pillar Citation / Description Banner */}
         {currentPillarMeta && (
-          <div className="mx-auto mt-6 max-w-4xl rounded-2xl border border-white/10 bg-[#131019] p-5 text-center">
-            <h3 className="font-sans text-xl font-bold text-white">
+          <div className="mx-auto mt-6 max-w-4xl rounded-2xl border border-zinc-200/90 bg-white p-5 text-center shadow-sm">
+            <h3 className="font-sans text-xl font-bold text-zinc-900">
               {currentPillarMeta.name}
             </h3>
-            <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-300">
+            <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-600">
               {currentPillarMeta.description}
             </p>
-            <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-0.5 text-[0.7rem] font-mono text-purple-300 font-semibold">
+            <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-purple-500/20 bg-purple-50 px-3 py-0.5 text-[0.7rem] font-mono text-purple-700 font-semibold">
               <span>Source:</span>
               <span>{currentPillarMeta.brochureSource}</span>
             </div>
@@ -343,7 +343,7 @@ export function PillarShowcase({
         )}
 
         {/* Direct WhatsApp Custom Kit Banner */}
-        <div className="mt-16 sm:mt-20 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#131019] via-[#161320] to-[#1A1624] p-6 sm:p-10 md:p-12 shadow-2xl">
+        <div className="mt-16 sm:mt-20 overflow-hidden rounded-2xl border border-zinc-800 bg-[#111111] p-6 sm:p-10 md:p-12 shadow-2xl text-white">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-8">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
@@ -354,7 +354,7 @@ export function PillarShowcase({
               </h3>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-zinc-300">
                 Mix and match items across all 5 pillars into a single custom-branded gift box.
-                Pair a PATRA copper bottle with a power bank diary, metal roller pen, and luxury
+                Pair a pure copper bottle with a power bank diary, metal roller pen, and luxury
                 dry fruit jar inside a customized magnetic rigid box with your corporate logo foil-embossed.
               </p>
 

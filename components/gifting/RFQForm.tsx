@@ -118,25 +118,25 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
     <form
       ref={formRef}
       onSubmit={onSubmit}
-      className="rounded-2xl border border-white/10 bg-[#131019] p-5 sm:p-7 md:p-8 shadow-2xl text-white"
+      className="rounded-2xl border border-zinc-200/90 bg-white p-5 sm:p-7 md:p-8 shadow-xl text-zinc-900"
     >
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 pb-4">
         <div>
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-purple-400 font-semibold">RFQ &amp; Volume Proposal</span>
-          <h3 className="font-sans text-xl sm:text-2xl font-bold text-white mt-1">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-purple-700 font-semibold">RFQ &amp; Volume Proposal</span>
+          <h3 className="font-sans text-xl sm:text-2xl font-bold text-zinc-900 mt-1">
             B2B Corporate Quotation Request
           </h3>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-mono text-xs font-semibold text-emerald-300">
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+        <div className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-xs font-semibold text-emerald-800 shadow-xs">
+          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>B2B Desk Online</span>
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="rfq-name" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            Full name <span aria-hidden="true" className="text-purple-400">*</span>
+          <label htmlFor="rfq-name" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+            Full name <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
             id="rfq-name"
@@ -150,8 +150,8 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-company" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            Company name <span aria-hidden="true" className="text-purple-400">*</span>
+          <label htmlFor="rfq-company" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+            Company name <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
             id="rfq-company"
@@ -165,8 +165,8 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            Work email <span aria-hidden="true" className="text-purple-400">*</span>
+          <label htmlFor="rfq-email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+            Work email <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
             id="rfq-email"
@@ -181,8 +181,8 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-phone" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            WhatsApp / mobile number <span aria-hidden="true" className="text-purple-400">*</span>
+          <label htmlFor="rfq-phone" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+            WhatsApp / mobile number <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
             id="rfq-phone"
@@ -200,8 +200,8 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-purpose" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            Gifting purpose <span aria-hidden="true" className="text-purple-400">*</span>
+          <label htmlFor="rfq-purpose" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+            Gifting purpose <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <select
             id="rfq-purpose"
@@ -211,7 +211,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
             className={fieldClass}
           >
             {purposeOptions.map((option) => (
-              <option key={option} value={option} className="bg-[#131019] text-white">
+              <option key={option} value={option} className="bg-white text-zinc-900">
                 {option}
               </option>
             ))}
@@ -219,8 +219,8 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-quantity" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            Estimated quantity tier <span aria-hidden="true" className="text-purple-400">*</span>
+          <label htmlFor="rfq-quantity" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+            Estimated quantity tier <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <select
             id="rfq-quantity"
@@ -230,7 +230,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
             className={fieldClass}
           >
             {QUANTITY_TIERS.map((tier) => (
-              <option key={tier} value={tier} className="bg-[#131019] text-white">
+              <option key={tier} value={tier} className="bg-white text-zinc-900">
                 {tier} units
               </option>
             ))}
@@ -238,7 +238,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="rfq-location" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
+          <label htmlFor="rfq-location" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
             Delivery city / office location
           </label>
           <input
@@ -253,20 +253,20 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         {/* Shortlist interactive chip tray */}
         <div className="sm:col-span-2">
           {items.length > 0 ? (
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="rounded-xl border border-zinc-200 bg-zinc-50/70 p-4">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-purple-500 font-mono text-[10px] font-bold text-white">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-purple-600 font-mono text-[10px] font-bold text-white">
                     {items.length}
                   </span>
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-purple-300">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-purple-700">
                     Shortlisted SKUs &amp; Items Included ({items.length})
                   </span>
                 </div>
                 <button
                   type="button"
                   onClick={clearItems}
-                  className="font-mono text-xs text-zinc-400 hover:text-white underline transition-colors"
+                  className="font-mono text-xs text-zinc-500 hover:text-zinc-900 underline transition-colors"
                 >
                   Clear all
                 </button>
@@ -276,9 +276,9 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                 {items.map((item) => (
                   <span
                     key={item.key}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/15 px-3 py-1 text-xs font-medium text-purple-200"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-xs font-medium text-purple-900 shadow-xs"
                   >
-                    <span className="font-mono font-bold text-[10px] uppercase tracking-wider text-purple-300">
+                    <span className="font-mono font-bold text-[10px] uppercase tracking-wider text-purple-700">
                       {shortlistKindLabels[item.kind] || item.kind}
                     </span>
                     <span className="truncate max-w-[200px] sm:max-w-[320px]">
@@ -288,7 +288,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                     <button
                       type="button"
                       onClick={() => removeItem(item.key)}
-                      className="ml-0.5 flex h-4 w-4 items-center justify-center rounded-full text-purple-300 hover:bg-purple-500/20 hover:text-white focus:outline-none transition-colors"
+                      className="ml-0.5 flex h-4 w-4 items-center justify-center rounded-full text-purple-600 hover:bg-purple-200 hover:text-purple-950 focus:outline-none transition-colors"
                       aria-label={`Remove ${item.name} from shortlisted quote items`}
                     >
                       ×
@@ -296,12 +296,12 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                   </span>
                 ))}
               </div>
-              <p className="mt-2.5 text-[11px] text-zinc-400 leading-relaxed">
+              <p className="mt-2.5 text-[11px] text-zinc-500 leading-relaxed">
                 These shortlisted items will be auto-attached to your WhatsApp inquiry and email request.
               </p>
             </div>
           ) : (
-            <div className="rounded-xl border border-dashed border-white/15 bg-white/[0.01] px-4 py-3 text-xs text-zinc-400 flex flex-wrap items-center justify-between gap-2">
+            <div className="rounded-xl border border-dashed border-zinc-300 bg-zinc-50 px-4 py-3 text-xs text-zinc-500 flex flex-wrap items-center justify-between gap-2">
               <span>
                 💡 <strong>Tip:</strong> Items added to your shortlist while exploring the 5 catalogue pillars will automatically attach here.
               </span>
@@ -310,7 +310,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="rfq-requirements" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-300">
+          <label htmlFor="rfq-requirements" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
             Additional specifications &amp; notes
           </label>
           <textarea
@@ -325,11 +325,11 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
       </div>
 
       {/* Dual Submission Actions */}
-      <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3.5 border-t border-white/10 pt-5">
+      <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3.5 border-t border-zinc-200 pt-5">
         <button
           type="button"
           onClick={() => handleAction("whatsapp")}
-          className="btn !bg-white !text-black hover:!bg-zinc-200 font-bold px-6 py-3.5 shadow-md justify-center text-sm"
+          className="btn !bg-zinc-900 !text-white hover:!bg-zinc-800 font-bold px-6 py-3.5 shadow-md justify-center text-sm"
         >
           <span>Send Instant WhatsApp Inquiry</span>
           <span className="btn-arrow" aria-hidden="true">&rarr;</span>
@@ -338,10 +338,10 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         <button
           type="button"
           onClick={() => handleAction("email")}
-          className="btn btn-ghost font-bold px-5 py-3.5 justify-center text-sm"
+          className="btn btn-ghost font-bold px-5 py-3.5 justify-center text-sm border-zinc-300 text-zinc-800 hover:bg-zinc-100"
         >
           <svg
-            className="h-4 w-4 shrink-0 text-zinc-400"
+            className="h-4 w-4 shrink-0 text-zinc-600"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -365,8 +365,8 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
           aria-live="polite"
           className={`mt-5 rounded-xl border p-4.5 transition-all ${
             submissionState.type === "whatsapp"
-              ? "border-emerald-500/30 bg-emerald-950/40 text-emerald-200"
-              : "border-purple-500/30 bg-purple-950/40 text-purple-200"
+              ? "border-emerald-200 bg-emerald-50 text-emerald-950"
+              : "border-purple-200 bg-purple-50 text-purple-950"
           }`}
         >
           <div className="flex items-start gap-3">
@@ -389,12 +389,12 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
             </div>
 
             <div className="flex-1 text-sm">
-              <p className="font-bold text-white">
+              <p className="font-bold text-zinc-900">
                 {submissionState.type === "whatsapp"
                   ? "WhatsApp Inquiry Initiated"
                   : "Email Drafted to Sales Desk"}
               </p>
-              <p className="mt-1 text-xs opacity-90 leading-relaxed text-zinc-300">
+              <p className="mt-1 text-xs opacity-90 leading-relaxed text-zinc-700">
                 {submissionState.type === "whatsapp" ? (
                   <>
                     A direct WhatsApp chat with our B2B desk (<strong>{contact.display}</strong>) has been opened with your details. If the tab did not open,{" "}
@@ -402,7 +402,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                       href={submissionState.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline font-bold text-emerald-400 hover:text-emerald-300"
+                      className="underline font-bold text-emerald-700 hover:text-emerald-900"
                     >
                       click here to open WhatsApp directly
                     </a>
@@ -413,7 +413,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                     Your mail client has been opened with your proposal request for <strong>{contact.emailLabel}</strong>. If your email client did not launch,{" "}
                     <a
                       href={submissionState.href}
-                      className="underline font-bold text-purple-300 hover:text-white"
+                      className="underline font-bold text-purple-700 hover:text-purple-900"
                     >
                       click here to launch your email draft
                     </a>

@@ -887,14 +887,14 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
   },
 
   /* ==========================================================================
-     PILLAR D: PATRA Pure Copperware & Artisanal Brassware (10 Items)
-     Source: PATRA Copper & Brass Catalogues
+     PILLAR D: Pure Copperware & Heritage Brassware (10 Items)
+     Source: Make a Wish Heritage Metalcraft Collection
      ========================================================================== */
   {
     sku: "PT-C-FTH",
-    name: "PATRA Feather Pure Copper Water Bottle 1000ml",
+    name: "Feather Pure Copper Water Bottle 1000ml",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Pure Copper Water Bottles",
+    categoryName: "Pure Copper Water Bottles",
     inclusions: [
       "Handcrafted 99% Pure Tested Copper Bottle (1000ml)",
       "Leak-Proof Copper Screw Cap with Silicone O-Ring",
@@ -912,20 +912,20 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Heritage Festivals",
     ],
     image: "/images/categories/copperware.jpg",
-    imageAlt: "PATRA Feather Pure Copper Water Bottle 1000ml Matt and Hammered",
+    imageAlt: "Feather Pure Copper Water Bottle 1000ml Matt and Hammered",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Natural oligodynamic properties infuse drinking water with essential copper ions overnight.",
   },
   {
     sku: "PT-C-PARI",
-    name: "PATRA Pari Pure Copper Water Bottle with Hammer Finish 950ml",
+    name: "Pari Pure Copper Water Bottle with Hammer Finish 950ml",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Pure Copper Water Bottles",
+    categoryName: "Pure Copper Water Bottles",
     inclusions: [
       "Pure Copper Hand-Dimpled Water Bottle (950ml)",
       "Precision Machined Leak-Proof Thread Cap",
-      "PATRA Presentation Gift Box",
+      "Artisanal Presentation Gift Box",
     ],
     dimensions: "27 cm Height x 7.2 cm Diameter (Approx 290g)",
     colors: ["Natural Copper Rose"],
@@ -937,16 +937,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Milestone Celebrations",
     ],
     image: "/images/categories/copperware.jpg",
-    imageAlt: "PATRA Pari Pure Copper Water Bottle with Hammer Finish 950ml",
+    imageAlt: "Pari Pure Copper Water Bottle with Hammer Finish 950ml",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Dense hammer indentations increase surface beauty while providing exceptional ergonomic grip.",
   },
   {
     sku: "PT-C-MEGH",
-    name: "PATRA Megh Pure Copper Water Bottle with Integrated Glass Tumbler Cap",
+    name: "Megh Pure Copper Water Bottle with Integrated Glass Tumbler Cap",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Pure Copper Water Bottles",
+    categoryName: "Pure Copper Water Bottles",
     inclusions: [
       "Pure Copper Water Bottle (900ml)",
       "Integrated Copper Drinking Glass (250ml) Serving as Top Lid",
@@ -962,16 +962,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Wellness Welcome",
     ],
     image: "/images/categories/copperware.jpg",
-    imageAlt: "PATRA Megh Pure Copper Water Bottle with Integrated Glass Tumbler Cap",
+    imageAlt: "Megh Pure Copper Water Bottle with Integrated Glass Tumbler Cap",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "The top lid unscrews into an authentic copper tumbler for dignified executive desk drinking.",
   },
   {
     sku: "PT-C-ZR",
-    name: "PATRA Zarna Designer Printed Pure Copper Bottle",
+    name: "Zarna Designer Printed Pure Copper Bottle",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Pure Copper Water Bottles",
+    categoryName: "Pure Copper Water Bottles",
     inclusions: [
       "Pure Copper Bottle with Food-Grade Enamel Print (1000ml)",
       "Leak-Proof Seal Cap",
@@ -987,16 +987,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Client Festive Suites",
     ],
     image: "/images/categories/copperware.jpg",
-    imageAlt: "PATRA Zarna Designer Printed Pure Copper Bottle",
+    imageAlt: "Zarna Designer Printed Pure Copper Bottle",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Combines ancient Ayurvedic wellness benefits with stunning contemporary botanical prints.",
   },
   {
     sku: "PT-C-RJW-POT",
-    name: "PATRA Rajwadi Pure Copper Table Pot 1500ml for Executive Lounges",
+    name: "Rajwadi Pure Copper Table Pot 1500ml for Executive Lounges",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Pure Copper Tableware & Pots",
+    categoryName: "Pure Copper Tableware & Pots",
     inclusions: [
       "Royal Heritage Pure Copper Water Pot (1500ml)",
       "Hand-Fitted Matching Copper Lid with Brass Finial Knob",
@@ -1012,16 +1012,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Luxury Client Keepsakes",
     ],
     image: "/images/categories/copperware.jpg",
-    imageAlt: "PATRA Rajwadi Pure Copper Table Pot 1500ml for Executive Lounges",
+    imageAlt: "Rajwadi Pure Copper Table Pot 1500ml for Executive Lounges",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Stately centerpiece for boardroom tables and executive suites honoring Indian metalcraft traditions.",
   },
   {
     sku: "PT-C-MTK-08",
-    name: "PATRA Heritage Pure Copper Matka Water Dispenser 8L with Brass Tap",
+    name: "Heritage Pure Copper Matka Water Dispenser 8L with Brass Tap",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Pure Copper Tableware & Pots",
+    categoryName: "Pure Copper Tableware & Pots",
     inclusions: [
       "Heavy-Gauge Pure Copper Matka Tank (8 Liters)",
       "Pure Brass Quarter-Turn Drip-Free Water Dispenser Tap",
@@ -1038,16 +1038,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Milestone Anniversaries",
     ],
     image: "/images/categories/copperware.jpg",
-    imageAlt: "PATRA Heritage Pure Copper Matka Water Dispenser 8L with Brass Tap",
+    imageAlt: "Heritage Pure Copper Matka Water Dispenser 8L with Brass Tap",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Serves 25–40 staff members in corporate lounges; naturally cools and detoxifies workplace drinking water.",
   },
   {
     sku: "PT-B-CFF-SET",
-    name: "PATRA Authentic South Indian Brass Coffee Dabara & Traditional Filter Set",
+    name: "Authentic South Indian Brass Coffee Dabara & Traditional Filter Set",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Artisanal Brass Drinkware & Sets",
+    categoryName: "Artisanal Brass Drinkware & Sets",
     inclusions: [
       "Heavy-Gauge Traditional Brass Coffee Dabara (Cup & Wide Saucer)",
       "2-Cup Traditional Brass Drip Filter Assembly",
@@ -1065,16 +1065,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Corporate VIPs",
     ],
     image: "/images/categories/brassware.jpg",
-    imageAlt: "PATRA Authentic South Indian Brass Coffee Dabara and Traditional Filter Set",
+    imageAlt: "Authentic South Indian Brass Coffee Dabara and Traditional Filter Set",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Authentic traditional Kumbakonam-style brass brewing set for brewing legendary degree filter coffee.",
   },
   {
     sku: "PT-B-TMB-04",
-    name: "PATRA Mandala Royal Hand-Carved Brass Tumblers Set of 4",
+    name: "Mandala Royal Hand-Carved Brass Tumblers Set of 4",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Artisanal Brass Drinkware & Sets",
+    categoryName: "Artisanal Brass Drinkware & Sets",
     inclusions: [
       "Four Heavy-Gauge Brass Tumblers (300ml each)",
       "Intricate Mandala Laser/Hand-Carved Exterior Motif",
@@ -1091,16 +1091,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Board Member Gifting",
     ],
     image: "/images/categories/brassware.jpg",
-    imageAlt: "PATRA Mandala Royal Hand-Carved Brass Tumblers Set of 4 in Gift Box",
+    imageAlt: "Mandala Royal Hand-Carved Brass Tumblers Set of 4 in Gift Box",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Heavy-walled brass drinkware carved with timeless mandala patterns that radiate prestige.",
   },
   {
     sku: "PT-B-KL-POT",
-    name: "PATRA Traditional A2 Ghee Pot with Pure Kalai Tin Coating",
+    name: "Traditional A2 Ghee Pot with Pure Kalai Tin Coating",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Kalai Cookware & Heritage Sets",
+    categoryName: "Kalai Cookware & Heritage Sets",
     inclusions: [
       "Heavy Hand-Beaten Solid Brass Pot (600ml)",
       "Traditional Pure Food-Grade Kalai (Tin) Inner Lining",
@@ -1116,16 +1116,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Ayurvedic Kitchen Upgrades",
     ],
     image: "/images/categories/brassware.jpg",
-    imageAlt: "PATRA Traditional A2 Ghee Pot with Pure Kalai Tin Coating",
+    imageAlt: "Traditional A2 Ghee Pot with Pure Kalai Tin Coating",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Lined with genuine kalai (tin) according to Vedic cooking traditions to preserve aroma and medicinal properties.",
   },
   {
     sku: "PT-B-SM-12",
-    name: "PATRA Kerala Heritage Samai Brass Diya Lamp 12 Inch",
+    name: "Kerala Heritage Samai Brass Diya Lamp 12 Inch",
     pillarId: "patra-heritage",
-    categoryName: "PATRA Kalai Cookware & Heritage Sets",
+    categoryName: "Kalai Cookware & Heritage Sets",
     inclusions: [
       "Solid Cast Brass 12-Inch Samai Diya with Annapakshi Peacock Finial",
       "Threaded Modular Assembly (Base, Pillar, 5-Wick Oil Plate, Top Crown)",
@@ -1140,7 +1140,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
       "Annual Town Hall Lighting",
     ],
     image: "/images/categories/brassware.jpg",
-    imageAlt: "PATRA Kerala Heritage Samai Brass Diya Lamp 12 Inch",
+    imageAlt: "Kerala Heritage Samai Brass Diya Lamp 12 Inch",
     statusBadge: "B2B Bulk Ready",
     highlights:
       "Auspicious 5-wick traditional standing oil lamp symbolizing wisdom and prosperity for enterprise milestones.",

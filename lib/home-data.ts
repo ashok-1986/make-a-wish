@@ -100,12 +100,12 @@ export const turnkeyFeatures: TurnkeyFeature[] = [
 ];
 
 /**
- * Visual presentation styles for the 5 service bucket panels in 8gnc.io enterprise dark mode.
+ * Visual presentation styles for the 5 service bucket panels in 8gnc.io architectural light studio theme.
  */
 export const serviceBucketStyles: BucketStyle[] = [
-  { span: "md:col-span-4", tone: "border border-white/10 bg-[#131019] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
-  { span: "md:col-span-2", tone: "border border-white/10 bg-[#161320] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
-  { span: "md:col-span-2", tone: "border border-white/10 bg-[#161320] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
-  { span: "md:col-span-4", tone: "border border-white/10 bg-[#131019] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
-  { span: "md:col-span-6", tone: "border border-white/10 bg-[#131019] text-white hover:border-purple-500/40", star: "rgba(124, 58, 237, 0.2)", link: "text-purple-400 hover:text-purple-300" },
+  { span: "", tone: "border border-zinc-200/90 bg-white text-zinc-900 shadow-sm hover:shadow-xl hover:border-purple-500/40 hover:-translate-y-1.5 transition-all duration-300", star: "rgba(124, 58, 237, 0.15)", link: "text-zinc-700 hover:text-purple-700" },
+  { span: "", tone: "border border-zinc-200/90 bg-white text-zinc-900 shadow-sm hover:shadow-xl hover:border-purple-500/40 hover:-translate-y-1.5 transition-all duration-300", star: "rgba(124, 58, 237, 0.15)", link: "text-zinc-700 hover:text-purple-700" },
+  { span: "", tone: "border border-zinc-200/90 bg-white text-zinc-900 shadow-sm hover:shadow-xl hover:border-purple-500/40 hover:-translate-y-1.5 transition-all duration-300", star: "rgba(124, 58, 237, 0.15)", link: "text-zinc-700 hover:text-purple-700" },
+  { span: "", tone: "border border-zinc-200/90 bg-white text-zinc-900 shadow-sm hover:shadow-xl hover:border-purple-500/40 hover:-translate-y-1.5 transition-all duration-300", star: "rgba(124, 58, 237, 0.15)", link: "text-zinc-700 hover:text-purple-700" },
+  { span: "", tone: "border border-zinc-200/90 bg-white text-zinc-900 shadow-sm hover:shadow-xl hover:border-purple-500/40 hover:-translate-y-1.5 transition-all duration-300", star: "rgba(124, 58, 237, 0.15)", link: "text-zinc-700 hover:text-purple-700" },
 ];
