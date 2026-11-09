@@ -133,14 +133,14 @@ export default function CorporateGiftingPage() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
               <span>365-Day B2B Corporate Gifting Solutions · Navi Mumbai, Thane &amp; Mumbai</span>
             </div>
 
             <h1
               id="gifting-hero-title"
-              className="mt-5 font-sans text-3xl sm:text-5xl font-extrabold tracking-[-0.035em] text-white leading-[1.08]"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[90px] font-medium tracking-[-0.04em] text-white leading-[1.02] text-balance"
             >
               Corporate Gifting, Tailored for Your Team.
             </h1>
@@ -167,26 +167,26 @@ export default function CorporateGiftingPage() {
 
             <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-6">
               <div>
-                <dt className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-zinc-500">
+                <dt className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
                   B2B Pillars
                 </dt>
-                <dd className="mt-1 font-sans text-3xl font-extrabold text-white">
+                <dd className="mt-1 font-sans text-3xl font-medium text-white">
                   5
                 </dd>
               </div>
               <div>
-                <dt className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-zinc-500">
+                <dt className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
                   Signature SKUs
                 </dt>
-                <dd className="mt-1 font-sans text-3xl font-extrabold text-white">
+                <dd className="mt-1 font-sans text-3xl font-medium text-white">
                   49+
                 </dd>
               </div>
               <div>
-                <dt className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-zinc-500">
+                <dt className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
                   Min MOQ
                 </dt>
-                <dd className="mt-1 font-sans text-3xl font-extrabold text-white">
+                <dd className="mt-1 font-sans text-3xl font-medium text-white">
                   25 Units
                 </dd>
               </div>
@@ -237,19 +237,19 @@ export default function CorporateGiftingPage() {
           <div className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#161320] via-[#131019] to-[#0E0C14] p-8 md:p-12 shadow-2xl">
             <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-14">
               <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/15 px-3.5 py-1 text-xs font-mono font-bold uppercase tracking-[0.16em] text-purple-300">
+                <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/15 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.16em] text-purple-300">
                   ★ PRD Pillar E Bundled Perk
                 </span>
 
                 <h2
                   id="turnkey-title"
-                  className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+                  className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance"
                 >
                   Workplace Decor and Hampers, One Schedule.
                 </h2>
 
                 <div className="mt-4 rounded-xl border border-purple-500/30 bg-purple-500/10 p-4 sm:p-5">
-                  <p className="font-semibold text-white text-base leading-snug">
+                  <p className="font-medium text-white text-base leading-snug">
                     Turnkey Office Decor + 100+ Hamper Bundle: Book your office celebration or corporate event decor with 100+ gift sets to unlock a 5%–10% package discount or complimentary entrance floral styling.
                   </p>
                 </div>
@@ -260,15 +260,15 @@ export default function CorporateGiftingPage() {
 
                 <ul className="mt-6 grid gap-3 text-sm text-zinc-300">
                   <li className="flex gap-3 border-t border-white/10 pt-3">
-                    <span className="text-purple-400 font-bold">✓</span>
+                    <span className="text-purple-400 font-medium">✓</span>
                     <span><strong>5%–10% Package Discount:</strong> Unlocked on qualifying bulk 100+ gift sets paired with workplace or ballroom event decor.</span>
                   </li>
                   <li className="flex gap-3 border-t border-white/10 pt-3">
-                    <span className="text-purple-400 font-bold">✓</span>
+                    <span className="text-purple-400 font-medium">✓</span>
                     <span><strong>Complimentary Entrance Floral Styling:</strong> Bespoke fresh floral welcome installation for your corporate reception or atrium.</span>
                   </li>
                   <li className="flex gap-3 border-t border-white/10 pt-3">
-                    <span className="text-purple-400 font-bold">✓</span>
+                    <span className="text-purple-400 font-medium">✓</span>
                     <span><strong>Single Window &amp; GST Invoicing:</strong> Gifting, custom branding, and event decor itemised under one 100% compliant B2B tax invoice.</span>
                   </li>
                 </ul>
@@ -303,13 +303,13 @@ export default function CorporateGiftingPage() {
       <section aria-labelledby="desk-title" className="border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
               <span>Enterprise Single Window</span>
             </div>
             <h2
               id="desk-title"
-              className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance"
             >
               Breadth, Craftsmanship, One Invoice.
             </h2>
@@ -324,14 +324,14 @@ export default function CorporateGiftingPage() {
                 <Reveal delay={i * 90} className="h-full">
                   <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#131019] p-6 shadow-lg transition-all hover:border-purple-500/40">
                     <div className="flex items-center justify-between">
-                      <span className="grid h-9 w-9 place-items-center rounded-full border border-purple-500/40 bg-purple-500/20 font-mono text-xs font-bold text-purple-300">
+                      <span className="grid h-9 w-9 place-items-center rounded-full border border-purple-500/40 bg-purple-500/20 font-mono text-xs font-medium text-purple-300">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-mono text-xs font-bold uppercase tracking-wider text-purple-400">
+                      <span className="font-mono text-xs font-medium uppercase tracking-wider text-purple-400">
                         {reason.tag}
                       </span>
                     </div>
-                    <h3 className="mt-4 font-sans text-xl font-bold text-white leading-snug">
+                    <h3 className="mt-4 font-sans text-xl font-medium text-white leading-snug">
                       {reason.name}
                     </h3>
                     <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-400">
@@ -354,13 +354,13 @@ export default function CorporateGiftingPage() {
         <div className="mx-auto max-w-7xl">
           <Reveal className="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-end">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
                 <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
                 <span>Complementary Catalog Options</span>
               </div>
               <h2
                 id="categories-title"
-                className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+                className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance"
               >
                 Fourteen Categories, One Standard.
               </h2>
@@ -369,7 +369,7 @@ export default function CorporateGiftingPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-[#131019] p-5 text-sm leading-relaxed text-zinc-300">
-              <p className="font-sans font-bold text-white">Full Catalogue on Request</p>
+              <p className="font-sans font-medium text-white">Full Catalogue on Request</p>
               <p className="mt-1 text-xs sm:text-sm text-zinc-400">
                 Photography and specifications for every category are shared by the corporate desk, together with the tiered rate card for your requirement.
               </p>
@@ -390,13 +390,13 @@ export default function CorporateGiftingPage() {
       >
         <div className="mx-auto max-w-7xl">
           <Reveal className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
               <span>Festive Hampers &amp; Signature Editions</span>
             </div>
             <h2
               id="lookbook-title"
-              className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance"
             >
               Thirteen Models, Four Packaging Series.
             </h2>
@@ -419,13 +419,13 @@ export default function CorporateGiftingPage() {
       >
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-14">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
               <span>Beyond the Festival</span>
             </div>
             <h2
               id="year-round-title"
-              className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance"
             >
               A Continuous Gifting Calendar, Not a Season.
             </h2>
@@ -437,7 +437,7 @@ export default function CorporateGiftingPage() {
               {yearRoundOccasions.map((occasion) => (
                 <li
                   key={occasion}
-                  className="rounded-full border border-white/10 bg-[#131019] px-3.5 py-1.5 text-xs font-semibold text-zinc-300"
+                  className="rounded-full border border-white/10 bg-[#131019] px-3.5 py-1.5 text-xs font-medium text-zinc-300"
                 >
                   {occasion}
                 </li>
@@ -466,10 +466,10 @@ export default function CorporateGiftingPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute inset-x-4 bottom-4 rounded-xl border border-white/15 bg-black/70 p-4 backdrop-blur-md">
-                <p className="font-mono text-xs font-bold uppercase tracking-wider text-purple-300">
+                <p className="font-mono text-xs font-medium uppercase tracking-wider text-purple-300">
                   Pillar In Focus
                 </p>
-                <p className="mt-1 font-sans text-base font-bold text-white">
+                <p className="mt-1 font-sans text-base font-medium text-white">
                   Pure Ayurvedic Copperware &amp; Tech Suites
                 </p>
                 <p className="mt-1 text-xs text-zinc-400">
@@ -485,13 +485,13 @@ export default function CorporateGiftingPage() {
       <section aria-labelledby="faq-title" className="border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
               <span>Procurement &amp; FAQ</span>
             </div>
             <h2
               id="faq-title"
-              className="mt-4 font-sans text-3xl sm:text-4xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance"
             >
               Direct Questions Answered by the Sales Desk.
             </h2>
@@ -515,7 +515,7 @@ export default function CorporateGiftingPage() {
             <dl className="grid gap-3">
               {faqs.map((entry) => (
                 <div key={entry.q} className="rounded-xl border border-white/10 bg-[#131019] p-5">
-                  <dt className="font-sans text-base font-bold text-white">{entry.q}</dt>
+                  <dt className="font-sans text-base font-medium text-white">{entry.q}</dt>
                   <dd className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-300">{entry.a}</dd>
                 </div>
               ))}
@@ -532,13 +532,13 @@ export default function CorporateGiftingPage() {
       >
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
               <span>Volume Quote Request</span>
             </div>
             <h2
               id="rfq-title"
-              className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-white leading-tight"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance"
             >
               Tell Us What Your Team Needs.
             </h2>
@@ -549,14 +549,14 @@ export default function CorporateGiftingPage() {
             </p>
 
             <div className="mt-8 rounded-2xl border border-white/10 bg-[#131019] p-6">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-400">
                 Corporate Sales Desk
               </p>
               <address className="mt-3 grid gap-1.5 not-italic text-sm text-zinc-300">
-                <a href={contact.phone} className="font-bold text-white hover:text-purple-300 transition-colors">
+                <a href={contact.phone} className="font-medium text-white hover:text-purple-300 transition-colors">
                   {contact.display}
                 </a>
-                <a href={contact.secondaryPhone} className="font-bold text-white hover:text-purple-300 transition-colors">
+                <a href={contact.secondaryPhone} className="font-medium text-white hover:text-purple-300 transition-colors">
                   {contact.secondaryDisplay}
                 </a>
                 <a href={contact.email} className="break-all text-purple-300 hover:text-white transition-colors">
@@ -580,13 +580,13 @@ export default function CorporateGiftingPage() {
       <section aria-labelledby="closing-title" className="bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-8">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
               <span>Make a Wish</span>
             </div>
             <h2
               id="closing-title"
-              className="mt-3 font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-white max-w-[20ch]"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance max-w-[20ch]"
             >
               One Desk for the Gift and the Workplace Celebration.
             </h2>

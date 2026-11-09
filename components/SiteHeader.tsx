@@ -44,7 +44,7 @@ export function SiteHeader() {
             className="h-10 w-auto"
             priority
           />
-          <span className="font-sans text-lg font-black tracking-tight text-zinc-900 hidden sm:inline">{SITE_NAME}</span>
+          <span className="font-sans text-lg font-medium tracking-tight text-zinc-900 hidden sm:inline">{SITE_NAME}</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
@@ -58,7 +58,7 @@ export function SiteHeader() {
                       applyGiftingFilter(link.filter as string);
                       closeMenu();
                     }}
-                    className="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
+                    className="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
                   >
                     {link.name}
                   </button>
@@ -66,7 +66,7 @@ export function SiteHeader() {
                   <Link
                     href={navHref(link)}
                     onClick={closeMenu}
-                    className="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
+                    className="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
                   >
                     {link.name}
                   </Link>
@@ -77,8 +77,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <ShortlistButton className="btn btn-ghost whitespace-nowrap !min-h-[38px] !px-3 !py-1.5 !text-xs text-zinc-900 border-zinc-300 hover:bg-zinc-100" />
-          <CatalogueButton className="btn !hidden !min-h-[38px] !whitespace-nowrap !px-4 !py-1.5 !text-xs xl:!inline-flex">
+          <ShortlistButton className="btn btn-ghost whitespace-nowrap !min-h-[38px] !px-3 !py-1.5 !text-xs text-zinc-900 border-zinc-300 hover:bg-zinc-100 font-medium" />
+          <CatalogueButton className="btn !hidden !min-h-[38px] !whitespace-nowrap !px-4 !py-1.5 !text-xs font-medium xl:!inline-flex">
             Request catalogue
           </CatalogueButton>
           <button
@@ -86,7 +86,7 @@ export function SiteHeader() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
-            className="grid h-10 w-10 place-items-center rounded-lg border border-zinc-300 text-xs font-bold text-zinc-800 hover:bg-zinc-100 lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-lg border border-zinc-300 text-xs font-medium text-zinc-800 hover:bg-zinc-100 lg:hidden"
           >
             {menuOpen ? "✕" : "☰"}
           </button>
@@ -106,7 +106,7 @@ export function SiteHeader() {
                         applyGiftingFilter(link.filter as string);
                         closeMenu();
                       }}
-                      className="block min-h-[44px] w-full rounded-xl px-3 py-2 text-left font-bold text-zinc-800 hover:bg-zinc-100"
+                      className="block min-h-[44px] w-full rounded-xl px-3 py-2 text-left font-medium text-zinc-800 hover:bg-zinc-100"
                     >
                       {link.name}
                     </button>
@@ -114,7 +114,7 @@ export function SiteHeader() {
                     <Link
                       href={navHref(link)}
                       onClick={closeMenu}
-                      className="block min-h-[44px] rounded-xl px-3 py-2 font-bold text-zinc-800 hover:bg-zinc-100"
+                      className="block min-h-[44px] rounded-xl px-3 py-2 font-medium text-zinc-800 hover:bg-zinc-100"
                     >
                       {link.name}
                     </Link>

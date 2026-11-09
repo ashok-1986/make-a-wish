@@ -12,8 +12,8 @@ import { CategoryCard } from "./CategoryCard";
 import { GIFTING_FILTER_EVENT, GIFTING_FILTER_STORAGE_KEY } from "./filterNavigation";
 
 const chipBase =
-  "inline-flex min-h-[40px] shrink-0 items-center rounded-full border px-4 py-1.5 text-xs font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500";
-const chipOn = "border-purple-600 bg-purple-600 text-white shadow-sm font-bold";
+  "inline-flex min-h-[40px] shrink-0 items-center rounded-full border px-4 py-1.5 text-xs font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500";
+const chipOn = "border-purple-600 bg-purple-600 text-white shadow-sm font-medium";
 const chipOff = "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-zinc-300 hover:text-zinc-900";
 
 /* Filterable directory of all 14 categories with 8gnc.io light studio aesthetics */
@@ -105,7 +105,7 @@ export function GiftingCatalogue() {
       </div>
 
       <p
-        className="mt-5 font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700"
+        className="mt-5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700"
         aria-live="polite"
       >
         Showing {results.length} of {giftingCategories.length} Categories

@@ -24,7 +24,7 @@ export default function ServicesPage() {
         <section key={bucket.id} id={bucket.id} aria-labelledby={`${bucket.id}-title`} className="scroll-mt-36">
           <div className="border-b border-white/10 bg-[#0E0C14] px-5 py-10 text-white md:px-10 md:py-14">
             <Reveal className="mx-auto max-w-7xl">
-              <h2 id={`${bucket.id}-title`} className="font-sans text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+              <h2 id={`${bucket.id}-title`} className="font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance">
                 {bucket.name}
               </h2>
               <p className="mt-3 text-base sm:text-lg leading-relaxed text-zinc-300">{bucket.focus}</p>
@@ -44,7 +44,7 @@ export default function ServicesPage() {
 
       <section className="border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24">
         <Reveal className="mx-auto max-w-7xl">
-          <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">Start with a Message</h2>
+          <h2 className="font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance">Start with a Message</h2>
           <div className="mt-8">
             <ContactLinks tone="sun" />
           </div>

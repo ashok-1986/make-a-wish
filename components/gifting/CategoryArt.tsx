@@ -23,7 +23,7 @@ export function CategoryArt({ category }: { category: GiftingCategory }) {
         background: `linear-gradient(135deg, ${category.plateFrom} 0%, ${category.plateTo} 100%)`,
       }}
     >
-      <span className="absolute -right-2 -top-9 select-none text-[8.5rem] font-black leading-none text-white/10">
+      <span className="absolute -right-2 -top-9 select-none text-[8.5rem] font-medium leading-none text-white/10">
         {category.number}
       </span>
       <div
@@ -40,7 +40,7 @@ export function CategoryArt({ category }: { category: GiftingCategory }) {
       >
         <CategoryIcon name={category.icon} className="h-24 w-24" />
       </div>
-      <span className="absolute bottom-5 right-5 text-[10px] font-black uppercase tracking-[0.24em] text-white/45">
+      <span className="absolute bottom-5 right-5 text-[10px] font-medium uppercase tracking-[0.24em] text-white/45">
         Make a Wish
       </span>
     </div>

@@ -27,7 +27,7 @@ export default function ContactPage() {
       >
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <Reveal>
-            <h2 id="reach-us" className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+            <h2 id="reach-us" className="font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance">
               Reach Our Corporate Desk
             </h2>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-300">
@@ -43,13 +43,13 @@ export default function ContactPage() {
             </div>
 
             <address className="mt-8 grid gap-2 not-italic text-sm">
-              <a href={contact.phone} className="font-bold text-white hover:text-purple-300 transition-colors">
+              <a href={contact.phone} className="font-medium text-white hover:text-purple-300 transition-colors">
                 {contact.display}
               </a>
-              <a href={contact.secondaryPhone} className="font-bold text-white hover:text-purple-300 transition-colors">
+              <a href={contact.secondaryPhone} className="font-medium text-white hover:text-purple-300 transition-colors">
                 {contact.secondaryDisplay}
               </a>
-              <a href={contact.email} className="break-all font-bold text-purple-300 hover:text-white transition-colors">
+              <a href={contact.email} className="break-all font-medium text-purple-300 hover:text-white transition-colors">
                 {contact.emailLabel}
               </a>
             </address>
@@ -57,15 +57,15 @@ export default function ContactPage() {
             <dl className="mt-8 grid gap-3 border-t border-white/10 pt-5 text-xs sm:text-sm text-zinc-400">
               <div className="flex flex-wrap justify-between gap-2">
                 <dt className="text-zinc-500">Operational Hours</dt>
-                <dd className="font-semibold text-white">Monday to Saturday, 10:00–19:00</dd>
+                <dd className="font-medium text-white">Monday to Saturday, 10:00–19:00</dd>
               </div>
               <div className="flex flex-wrap justify-between gap-2">
                 <dt className="text-zinc-500">Regional Coverage</dt>
-                <dd className="font-semibold text-white">Navi Mumbai, Thane, Greater Mumbai &amp; Bulk Pan-India</dd>
+                <dd className="font-medium text-white">Navi Mumbai, Thane, Greater Mumbai &amp; Bulk Pan-India</dd>
               </div>
               <div className="flex flex-wrap justify-between gap-2">
                 <dt className="text-zinc-500">Official Catalog</dt>
-                <dd className="font-semibold text-white">Itemized rate card shared on request</dd>
+                <dd className="font-medium text-white">Itemized rate card shared on request</dd>
               </div>
             </dl>
           </Reveal>
@@ -82,7 +82,7 @@ export default function ContactPage() {
       >
         <Reveal className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6">
           <div>
-            <h2 id="contact-programme" className="font-sans text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 id="contact-programme" className="font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance">
               Planning Corporate Gifting or Events?
             </h2>
             <p className="mt-2 text-sm sm:text-base text-zinc-300">

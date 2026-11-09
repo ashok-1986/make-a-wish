@@ -12,21 +12,21 @@ export function ServicesSection() {
     >
       <div className="mx-auto max-w-7xl">
         <AnimateOnView className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-700">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
               <span>Full-Stack Corporate Production</span>
             </div>
             <h2
               id="pillars-title"
-              className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-zinc-900 leading-[1.06] text-balance"
             >
               Five Disciplines, One Unified Production Team.
             </h2>
           </div>
           <Link
             href="/services"
-            className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-purple-700 hover:text-purple-900 font-bold"
+            className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-purple-700 hover:text-purple-900 font-medium"
           >
             <span>See Every Service</span>
             <span
@@ -58,15 +58,15 @@ export function ServicesSection() {
                   />
 
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-purple-700 font-bold">
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-purple-700 font-medium">
                       0{i + 1} · Pillar
                     </span>
 
-                    <h3 className="relative mt-2 font-sans text-lg sm:text-xl font-bold text-zinc-900 leading-snug">
+                    <h3 className="relative mt-2 font-sans text-xl sm:text-2xl lg:text-[32px] font-medium text-zinc-900 leading-snug tracking-tight">
                       {bucket.name}
                     </h3>
 
-                    <p className="relative mt-2 text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    <p className="relative mt-2 text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
                       {bucket.focus}
                     </p>
                   </div>
@@ -76,7 +76,7 @@ export function ServicesSection() {
                       <li key={service.slug}>
                         <Link
                           href={`/services#${service.slug}`}
-                          className="inline-block text-xs font-semibold text-zinc-700 hover:text-purple-700 transition-colors"
+                          className="inline-block text-xs font-medium text-zinc-700 hover:text-purple-700 transition-colors"
                         >
                           <span className="text-purple-600 mr-1">•</span>
                           {service.name}

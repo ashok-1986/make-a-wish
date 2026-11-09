@@ -17,7 +17,7 @@ export function SiteFooter() {
               className="h-12 w-auto"
             />
             <div>
-              <p className="font-sans text-base font-bold text-white">
+              <p className="font-sans text-base font-medium text-white">
                 {SITE_NAME}
               </p>
               <p className="text-xs text-zinc-400">
@@ -31,7 +31,7 @@ export function SiteFooter() {
         </div>
 
         <nav aria-label="Footer navigation">
-          <h2 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-400">
             Explore
           </h2>
           <ul className="mt-4 grid gap-1.5">
@@ -49,19 +49,19 @@ export function SiteFooter() {
         </nav>
 
         <div>
-          <h2 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-400">
             Corporate Sales Desk
           </h2>
           <address className="mt-4 grid gap-2 text-xs sm:text-sm not-italic text-zinc-300">
             <a
               href={contact.phone}
-              className="font-semibold text-white hover:text-purple-300 transition-colors"
+              className="font-medium text-white hover:text-purple-300 transition-colors"
             >
               {contact.display}
             </a>
             <a
               href={contact.secondaryPhone}
-              className="font-semibold text-white hover:text-purple-300 transition-colors"
+              className="font-medium text-white hover:text-purple-300 transition-colors"
             >
               {contact.secondaryDisplay}
             </a>

@@ -20,20 +20,20 @@ export function CategoryShowcaseSection() {
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>5 Core Corporate Pillars</span>
           </div>
 
           <h2
             id="category-showcase-heading"
-            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
+            className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-zinc-900 leading-[1.06] text-balance"
           >
             Five Core Disciplines, One Unified Production Partner.
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-600">
+          <p className="mt-5 text-base sm:text-lg leading-relaxed text-zinc-600 max-w-2xl mx-auto font-normal">
             No consumer retail noise or unmaintained product lists. Each pillar represents an end-to-end B2B production capability tailored for HR, administration, and procurement teams under a single GST invoice.
           </p>
         </div>

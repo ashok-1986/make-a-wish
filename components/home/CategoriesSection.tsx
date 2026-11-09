@@ -10,14 +10,14 @@ export function CategoriesSection() {
     >
       <div className="mx-auto max-w-7xl">
         <Reveal className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>Enterprise Catalog Directory</span>
           </div>
 
           <h2
             id="categories-title"
-            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
+            className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-zinc-900 leading-[1.06] text-balance"
           >
             One Desk, Fourteen Categories.
           </h2>

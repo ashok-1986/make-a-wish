@@ -150,24 +150,24 @@ export function HeroSection() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           {/* Left Column: Bold Architectural Value Proposition */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-[0.7rem] sm:text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-[0.7rem] sm:text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-400 animate-pulse" />
               <span>B2B Corporate Flagship · Navi Mumbai &amp; Mumbai</span>
             </div>
 
             <h1
               id="hero-title"
-              className="hero-h1 mt-5 font-sans text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.035em] text-white"
+              className="hero-h1 mt-5 font-sans text-4xl sm:text-6xl lg:text-[90px] font-medium leading-[1.02] tracking-[-0.04em] text-white"
             >
               Corporate Gifting &amp; Turnkey Production. Built for Enterprise Teams.
             </h1>
 
-            <p className="hero-subcopy mt-6 text-base sm:text-lg leading-relaxed text-zinc-300 max-w-[58ch]">
+            <p className="hero-subcopy mt-6 text-base sm:text-lg leading-relaxed text-zinc-300 max-w-[58ch] font-normal">
               Curated 2-in-1 to 6-in-1 Employee Joining Kits, Executive Power Bank Diaries, Pure Copperware, and Luxury Gourmet Hampers. Pre-packaged and customized with your corporate logo under a single GST invoice.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
-              <a href="#pillar-showcase" className="hero-cta-primary btn btn-dark-section">
+              <a href="#pillar-showcase" className="hero-cta-primary btn btn-dark-section font-medium">
                 <span>Explore 5 Corporate Pillars</span>
                 <span className="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -175,14 +175,14 @@ export function HeroSection() {
                 href={directWhatsAppHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hero-cta-secondary btn btn-ghost"
+                className="hero-cta-secondary btn btn-ghost font-medium"
               >
                 <WhatsAppIcon className="h-4 w-4 text-emerald-400" />
                 <span>Direct WhatsApp Desk</span>
               </a>
             </div>
 
-            <p className="mt-4 text-xs font-medium text-zinc-400 tracking-wide">
+            <p className="mt-4 text-xs font-normal text-zinc-400 tracking-wide">
               Price-free B2B showcase. Tiered rate cards and custom mockups shared on request by our corporate sales desk.
             </p>
           </div>
@@ -205,14 +205,14 @@ export function HeroSection() {
               <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/15 bg-black/60 p-3.5 backdrop-blur-md">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-purple-300 font-bold">
+                    <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-purple-300 font-medium">
                       Executive Showcase
                     </p>
-                    <p className="text-sm font-bold text-white">
+                    <p className="text-sm font-medium text-white">
                       Boardroom Ready Hampers &amp; Joining Kits
                     </p>
                   </div>
-                  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/20 px-2.5 py-1 text-[0.65rem] font-bold text-emerald-300">
+                  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/20 px-2.5 py-1 text-[0.65rem] font-medium text-emerald-300">
                     25 MOQ
                   </span>
                 </div>
@@ -225,23 +225,23 @@ export function HeroSection() {
         <div className="hero-stats mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 border-y border-white/10 py-6">
           <div className="border-l-2 border-purple-500/40 pl-4">
             <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">01 / Scope</p>
-            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">5 B2B Pillars</p>
-            <p className="text-xs text-zinc-400">Joining Kits to Pure Copper</p>
+            <p className="mt-1 text-2xl sm:text-3xl font-medium text-white">5 B2B Pillars</p>
+            <p className="text-xs text-zinc-400 font-normal">Joining Kits to Pure Copper</p>
           </div>
           <div className="border-l-2 border-purple-500/40 pl-4">
             <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">02 / Portfolio</p>
-            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">49+ SKUs</p>
-            <p className="text-xs text-zinc-400">H-Series, PT-C &amp; PT-B</p>
+            <p className="mt-1 text-2xl sm:text-3xl font-medium text-white">49+ SKUs</p>
+            <p className="text-xs text-zinc-400 font-normal">H-Series, PT-C &amp; PT-B</p>
           </div>
           <div className="border-l-2 border-purple-500/40 pl-4">
             <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">03 / Customization</p>
-            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">100% Branded</p>
-            <p className="text-xs text-zinc-400">Laser, UV &amp; Embossing</p>
+            <p className="mt-1 text-2xl sm:text-3xl font-medium text-white">100% Branded</p>
+            <p className="text-xs text-zinc-400 font-normal">Laser, UV &amp; Embossing</p>
           </div>
           <div className="border-l-2 border-purple-500/40 pl-4">
             <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">04 / Turnkey Perk</p>
-            <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">5%–10% Off</p>
-            <p className="text-xs text-zinc-400">Decor + Gifting Bundles</p>
+            <p className="mt-1 text-2xl sm:text-3xl font-medium text-white">5%–10% Off</p>
+            <p className="text-xs text-zinc-400 font-normal">Decor + Gifting Bundles</p>
           </div>
         </div>
 
@@ -258,21 +258,21 @@ export function HeroSection() {
                 <div>
                   <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
                     <span>{card.number}</span>
-                    <span className="rounded-full bg-white/5 border border-white/10 px-2 py-0.5 text-[0.65rem] font-bold text-purple-300">
+                    <span className="rounded-full bg-white/5 border border-white/10 px-2 py-0.5 text-[0.65rem] font-medium text-purple-300">
                       {card.badge}
                     </span>
                   </div>
-                  <h3 className="mt-3 text-base font-bold text-white group-hover:text-purple-300 transition-colors">
+                  <h3 className="mt-3 text-base font-medium text-white group-hover:text-purple-300 transition-colors">
                     {card.title}
                   </h3>
-                  <p className="mt-1 text-xs font-medium text-zinc-400">
+                  <p className="mt-1 text-xs font-normal text-zinc-400">
                     {card.subtitle}
                   </p>
-                  <p className="mt-2 text-xs leading-relaxed text-zinc-400 line-clamp-2">
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-400 line-clamp-2 font-normal">
                     {card.description}
                   </p>
                 </div>
-                <div className="mt-4 flex items-center gap-1.5 text-xs font-bold text-purple-400 transition-transform group-hover:translate-x-1">
+                <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-purple-400 transition-transform group-hover:translate-x-1">
                   <span>Explore items</span>
                   <span aria-hidden="true">&rarr;</span>
                 </div>

@@ -64,7 +64,7 @@ function PillarFallbackGraphic({
           </svg>
         )}
       </div>
-      <p className="mt-3 font-mono text-xs font-bold tracking-widest text-purple-700 uppercase">
+      <p className="mt-3 font-mono text-xs font-medium tracking-widest text-purple-700 uppercase">
         {sku}
       </p>
       <p className="mt-0.5 text-[0.7rem] font-medium text-zinc-500">
@@ -128,7 +128,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
         {/* Top Badges */}
         <div className="pointer-events-none absolute left-3 top-3 flex flex-wrap gap-1.5 z-10">
-          <span className="rounded-full border border-purple-500/30 bg-purple-50/90 px-2.5 py-0.5 font-mono text-[0.7rem] font-bold tracking-wider text-purple-700 backdrop-blur-md">
+          <span className="rounded-full border border-purple-500/30 bg-purple-50/90 px-2.5 py-0.5 font-mono text-[0.7rem] font-medium tracking-wider text-purple-700 backdrop-blur-md">
             SKU: {product.sku}
           </span>
         </div>
@@ -142,7 +142,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
         {/* Bottom Category Badge */}
         <div className="pointer-events-none absolute bottom-3 left-3 z-10 max-w-[85%]">
-          <span className="inline-block truncate rounded-md border border-zinc-200 bg-white/95 px-2 py-0.5 font-mono text-[0.65rem] font-bold uppercase tracking-wider text-zinc-800 backdrop-blur-md shadow-xs">
+          <span className="inline-block truncate rounded-md border border-zinc-200 bg-white/95 px-2 py-0.5 font-mono text-[0.65rem] font-medium uppercase tracking-wider text-zinc-800 backdrop-blur-md shadow-xs">
             {product.categoryName}
           </span>
         </div>
@@ -150,7 +150,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
       {/* Body Content */}
       <div className="mt-4 flex flex-1 flex-col">
-        <h3 className="font-sans text-lg sm:text-xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-purple-700">
+        <h3 className="font-sans text-lg sm:text-xl font-medium tracking-tight text-zinc-900 transition-colors group-hover:text-purple-700">
           {product.name}
         </h3>
 
@@ -186,7 +186,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
         {product.inclusions && product.inclusions.length > 0 && (
           <div className="mt-3.5 rounded-xl border border-zinc-200/90 bg-zinc-50/70 p-3">
             <div className="flex items-center justify-between">
-              <p className="font-mono text-[0.68rem] font-bold uppercase tracking-wider text-purple-700">
+              <p className="font-mono text-[0.68rem] font-medium uppercase tracking-wider text-purple-700">
                 Kit Inclusions
               </p>
               <span className="font-mono text-[0.68rem] font-medium text-zinc-500">
@@ -196,14 +196,14 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             <ul className="mt-1.5 space-y-1 text-xs text-zinc-700">
               {product.inclusions.slice(0, 4).map((item, idx) => (
                 <li key={idx} className="flex items-start gap-1.5">
-                  <span className="mt-0.5 grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-purple-100 text-[9px] font-bold text-purple-700">
+                  <span className="mt-0.5 grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-purple-100 text-[9px] font-medium text-purple-700">
                     ✓
                   </span>
                   <span className="truncate leading-tight">{item}</span>
                 </li>
               ))}
               {product.inclusions.length > 4 && (
-                <li className="pt-0.5 text-[0.72rem] font-semibold text-purple-700">
+                <li className="pt-0.5 text-[0.72rem] font-medium text-purple-700">
                   +{product.inclusions.length - 4} more items included
                 </li>
               )}
@@ -219,11 +219,11 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
           <div className="flex items-center justify-between">
             <label
               htmlFor={`tier-${product.sku}`}
-              className="text-xs font-semibold text-zinc-700"
+              className="text-xs font-medium text-zinc-700"
             >
               Volume Tier:
             </label>
-            <span className="text-[0.68rem] font-mono text-purple-700 font-semibold">
+            <span className="text-[0.68rem] font-mono text-purple-700 font-medium">
               {selectedTier.includes("Bundle Perk")
                 ? "5%–10% Bundle Perk"
                 : "MOQ: 25 units"}
@@ -235,7 +235,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
               id={`tier-${product.sku}`}
               value={selectedTier}
               onChange={(e) => handleTierChange(e.target.value as QuantityTier)}
-              className="w-full appearance-none rounded-xl border border-zinc-300 bg-zinc-50/80 px-3 py-2 pr-8 text-xs font-semibold text-zinc-800 transition-colors hover:border-zinc-400 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/20"
+              className="w-full appearance-none rounded-xl border border-zinc-300 bg-zinc-50/80 px-3 py-2 pr-8 text-xs font-medium text-zinc-800 transition-colors hover:border-zinc-400 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/20"
             >
               {QUANTITY_TIERS.map((tier) => (
                 <option key={tier} value={tier} className="bg-white text-zinc-900">
@@ -261,7 +261,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             type="button"
             onClick={handleToggleShortlist}
             aria-pressed={isShortlisted}
-            className={`btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold transition-all flex-1 justify-center ${
+            className={`btn !min-h-[40px] !px-3 !py-2 !text-xs font-medium transition-all flex-1 justify-center ${
               addedFeedback ? "animate-badge-pop" : ""
             } ${
               isShortlisted
@@ -282,7 +282,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold flex-1 justify-center !bg-zinc-900 !text-white hover:!bg-zinc-800 transition-all shadow-sm"
+            className="btn !min-h-[40px] !px-3 !py-2 !text-xs font-medium flex-1 justify-center !bg-zinc-900 !text-white hover:!bg-zinc-800 transition-all shadow-sm"
           >
             <WhatsAppIcon className="h-3.5 w-3.5 shrink-0 fill-current text-emerald-400" />
             <span>WhatsApp</span>

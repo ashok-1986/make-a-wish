@@ -59,10 +59,10 @@ export function TurnkeyPlanner() {
     <div className="rounded-2xl border border-zinc-200/90 bg-white p-6 text-zinc-900 shadow-xl md:p-8">
       <fieldset>
         <legend className="flex items-center gap-3">
-          <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-purple-500/30 bg-purple-50 font-mono text-xs font-bold text-purple-700">
+          <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-purple-500/30 bg-purple-50 font-mono text-xs font-medium text-purple-700">
             01
           </span>
-          <span className="font-sans text-lg font-bold text-zinc-900">
+          <span className="font-sans text-lg font-medium text-zinc-900">
             Choose Gifting Scope
           </span>
         </legend>
@@ -72,7 +72,7 @@ export function TurnkeyPlanner() {
             return (
               <label
                 key={scope}
-                className={`flex min-h-[46px] cursor-pointer items-center gap-3 rounded-xl border px-3.5 py-2.5 text-xs sm:text-sm font-semibold transition-all ${
+                className={`flex min-h-[46px] cursor-pointer items-center gap-3 rounded-xl border px-3.5 py-2.5 text-xs sm:text-sm font-medium transition-all ${
                   isSelected
                     ? "border-purple-600 bg-purple-50/80 text-purple-900 shadow-xs"
                     : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-zinc-300 hover:text-zinc-900"
@@ -93,10 +93,10 @@ export function TurnkeyPlanner() {
 
       <fieldset className="mt-6 border-t border-zinc-200 pt-6">
         <legend className="flex items-center gap-3">
-          <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-purple-500/30 bg-purple-50 font-mono text-xs font-bold text-purple-700">
+          <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-purple-500/30 bg-purple-50 font-mono text-xs font-medium text-purple-700">
             02
           </span>
-          <span className="font-sans text-lg font-bold text-zinc-900">
+          <span className="font-sans text-lg font-medium text-zinc-900">
             Workplace Campus Decor Programme
           </span>
         </legend>
@@ -111,7 +111,7 @@ export function TurnkeyPlanner() {
             className="mt-1 h-5 w-5 shrink-0 rounded accent-purple-600"
           />
           <span>
-            <span className="block font-bold text-zinc-900">
+            <span className="block font-medium text-zinc-900">
               Pair with office festive campus decor
             </span>
             <span className="mt-1 block text-xs sm:text-sm leading-relaxed text-zinc-600">
@@ -122,30 +122,30 @@ export function TurnkeyPlanner() {
       </fieldset>
 
       <div className="mt-6 rounded-xl border border-zinc-200 bg-[#F9F8F6] p-4 sm:p-5">
-        <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700">
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700">
           Selected Configuration
         </p>
         <dl className="mt-3 grid gap-2 text-xs sm:text-sm">
           <div className="flex flex-wrap justify-between gap-2 border-b border-zinc-200 pb-2">
             <dt className="text-zinc-500">Gifting Scope</dt>
-            <dd className="font-semibold text-zinc-900">{scopeLabel}</dd>
+            <dd className="font-medium text-zinc-900">{scopeLabel}</dd>
           </div>
           <div className="flex flex-wrap justify-between gap-2 border-b border-zinc-200 pb-2">
             <dt className="text-zinc-500">Workplace Decor</dt>
-            <dd className="font-semibold text-zinc-900">
+            <dd className="font-medium text-zinc-900">
               {decor ? "Included · Turnkey Bundle" : "Not included"}
             </dd>
           </div>
         </dl>
         <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs font-medium text-zinc-600">
           <li className="flex items-center gap-1.5">
-            <span className="text-purple-600 font-bold">✓</span> Single-window GST invoice
+            <span className="text-purple-600 font-medium">✓</span> Single-window GST invoice
           </li>
           <li className="flex items-center gap-1.5">
-            <span className="text-purple-600 font-bold">✓</span> Coordinated delivery schedule
+            <span className="text-purple-600 font-medium">✓</span> Coordinated delivery schedule
           </li>
           <li className="flex items-center gap-1.5">
-            <span className="text-purple-600 font-bold">✓</span> One dedicated point of contact
+            <span className="text-purple-600 font-medium">✓</span> One dedicated point of contact
           </li>
         </ul>
       </div>

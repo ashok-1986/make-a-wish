@@ -44,7 +44,7 @@ export function ShortlistButton({ className = "btn btn-ghost text-plum" }: { cla
     >
       Shortlist
       <span
-        className={`inline-grid h-6 min-w-6 place-items-center rounded-full bg-sun px-1.5 text-xs font-black text-ink transition-transform ${
+        className={`inline-grid h-6 min-w-6 place-items-center rounded-full bg-sun px-1.5 text-xs font-medium text-ink transition-transform ${
           popped ? "animate-badge-pop" : ""
         }`}
       >

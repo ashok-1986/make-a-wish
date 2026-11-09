@@ -61,11 +61,11 @@ test("corporate-gifting page metadata and structure conforms to PRD v3.0 specifi
 
   // Stats DL
   assert.ok(
-    content.includes("B2B Pillars") && content.includes(">5<") || content.includes("\n                  5\n"),
+    content.includes("B2B Pillars") && (content.includes(">5<") || /\r?\n\s+5\r?\n/.test(content)),
     "Stats dl must include 5 B2B Pillars"
   );
   assert.ok(
-    content.includes("Signature SKUs") && (content.includes(">49+<") || content.includes("\n                  49+\n")),
+    content.includes("Signature SKUs") && (content.includes(">49+<") || /\r?\n\s+49\+\r?\n/.test(content)),
     "Stats dl must include 49+ Signature SKUs"
   );
   assert.ok(

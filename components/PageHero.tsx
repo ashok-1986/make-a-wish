@@ -15,12 +15,12 @@ export function PageHero({
       />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+        <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
           <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
           <span>Make a Wish Flagship</span>
         </div>
 
-        <h1 className="mt-4 font-sans text-3xl sm:text-5xl font-extrabold tracking-[-0.035em] text-white leading-tight">
+        <h1 className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[90px] font-medium tracking-[-0.04em] text-white leading-[1.02] text-balance">
           {title}
         </h1>
 

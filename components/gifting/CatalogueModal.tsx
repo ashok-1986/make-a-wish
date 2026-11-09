@@ -50,10 +50,10 @@ export function CatalogueModal() {
     <Overlay open={catalogueOpen} onClose={closeCatalogue} labelledBy="catalogue-title">
       <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-zinc-200 bg-zinc-50 px-6 py-5">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700">
             Catalog Request
           </p>
-          <h2 id="catalogue-title" className="mt-1 font-sans text-xl font-bold text-zinc-900">
+          <h2 id="catalogue-title" className="mt-1 font-sans text-xl font-medium text-zinc-900">
             The 2026 Corporate Gifting Catalogue
           </h2>
         </div>
@@ -61,7 +61,7 @@ export function CatalogueModal() {
           type="button"
           onClick={closeCatalogue}
           aria-label="Close catalogue request"
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-zinc-300 text-lg font-bold text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-zinc-300 text-lg font-medium text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
         >
           &times;
         </button>
@@ -75,7 +75,7 @@ export function CatalogueModal() {
         <form onSubmit={onSubmit} className="mt-5 grid gap-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="cat-name" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+              <label htmlFor="cat-name" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
                 Full name
               </label>
               <input
@@ -89,7 +89,7 @@ export function CatalogueModal() {
               />
             </div>
             <div>
-              <label htmlFor="cat-company" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+              <label htmlFor="cat-company" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
                 Company
               </label>
               <input
@@ -106,7 +106,7 @@ export function CatalogueModal() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="cat-email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+              <label htmlFor="cat-email" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
                 Work email
               </label>
               <input
@@ -121,7 +121,7 @@ export function CatalogueModal() {
               />
             </div>
             <div>
-              <label htmlFor="cat-phone" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+              <label htmlFor="cat-phone" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
                 WhatsApp number
               </label>
               <input
@@ -141,7 +141,7 @@ export function CatalogueModal() {
           </div>
 
           <div>
-            <label htmlFor="cat-interest" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+            <label htmlFor="cat-interest" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
               Collection of interest
             </label>
             <select
@@ -175,7 +175,7 @@ export function CatalogueModal() {
               href={whatsappLink(message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-purple-700 underline"
+              className="font-medium text-purple-700 underline"
             >
               open the request on WhatsApp
             </a>
@@ -185,7 +185,7 @@ export function CatalogueModal() {
 
         <p className="mt-4 border-t border-zinc-200 pt-4 text-xs leading-relaxed text-zinc-500">
           Prefer email? Write directly to{" "}
-          <a href={contact.email} className="font-semibold text-purple-700 hover:text-purple-900">
+          <a href={contact.email} className="font-medium text-purple-700 hover:text-purple-900">
             {contact.emailLabel}
           </a>
           .

@@ -9,14 +9,14 @@ export function ProcessSection() {
     >
       <div className="mx-auto max-w-7xl">
         <AnimateOnView className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>Operational Workflow</span>
           </div>
 
           <h2
             id="process-title"
-            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
+            className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-zinc-900 leading-[1.06] text-balance"
           >
             From Shortlist to Executive Desk Dispatch.
           </h2>
@@ -34,12 +34,12 @@ export function ProcessSection() {
             >
               <span
                 aria-hidden="true"
-                className="grid h-8 w-8 place-items-center rounded-full border border-purple-500/30 bg-purple-50 font-mono text-xs font-bold text-purple-700"
+                className="grid h-8 w-8 place-items-center rounded-full border border-purple-500/30 bg-purple-50 font-mono text-xs font-medium text-purple-700"
               >
                 0{i + 1}
               </span>
 
-              <h3 className="mt-5 font-sans text-lg font-bold text-zinc-900">
+              <h3 className="mt-5 font-sans text-lg font-medium text-zinc-900">
                 <span className="sr-only">Step {i + 1}: </span>
                 {step.name}
               </h3>

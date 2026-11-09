@@ -21,14 +21,14 @@ export function ClosingSection() {
       </div>
 
       <AnimateOnView className="relative mx-auto max-w-7xl">
-        <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
+        <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-300">
           <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
           <span>Elevate Your Brand</span>
         </div>
 
         <h2
           id="closing-title"
-          className="mt-5 font-sans text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.035em] text-white leading-[1.08] max-w-[20ch]"
+          className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-white leading-[1.06] text-balance max-w-[20ch]"
         >
           Elevate Your Next Corporate Gifting Rollout.
         </h2>

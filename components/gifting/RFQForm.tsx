@@ -118,12 +118,12 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
     >
       <div className="mb-6 flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 pb-4">
         <div>
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-purple-700 font-semibold">RFQ &amp; Volume Proposal</span>
-          <h3 className="font-sans text-xl sm:text-2xl font-bold text-zinc-900 mt-1">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-purple-700 font-medium">RFQ &amp; Volume Proposal</span>
+          <h3 className="font-sans text-xl sm:text-2xl font-medium text-zinc-900 mt-1">
             B2B Corporate Quotation Request
           </h3>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-xs font-semibold text-emerald-800 shadow-xs">
+        <div className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-xs font-medium text-emerald-800 shadow-xs">
           <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>B2B Desk Online</span>
         </div>
@@ -131,7 +131,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="rfq-name" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-name" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             Full name <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
@@ -146,7 +146,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-company" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-company" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             Company name <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
@@ -161,7 +161,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-email" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             Work email <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
@@ -177,7 +177,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-phone" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-phone" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             WhatsApp / mobile number <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <input
@@ -196,7 +196,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-purpose" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-purpose" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             Gifting purpose <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <select
@@ -215,7 +215,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div>
-          <label htmlFor="rfq-quantity" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-quantity" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             Estimated quantity tier <span aria-hidden="true" className="text-purple-600">*</span>
           </label>
           <select
@@ -234,7 +234,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="rfq-location" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-location" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             Delivery city / office location
           </label>
           <input
@@ -252,10 +252,10 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
             <div className="rounded-xl border border-zinc-200 bg-zinc-50/70 p-4">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-purple-600 font-mono text-[10px] font-bold text-white">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-purple-600 font-mono text-[10px] font-medium text-white">
                     {items.length}
                   </span>
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-purple-700">
+                  <span className="font-mono text-xs font-medium uppercase tracking-wider text-purple-700">
                     Shortlisted SKUs &amp; Items Included ({items.length})
                   </span>
                 </div>
@@ -274,7 +274,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                     key={item.key}
                     className="inline-flex items-center gap-1.5 rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-xs font-medium text-purple-900 shadow-xs"
                   >
-                    <span className="font-mono font-bold text-[10px] uppercase tracking-wider text-purple-700">
+                    <span className="font-mono font-medium text-[10px] uppercase tracking-wider text-purple-700">
                       {shortlistKindLabels[item.kind] || item.kind}
                     </span>
                     <span className="truncate max-w-[200px] sm:max-w-[320px]">
@@ -306,7 +306,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="rfq-requirements" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <label htmlFor="rfq-requirements" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-700">
             Additional specifications &amp; notes
           </label>
           <textarea
@@ -325,7 +325,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         <button
           type="button"
           onClick={() => handleAction("whatsapp")}
-          className="btn !bg-zinc-900 !text-white hover:!bg-zinc-800 font-bold px-6 py-3.5 shadow-md justify-center text-sm"
+          className="btn !bg-zinc-900 !text-white hover:!bg-zinc-800 font-medium px-6 py-3.5 shadow-md justify-center text-sm"
         >
           <span>Send Instant WhatsApp Inquiry</span>
           <span className="btn-arrow" aria-hidden="true">&rarr;</span>
@@ -334,7 +334,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
         <button
           type="button"
           onClick={() => handleAction("email")}
-          className="btn btn-ghost font-bold px-5 py-3.5 justify-center text-sm border-zinc-300 text-zinc-800 hover:bg-zinc-100"
+          className="btn btn-ghost font-medium px-5 py-3.5 justify-center text-sm border-zinc-300 text-zinc-800 hover:bg-zinc-100"
         >
           <svg
             className="h-4 w-4 shrink-0 text-zinc-600"
@@ -385,7 +385,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
             </div>
 
             <div className="flex-1 text-sm">
-              <p className="font-bold text-zinc-900">
+              <p className="font-medium text-zinc-900">
                 {submissionState.type === "whatsapp"
                   ? "WhatsApp Inquiry Initiated"
                   : "Email Drafted to Sales Desk"}
@@ -398,7 +398,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                       href={submissionState.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline font-bold text-emerald-700 hover:text-emerald-900"
+                      className="underline font-medium text-emerald-700 hover:text-emerald-900"
                     >
                       click here to open WhatsApp directly
                     </a>
@@ -409,7 +409,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                     Your mail client has been opened with your proposal request for <strong>{contact.emailLabel}</strong>. If your email client did not launch,{" "}
                     <a
                       href={submissionState.href}
-                      className="underline font-bold text-purple-700 hover:text-purple-900"
+                      className="underline font-medium text-purple-700 hover:text-purple-900"
                     >
                       click here to launch your email draft
                     </a>
@@ -424,12 +424,12 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
 
       {/* PRD Section 5.3 Direct Desk Footer Bar */}
       <div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-center text-xs text-zinc-600">
-        <span className="font-mono font-bold uppercase tracking-wider text-purple-700">Direct B2B Desk:</span>{" "}
-        <a href={contact.phone} className="font-semibold text-zinc-900 hover:text-purple-700 hover:underline">
+        <span className="font-mono font-medium uppercase tracking-wider text-purple-700">Direct B2B Desk:</span>{" "}
+        <a href={contact.phone} className="font-medium text-zinc-900 hover:text-purple-700 hover:underline">
           {contact.display}
         </a>{" "}
         |{" "}
-        <a href={contact.email} className="font-semibold text-purple-700 hover:text-purple-900 hover:underline">
+        <a href={contact.email} className="font-medium text-purple-700 hover:text-purple-900 hover:underline">
           {contact.emailLabel}
         </a>{" "}
         | <span>Panvel, Navi Mumbai &amp; Greater Mumbai</span>

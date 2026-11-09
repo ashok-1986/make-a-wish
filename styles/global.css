@@ -45,45 +45,46 @@ body {
 }
 
 @layer components {
-  /* Architectural display typography: bold, tight tracking, zero cursive */
+  /* Architectural display typography: max weight 500 (Medium), high-impact editorial scale */
   .display-xl {
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-    font-weight: 800;
+    font-weight: 500;
     font-style: normal;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.75rem, 6.5vw, 5.625rem); /* Up to 90px */
+    line-height: 1.02;
+    letter-spacing: -0.04em;
     text-wrap: balance;
   }
   .display-lg {
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-    font-weight: 800;
+    font-weight: 500;
     font-style: normal;
-    font-size: clamp(1.85rem, 4vw, 3.25rem);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.25rem, 5vw, 4.5rem); /* Up to 72px */
+    line-height: 1.06;
+    letter-spacing: -0.035em;
     text-wrap: balance;
   }
   .display-md {
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
-    font-size: clamp(1.35rem, 2.5vw, 2rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.5rem, 2.8vw, 2.5rem); /* Up to 40px */
+    line-height: 1.15;
+    letter-spacing: -0.025em;
   }
   .lede {
     font-size: clamp(1.05rem, 1.8vw, 1.25rem);
     line-height: 1.6;
     max-width: 62ch;
     color: #52525b;
+    font-weight: 400;
   }
 
   /* Micro-labels & headers */
   .eyebrow {
     font-family: var(--font-sans), monospace;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.22em;
     line-height: 1.4;
     text-transform: uppercase;
@@ -130,7 +131,7 @@ body {
     min-height: 3rem;
     padding: 0.75rem 1.75rem;
     border-radius: 999px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.95rem;
     line-height: 1.1;
     background: #111111;

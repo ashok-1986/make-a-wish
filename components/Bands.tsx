@@ -30,7 +30,7 @@ export function Bands({
             className={`${p.tone} scroll-mt-36 px-5 py-12 md:px-10 md:py-16`}
           >
             <Reveal className="mx-auto grid max-w-7xl items-baseline gap-4 md:grid-cols-[1.1fr_1fr] md:gap-12">
-              <Heading className="font-sans text-2xl sm:text-4xl font-extrabold tracking-[-0.03em] text-white">
+              <Heading className="font-sans text-2xl sm:text-3xl lg:text-[40px] font-medium tracking-tight text-white">
                 {item.name}
               </Heading>
               <div>
@@ -43,7 +43,7 @@ export function Bands({
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider font-semibold ${p.link}`}
+                      className={`inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider font-medium ${p.link}`}
                     >
                       <span>Enquire about {item.name}</span>
                       <span aria-hidden="true">&rarr;</span>

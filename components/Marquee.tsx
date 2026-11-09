@@ -12,10 +12,10 @@ export function Marquee() {
           <ul key={copy} className="flex shrink-0 items-center">
             {giftingCategories.map((c) => (
               <li key={`${copy}-${c.id}`} className="flex items-center">
-                <span className="whitespace-nowrap px-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-zinc-700">
+                <span className="whitespace-nowrap px-4 font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-700">
                   {c.name}
                 </span>
-                <span className="px-3 text-purple-600 font-mono text-xs font-bold">//</span>
+                <span className="px-3 text-purple-600 font-mono text-xs font-medium">//</span>
               </li>
             ))}
           </ul>

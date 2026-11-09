@@ -11,14 +11,14 @@ export function RFQSection() {
     >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
         <AnimateOnView>
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>B2B Corporate Sales Desk</span>
           </div>
 
           <h2
             id="rfq-title"
-            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
+            className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-zinc-900 leading-[1.06] text-balance"
           >
             Request a B2B Volume Quote &amp; Digital Presentation.
           </h2>
@@ -28,28 +28,28 @@ export function RFQSection() {
           </p>
 
           <div className="mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700">
               Direct Sales Lines
             </p>
             <address className="mt-4 grid gap-2 not-italic text-sm text-zinc-700">
               <a
                 href={contact.phone}
                 aria-label={`Call primary phone ${contact.display}`}
-                className="font-bold text-zinc-900 hover:text-purple-700 transition-colors"
+                className="font-medium text-zinc-900 hover:text-purple-700 transition-colors"
               >
                 {contact.display}
               </a>
               <a
                 href={contact.secondaryPhone}
                 aria-label={`Call secondary phone ${contact.secondaryDisplay}`}
-                className="font-bold text-zinc-900 hover:text-purple-700 transition-colors"
+                className="font-medium text-zinc-900 hover:text-purple-700 transition-colors"
               >
                 {contact.secondaryDisplay}
               </a>
               <a
                 href={contact.email}
                 aria-label={`Email corporate desk at ${contact.emailLabel}`}
-                className="break-all font-semibold text-purple-700 hover:text-purple-900 transition-colors"
+                className="break-all font-medium text-purple-700 hover:text-purple-900 transition-colors"
               >
                 {contact.emailLabel}
               </a>

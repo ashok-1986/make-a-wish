@@ -27,7 +27,7 @@ export function CategoryCard({ category }: { category: GiftingCategory }) {
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/90 bg-white shadow-sm transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:-translate-y-1">
       <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100">
         <CategoryArt category={category} />
-        <span className="absolute left-3.5 top-3.5 rounded-full border border-purple-500/40 bg-white/90 px-2.5 py-0.5 text-xs font-mono font-bold text-purple-700 backdrop-blur-sm shadow-xs">
+        <span className="absolute left-3.5 top-3.5 rounded-full border border-purple-500/40 bg-white/90 px-2.5 py-0.5 text-xs font-mono font-medium text-purple-700 backdrop-blur-sm shadow-xs">
           {category.number}
         </span>
         <span className="absolute bottom-3.5 left-3.5 rounded-full border border-zinc-200 bg-white/90 px-2.5 py-0.5 text-[0.7rem] font-medium text-zinc-700 backdrop-blur-sm shadow-xs">
@@ -36,7 +36,7 @@ export function CategoryCard({ category }: { category: GiftingCategory }) {
       </div>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="font-sans text-xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-purple-700">
+        <h3 className="font-sans text-xl font-medium tracking-tight text-zinc-900 transition-colors group-hover:text-purple-700">
           {category.name}
         </h3>
         <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-600">
@@ -55,7 +55,7 @@ export function CategoryCard({ category }: { category: GiftingCategory }) {
         </ul>
 
         <p className="mt-3.5 text-xs sm:text-sm leading-relaxed text-zinc-500">
-          <span className="font-bold text-zinc-800">Recommended for:</span> {category.useCase}
+          <span className="font-medium text-zinc-800">Recommended for:</span> {category.useCase}
         </p>
 
         <div className="mt-auto pt-5 border-t border-zinc-200">

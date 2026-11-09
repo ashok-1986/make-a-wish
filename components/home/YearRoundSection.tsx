@@ -23,10 +23,10 @@ export function YearRoundSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
             <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-black/60 p-3.5 backdrop-blur-md">
-              <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-purple-300 font-bold">
+              <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-purple-300 font-medium">
                 Year-Round Corporate Infrastructure
               </p>
-              <p className="text-sm font-bold text-white">
+              <p className="text-sm font-medium text-white">
                 Employee Welcomes · Milestone Awards · Festive Despatch
               </p>
             </div>
@@ -35,14 +35,14 @@ export function YearRoundSection() {
 
         {/* Right Column: Narrative & Occasion Cards */}
         <AnimateOnView delay={0.12}>
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>365-Day Corporate Gifting Calendar</span>
           </div>
 
           <h2
             id="year-round-title"
-            className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
+            className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-zinc-900 leading-[1.06] text-balance"
           >
             The Corporate Calendar Doesn&rsquo;t Stop After Diwali.
           </h2>
@@ -57,7 +57,7 @@ export function YearRoundSection() {
                 key={item.name}
                 className="rounded-xl border border-zinc-200/90 bg-white p-5 shadow-sm transition-all hover:shadow-md hover:border-purple-500/40 hover:-translate-y-1"
               >
-                <h3 className="font-sans text-base font-bold text-zinc-900">
+                <h3 className="font-sans text-base font-medium text-zinc-900">
                   {item.name}
                 </h3>
                 <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-600">

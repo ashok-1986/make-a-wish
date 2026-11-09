@@ -14,8 +14,8 @@ import { gsap, ScrollTrigger, isReducedMotion, MOTION_TOKENS } from "../../lib/m
 import { HamperCard } from "./HamperCard";
 
 const chipBase =
-  "inline-flex min-h-[38px] shrink-0 items-center rounded-full border px-3.5 py-1 text-xs font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500";
-const chipOn = "border-purple-600 bg-purple-600 text-white font-bold shadow-sm";
+  "inline-flex min-h-[38px] shrink-0 items-center rounded-full border px-3.5 py-1 text-xs font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500";
+const chipOn = "border-purple-600 bg-purple-600 text-white font-medium shadow-sm";
 const chipOff = "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-zinc-300 hover:text-zinc-900";
 
 export function HamperLookbook() {
@@ -69,7 +69,7 @@ export function HamperLookbook() {
     <div>
       <div className="grid gap-5 rounded-2xl border border-zinc-200/90 bg-[#F9F8F6] p-4 md:p-6 shadow-sm">
         <div className="min-w-0">
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700 mb-2.5">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700 mb-2.5">
             Packaging Series
           </p>
           <div
@@ -100,7 +100,7 @@ export function HamperLookbook() {
         </div>
 
         <div className="min-w-0 border-t border-zinc-200 pt-4">
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700 mb-2.5">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700 mb-2.5">
             Net Weight Category
           </p>
           <div
@@ -124,7 +124,7 @@ export function HamperLookbook() {
       </div>
 
       <p
-        className="mt-5 font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700"
+        className="mt-5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700"
         aria-live="polite"
       >
         Showing {results.length} of {hampers.length} Hamper Models

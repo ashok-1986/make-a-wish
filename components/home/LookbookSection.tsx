@@ -12,14 +12,14 @@ export function LookbookSection() {
       <div className="mx-auto max-w-7xl">
         <Reveal className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-medium uppercase tracking-[0.2em] text-purple-700">
               <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
               <span>Festive Luxury Hampers · 13 Signature Models</span>
             </div>
 
             <h2
               id="lookbook-title"
-              className="mt-4 font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-zinc-900 leading-tight"
+              className="mt-5 font-sans text-4xl sm:text-6xl lg:text-[72px] font-medium tracking-[-0.035em] text-zinc-900 leading-[1.06] text-balance"
             >
               The Festive Season, in Thirteen Signature Boxes.
             </h2>
@@ -30,17 +30,17 @@ export function LookbookSection() {
           </div>
 
           <div className="rounded-2xl border border-zinc-200/90 bg-[#F9F8F6] p-5 shadow-sm">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-purple-700">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-purple-700">
               Packaging Architectures
             </p>
-            <ul className="mt-3 grid gap-2 text-xs sm:text-sm font-semibold">
+            <ul className="mt-3 grid gap-2 text-xs sm:text-sm font-medium">
               {hamperSeries.map((series) => (
                 <li
                   key={series.id}
                   className="flex items-center justify-between gap-3 border-b border-zinc-200 pb-2 text-zinc-700"
                 >
                   <span>{series.name}</span>
-                  <span className="font-mono font-bold text-purple-700">
+                  <span className="font-mono font-medium text-purple-700">
                     {hamperSeriesCount(series.id)} models
                   </span>
                 </li>
