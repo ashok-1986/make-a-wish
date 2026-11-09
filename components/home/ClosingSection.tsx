@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Reveal } from "../Reveal";
+import { AnimateOnView } from "../AnimateOnView";
 import { ContactLinks } from "../ContactLinks";
 
 export function ClosingSection() {
@@ -20,7 +20,7 @@ export function ClosingSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/75" />
       </div>
 
-      <Reveal className="relative mx-auto max-w-7xl">
+      <AnimateOnView className="relative mx-auto max-w-7xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-300">
           <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
           <span>Elevate Your Brand</span>
@@ -44,7 +44,7 @@ export function ClosingSection() {
             message="Hello Make a Wish Corporate Desk, I would like to inquire about bulk corporate gifting, joining kits, and proposals for our team."
           />
         </div>
-      </Reveal>
+      </AnimateOnView>
     </section>
   );
 }

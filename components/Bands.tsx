@@ -29,7 +29,7 @@ export function Bands({
             id={item.id}
             className={`${p.tone} scroll-mt-36 px-5 py-12 md:px-10 md:py-16`}
           >
-            <Reveal className="mx-auto grid max-w-6xl items-baseline gap-4 md:grid-cols-[1.1fr_1fr] md:gap-12">
+            <Reveal className="mx-auto grid max-w-7xl items-baseline gap-4 md:grid-cols-[1.1fr_1fr] md:gap-12">
               <Heading className="font-sans text-2xl sm:text-4xl font-extrabold tracking-[-0.03em] text-white">
                 {item.name}
               </Heading>

@@ -19,6 +19,15 @@
   --border-subtle: #e4e4e7;
   --border-focus: rgba(124, 58, 237, 0.5);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* GSAP + Lenis 8gnc.io motion tokens */
+  --motion-duration-fast: 0.22s;
+  --motion-duration-ui: 0.65s;
+  --motion-duration-hero: 0.85s;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-stagger-card: 0.11s;
+  --motion-y-enter: 28px;
 }
 
 html {
@@ -136,8 +145,12 @@ body {
     transform: translateY(-1.5px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   }
-  .btn:active {
-    transform: translateY(0) scale(0.98);
+  .btn:active,
+  .btn-ghost:active,
+  .btn-dark-section:active,
+  .btn-sun:active {
+    transform: translateY(0) scale(0.97);
+    transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   .btn .btn-arrow {
     transition: transform 260ms var(--ease-out);
@@ -387,6 +400,29 @@ html {
     transform: none;
   }
 }
+@keyframes badge-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.24);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-badge-pop {
+  animation: badge-pop 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-hover-lift {
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms ease;
+}
+.card-hover-lift:hover {
+  transform: translateY(-4px) scale(1.012);
+}
+
 .modal-panel {
   animation: panel-up 360ms var(--ease-out) both;
 }

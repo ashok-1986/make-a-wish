@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   hampers,
   hamperMatchesBand,
@@ -10,6 +10,7 @@ import {
   type SeriesId,
   type WeightBandId,
 } from "../../lib/gifting";
+import { gsap, ScrollTrigger, isReducedMotion, MOTION_TOKENS } from "../../lib/motion";
 import { HamperCard } from "./HamperCard";
 
 const chipBase =
@@ -20,6 +21,7 @@ const chipOff = "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-zinc-300 
 export function HamperLookbook() {
   const [series, setSeries] = useState<SeriesId | "all">("all");
   const [band, setBand] = useState<WeightBandId>("all");
+  const gridRef = useRef<HTMLUListElement>(null);
 
   const results = useMemo(
     () =>
@@ -29,6 +31,39 @@ export function HamperLookbook() {
       ),
     [series, band]
   );
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el || isReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      const cards = el.children;
+      if (cards && cards.length > 0) {
+        gsap.fromTo(
+          Array.from(cards),
+          { y: 36, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: MOTION_TOKENS.ease.out,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, el);
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      ctx.revert();
+    };
+  }, [results]);
 
   return (
     <div>
@@ -110,7 +145,7 @@ export function HamperLookbook() {
           </button>
         </div>
       ) : (
-        <ul className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <ul ref={gridRef} className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {results.map((hamper) => (
             <li key={hamper.id}>
               <HamperCard hamper={hamper} />

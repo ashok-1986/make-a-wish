@@ -1,4 +1,4 @@
-import { Reveal } from "../Reveal";
+import { AnimateOnView } from "../AnimateOnView";
 import { pillarSteps } from "../../lib/home-data";
 
 export function ProcessSection() {
@@ -8,7 +8,7 @@ export function ProcessSection() {
       className="border-b border-zinc-200 bg-white px-5 py-16 text-zinc-900 md:px-10 md:py-24"
     >
       <div className="mx-auto max-w-7xl">
-        <Reveal className="max-w-3xl">
+        <AnimateOnView className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>Operational Workflow</span>
@@ -24,9 +24,9 @@ export function ProcessSection() {
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-600">
             Zero public retail pricing or consumer carts. You specify the tier and SKUs, and our corporate desk returns custom digital mockups, tiered rate cards, and an exact delivery schedule.
           </p>
-        </Reveal>
+        </AnimateOnView>
 
-        <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimateOnView as="ol" stagger={0.12} y={32} className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {pillarSteps.map((step, i) => (
             <li
               key={step.name}
@@ -49,7 +49,7 @@ export function ProcessSection() {
               </p>
             </li>
           ))}
-        </ol>
+        </AnimateOnView>
       </div>
     </section>
   );

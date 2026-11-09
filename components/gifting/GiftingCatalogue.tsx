@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   categoryFilters,
   categoryMatchesFilter,
   giftingCategories,
   type CategoryFilterId,
 } from "../../lib/gifting";
+import { gsap, ScrollTrigger, isReducedMotion, MOTION_TOKENS } from "../../lib/motion";
 import { CategoryCard } from "./CategoryCard";
 import { GIFTING_FILTER_EVENT, GIFTING_FILTER_STORAGE_KEY } from "./filterNavigation";
 
@@ -18,6 +19,7 @@ const chipOff = "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-zinc-300 
 /* Filterable directory of all 14 categories with 8gnc.io light studio aesthetics */
 export function GiftingCatalogue() {
   const [filter, setFilter] = useState<CategoryFilterId>("all");
+  const gridRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     try {
@@ -45,6 +47,39 @@ export function GiftingCatalogue() {
     () => giftingCategories.filter((category) => categoryMatchesFilter(category, filter)),
     [filter]
   );
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el || isReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      const cards = el.children;
+      if (cards && cards.length > 0) {
+        gsap.fromTo(
+          Array.from(cards),
+          { y: 36, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.06,
+            ease: MOTION_TOKENS.ease.out,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, el);
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      ctx.revert();
+    };
+  }, [results]);
 
   return (
     <div>
@@ -88,7 +123,7 @@ export function GiftingCatalogue() {
           </button>
         </div>
       ) : (
-        <ul className="mt-6 grid gap-6 sm:grid-cols-2">
+        <ul ref={gridRef} className="mt-6 grid gap-6 sm:grid-cols-2">
           {results.map((category) => (
             <li key={category.id}>
               <CategoryCard category={category} />

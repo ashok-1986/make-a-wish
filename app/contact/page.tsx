@@ -25,7 +25,7 @@ export default function ContactPage() {
         aria-labelledby="reach-us"
         className="scroll-mt-24 border-b border-white/10 bg-[#0B090E] px-5 py-16 text-white md:px-10 md:py-24"
       >
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <Reveal>
             <h2 id="reach-us" className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
               Reach Our Corporate Desk

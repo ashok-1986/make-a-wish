@@ -6,6 +6,7 @@ import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { GiftingProvider } from "../components/gifting/GiftingProvider";
 import { GiftingOverlays } from "../components/gifting/GiftingOverlays";
+import { MotionProvider } from "../components/providers/MotionProvider";
 
 /* High-contrast architectural grotesque sans echoing 8gnc.io enterprise aesthetic */
 const sans = Plus_Jakarta_Sans({
@@ -69,13 +70,15 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <GiftingProvider>
-          <AnnouncementBar />
-          <SiteHeader />
-          <main id="main">{children}</main>
-          <SiteFooter />
-          <GiftingOverlays />
-        </GiftingProvider>
+        <MotionProvider>
+          <GiftingProvider>
+            <AnnouncementBar />
+            <SiteHeader />
+            <main id="main">{children}</main>
+            <SiteFooter />
+            <GiftingOverlays />
+          </GiftingProvider>
+        </MotionProvider>
       </body>
     </html>
   );

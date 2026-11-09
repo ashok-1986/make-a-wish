@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Reveal } from "../Reveal";
+import { AnimateOnView } from "../AnimateOnView";
 import { YearRoundButton } from "../gifting/GiftingActions";
 import { yearRoundHighlights } from "../../lib/home-data";
 
@@ -11,7 +11,7 @@ export function YearRoundSection() {
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
         {/* Left Column: Real Corporate Corridor & Gifting Photography */}
-        <Reveal>
+        <AnimateOnView>
           <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl">
             <Image
               src="/images/why-corporate.png"
@@ -31,10 +31,10 @@ export function YearRoundSection() {
               </p>
             </div>
           </div>
-        </Reveal>
+        </AnimateOnView>
 
         {/* Right Column: Narrative & Occasion Cards */}
-        <Reveal delay={100}>
+        <AnimateOnView delay={0.12}>
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>365-Day Corporate Gifting Calendar</span>
@@ -76,7 +76,7 @@ export function YearRoundSection() {
               Plan Corporate Calendar
             </a>
           </div>
-        </Reveal>
+        </AnimateOnView>
       </div>
     </section>
   );

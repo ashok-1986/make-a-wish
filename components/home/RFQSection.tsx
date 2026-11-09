@@ -1,4 +1,4 @@
-import { Reveal } from "../Reveal";
+import { AnimateOnView } from "../AnimateOnView";
 import { RFQForm } from "../gifting/RFQForm";
 import { contact } from "../../lib/site";
 
@@ -10,7 +10,7 @@ export function RFQSection() {
       className="scroll-mt-24 border-b border-zinc-200 bg-[#F9F8F6] px-5 py-16 text-zinc-900 md:px-10 md:py-24"
     >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-        <Reveal>
+        <AnimateOnView>
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>B2B Corporate Sales Desk</span>
@@ -63,11 +63,11 @@ export function RFQSection() {
           <p className="mt-6 text-xs text-zinc-500 leading-relaxed">
             Prefer to send your shortlist directly? Add items as you browse and transmit the list directly over WhatsApp from the shortlist tray.
           </p>
-        </Reveal>
+        </AnimateOnView>
 
-        <Reveal delay={100}>
+        <AnimateOnView delay={0.12}>
           <RFQForm />
-        </Reveal>
+        </AnimateOnView>
       </div>
     </section>
   );

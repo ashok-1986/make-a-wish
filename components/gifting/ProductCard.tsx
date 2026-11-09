@@ -262,6 +262,8 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             onClick={handleToggleShortlist}
             aria-pressed={isShortlisted}
             className={`btn !min-h-[40px] !px-3 !py-2 !text-xs font-bold transition-all flex-1 justify-center ${
+              addedFeedback ? "animate-badge-pop" : ""
+            } ${
               isShortlisted
                 ? "!bg-purple-600 !text-white border border-purple-600 shadow-sm"
                 : "btn-ghost !text-zinc-800 border-zinc-300 hover:!bg-zinc-100"

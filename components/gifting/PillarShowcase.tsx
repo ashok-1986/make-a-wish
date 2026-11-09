@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import {
   type CatalogPillarId,
   type PillarMeta,
@@ -12,6 +12,7 @@ import {
 } from "../../lib/catalog-data";
 import { whatsappLink } from "../../lib/site";
 import { WhatsAppIcon } from "../icons/WhatsAppIcon";
+import { gsap, ScrollTrigger, isReducedMotion, MOTION_TOKENS } from "../../lib/motion";
 import { useGifting } from "./GiftingProvider";
 import { ProductCard } from "./ProductCard";
 
@@ -47,6 +48,7 @@ export function PillarShowcase({
   const [selectedPillar, setSelectedPillar] = useState<CatalogPillarId>(initialPillar);
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const searchInputId = useId();
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const { openCatalogue, seedRFQ } = useGifting();
 
@@ -85,6 +87,40 @@ export function PillarShowcase({
     setSearchQuery("");
     setSelectedPillar("all");
   }
+
+  // Staggered reveal for product cards on initial viewport entry or filter change
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el || isReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      const cards = el.children;
+      if (cards && cards.length > 0) {
+        gsap.fromTo(
+          Array.from(cards).slice(0, 12),
+          { y: 36, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: MOTION_TOKENS.ease.out,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, el);
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      ctx.revert();
+    };
+  }, [filteredProducts]);
 
   const customKitWhatsAppHref = whatsappLink(
     [
@@ -289,7 +325,7 @@ export function PillarShowcase({
 
         {/* Products Grid or Empty State */}
         {filteredProducts.length > 0 ? (
-          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div ref={gridRef} className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.sku} product={product} />
             ))}

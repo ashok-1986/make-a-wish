@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { gsap, isReducedMotion } from "../../lib/motion";
 import { whatsappLink } from "../../lib/site";
 import { WhatsAppIcon } from "../icons/WhatsAppIcon";
 
@@ -42,12 +46,92 @@ const spotlightCards = [
 ];
 
 export function HeroSection() {
+  const heroRef = useRef<HTMLElement>(null);
   const directWhatsAppHref = whatsappLink(
     "Hello Make a Wish Corporate Desk, I would like to inquire about year-round corporate gifting, onboarding kits, and catalog proposals."
   );
 
+  useEffect(() => {
+    if (isReducedMotion()) return;
+    const el = heroRef.current;
+    if (!el) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+      tl.fromTo(
+        ".hero-h1",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.85 }
+      )
+        .fromTo(
+          ".hero-subcopy",
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.75 },
+          "-=0.7" // delayed +0.15s relative to H1
+        )
+        .fromTo(
+          ".hero-cta-primary",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6 },
+          "-=0.57" // delayed +0.28s
+        )
+        .fromTo(
+          ".hero-cta-secondary",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6 },
+          "-=0.47" // delayed +0.38s
+        )
+        .fromTo(
+          ".hero-showcase",
+          { scale: 0.96, y: 15, opacity: 0 },
+          { scale: 1, y: 0, opacity: 1, duration: 0.9 },
+          0.2 // delayed +0.2s from timeline start
+        );
+
+      // Stats row triggered when 20% in view
+      gsap.fromTo(
+        ".hero-stats > div",
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.65,
+          stagger: 0.08,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".hero-stats",
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+
+      // Spotlight cards staggered reveal
+      gsap.fromTo(
+        ".hero-spotlight-card",
+        { y: 25, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".hero-spotlights",
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+    }, el);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={heroRef}
       aria-labelledby="hero-title"
       className="dark-section relative overflow-hidden bg-[#0B090E] border-b border-white/10 px-5 pb-16 pt-12 md:px-10 md:pb-24 md:pt-16"
     >
@@ -73,17 +157,17 @@ export function HeroSection() {
 
             <h1
               id="hero-title"
-              className="mt-5 font-sans text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.035em] text-white"
+              className="hero-h1 mt-5 font-sans text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.035em] text-white"
             >
               Corporate Gifting &amp; Turnkey Production. Built for Enterprise Teams.
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg leading-relaxed text-zinc-300 max-w-[58ch]">
+            <p className="hero-subcopy mt-6 text-base sm:text-lg leading-relaxed text-zinc-300 max-w-[58ch]">
               Curated 2-in-1 to 6-in-1 Employee Joining Kits, Executive Power Bank Diaries, Pure Copperware, and Luxury Gourmet Hampers. Pre-packaged and customized with your corporate logo under a single GST invoice.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
-              <a href="#pillar-showcase" className="btn btn-dark-section">
+              <a href="#pillar-showcase" className="hero-cta-primary btn btn-dark-section">
                 <span>Explore 5 Corporate Pillars</span>
                 <span className="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -91,7 +175,7 @@ export function HeroSection() {
                 href={directWhatsAppHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost"
+                className="hero-cta-secondary btn btn-ghost"
               >
                 <WhatsAppIcon className="h-4 w-4 text-emerald-400" />
                 <span>Direct WhatsApp Desk</span>
@@ -104,7 +188,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Real Cinematic Boardroom Photography */}
-          <div className="relative">
+          <div className="hero-showcase relative">
             <div className="group relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-2xl border border-white/15 bg-[#131019] shadow-2xl shadow-purple-950/30">
               <Image
                 src="/images/hero-corporate.png"
@@ -138,7 +222,7 @@ export function HeroSection() {
         </div>
 
         {/* 4 Architectural Metric Blocks (8gnc.io grid style) */}
-        <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 border-y border-white/10 py-6">
+        <div className="hero-stats mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 border-y border-white/10 py-6">
           <div className="border-l-2 border-purple-500/40 pl-4">
             <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-zinc-400">01 / Scope</p>
             <p className="mt-1 text-xl sm:text-2xl font-extrabold text-white">5 B2B Pillars</p>
@@ -164,12 +248,12 @@ export function HeroSection() {
         {/* 4 Spotlight Focus Cards */}
         <div className="mt-8">
           <h2 className="sr-only">Core Corporate Gifting Pillars</h2>
-          <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="hero-spotlights grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
             {spotlightCards.map((card) => (
               <a
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-[#131019] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:bg-[#1a1624] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+                className="hero-spotlight-card group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-[#131019] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:bg-[#1a1624] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs font-mono text-zinc-400">

@@ -1,4 +1,4 @@
-import { Reveal } from "../Reveal";
+import { AnimateOnView } from "../AnimateOnView";
 import { TurnkeyPlanner } from "../gifting/TurnkeyPlanner";
 import { contact } from "../../lib/site";
 import { turnkeyFeatures } from "../../lib/home-data";
@@ -11,7 +11,7 @@ export function TurnkeySection() {
       className="relative scroll-mt-24 overflow-hidden border-b border-zinc-200 bg-white px-5 py-16 text-zinc-900 md:px-10 md:py-24"
     >
       <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-14">
-        <Reveal>
+        <AnimateOnView>
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-purple-700">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-600" />
             <span>Turnkey Production · One Window</span>
@@ -53,11 +53,11 @@ export function TurnkeySection() {
               Call {contact.display}
             </a>
           </div>
-        </Reveal>
+        </AnimateOnView>
 
-        <Reveal delay={120}>
+        <AnimateOnView delay={0.15}>
           <TurnkeyPlanner />
-        </Reveal>
+        </AnimateOnView>
       </div>
     </section>
   );
