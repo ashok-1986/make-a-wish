@@ -48,10 +48,10 @@ export type NavLink = {
 /* The 5 B2B Pillars + Inquire link */
 export const navLinks: NavLink[] = [
   { name: "Joining Kits & Combos", href: "/#pillar-showcase", pillarId: "joining-kits" },
-  { name: "Diaries & Tech", href: "/#pillar-showcase", pillarId: "diaries-tech" },
-  { name: "Bags & Drinkware", href: "/#pillar-showcase", pillarId: "bags-drinkware" },
-  { name: "Pure Copper & Brass", href: "/#pillar-showcase", pillarId: "patra-heritage" },
-  { name: "Gourmet Hampers", href: "/#pillar-showcase", pillarId: "gourmet-lifestyle" },
+  { name: "Pure Copper & Brass", href: "/#pillar-showcase", pillarId: "pure-copper-heritage" },
+  { name: "Tech Diaries & Desk", href: "/#pillar-showcase", pillarId: "tech-diaries-desk" },
+  { name: "Gourmet Hampers", href: "/#pillar-showcase", pillarId: "gourmet-hampers" },
+  { name: "Turnkey Decor + Gifting", href: "/#turnkey-programme", pillarId: "turnkey-decor-gifting" },
   { name: "Inquire / WhatsApp", href: "/#rfq-section" },
 ];
 

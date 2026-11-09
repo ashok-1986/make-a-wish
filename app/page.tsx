@@ -2,8 +2,6 @@ import { Marquee } from "../components/Marquee";
 import {
   HeroSection,
   TrustStrip,
-  CategoriesSection,
-  LookbookSection,
   TurnkeySection,
   YearRoundSection,
   ProcessSection,
@@ -11,15 +9,15 @@ import {
   RFQSection,
   ClosingSection,
 } from "../components/home";
-import { PillarShowcase } from "../components/gifting/PillarShowcase";
+import { CategoryShowcaseSection } from "../components/showcase/CategoryShowcaseSection";
+import { FeaturedSetsSection } from "../components/showcase/FeaturedSetsSection";
 
 /**
- * Main landing page for Make a Wish.
+ * Main landing page for Make a Wish (v2 Category-Led B2B Showcase).
  *
- * Composes the primary corporate gifting hero, trust banner, marquee, 5 core B2B gifting
- * pillars showcase, 14-category hub, Diwali 2026 signature lookbook, turnkey decor planner,
- * year-round gifting spotlight, 4-step ordering process, service pillars, corporate desk RFQ,
- * and closing contact CTA.
+ * Implements the v2 Category-Led B2B Showcase page flow:
+ * Hero → Stats / Trust Strip → 5 Pillar Category Grid → Featured Sets →
+ * Turnkey Decor & Gifting → Year-Round Calendar → Process → Services → RFQ → Closing.
  */
 export default function HomePage() {
   return (
@@ -27,9 +25,8 @@ export default function HomePage() {
       <HeroSection />
       <TrustStrip />
       <Marquee />
-      <PillarShowcase />
-      <CategoriesSection />
-      <LookbookSection />
+      <CategoryShowcaseSection />
+      <FeaturedSetsSection />
       <TurnkeySection />
       <YearRoundSection />
       <ProcessSection />

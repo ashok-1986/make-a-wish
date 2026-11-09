@@ -6,6 +6,7 @@ import { YearRoundButton } from "../../components/gifting/GiftingActions";
 import { GiftingCatalogue } from "../../components/gifting/GiftingCatalogue";
 import { HamperLookbook } from "../../components/gifting/HamperLookbook";
 import { PillarShowcase } from "../../components/gifting/PillarShowcase";
+import { FeaturedSetsSection } from "../../components/showcase/FeaturedSetsSection";
 import { RFQForm } from "../../components/gifting/RFQForm";
 import { TurnkeyPlanner } from "../../components/gifting/TurnkeyPlanner";
 import { WhatsAppIcon } from "../../components/icons/WhatsAppIcon";
@@ -222,6 +223,9 @@ export default function CorporateGiftingPage() {
 
       {/* Section 1: 5 Core B2B Gifting Pillars Showcase */}
       <PillarShowcase />
+
+      {/* Featured Curated Sets */}
+      <FeaturedSetsSection />
 
       {/* Section 2: Turnkey Bundled Package Callout (PRD Section 2.1 Pillar E) */}
       <section
