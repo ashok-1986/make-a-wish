@@ -34,33 +34,29 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
     summary: string;
   } | null>(null);
 
-  /* Sync when rfqSeed from context changes */
+  /* Sync RFQ seed from context or session storage fallback */
   useEffect(() => {
-    if (!rfqSeed) return;
-    if (rfqSeed.inquiryType) setGiftingPurpose(rfqSeed.inquiryType);
-    if (rfqSeed.notes) setRequirements(rfqSeed.notes);
-    setSubmissionState(null);
-    try {
-      window.sessionStorage.removeItem(RFQ_SEED_KEY);
-    } catch {
-      /* Storage can be unavailable in private modes. */
+    let seed: { inquiryType?: string; notes?: string } | null = rfqSeed;
+    if (!seed) {
+      try {
+        const raw = window.sessionStorage.getItem(RFQ_SEED_KEY);
+        if (raw) seed = JSON.parse(raw);
+      } catch {
+        /* Storage can be unavailable in private modes. */
+      }
+    }
+
+    if (seed) {
+      if (seed.inquiryType) setGiftingPurpose(seed.inquiryType);
+      if (seed.notes) setRequirements(seed.notes);
+      setSubmissionState(null);
+      try {
+        window.sessionStorage.removeItem(RFQ_SEED_KEY);
+      } catch {
+        /* Storage can be unavailable in private modes. */
+      }
     }
   }, [rfqSeed]);
-
-  /* A shortlist sent from a page without an enquiry form is carried here through
-     session storage. Read it once, then clear it so it does not reappear later. */
-  useEffect(() => {
-    try {
-      const raw = window.sessionStorage.getItem(RFQ_SEED_KEY);
-      if (!raw) return;
-      const stored = JSON.parse(raw) as { inquiryType?: string; notes?: string };
-      if (stored.inquiryType) setGiftingPurpose(stored.inquiryType);
-      if (stored.notes) setRequirements(stored.notes);
-      window.sessionStorage.removeItem(RFQ_SEED_KEY);
-    } catch {
-      /* A corrupted or unavailable store should not block the form. */
-    }
-  }, []);
 
   const purposeOptions = useMemo(() => {
     const base = [...corporateGiftingPurposes] as string[];
