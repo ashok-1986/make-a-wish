@@ -149,3 +149,4 @@ export function PillarCategoryCard({
     </motion.article>
   );
 }
+

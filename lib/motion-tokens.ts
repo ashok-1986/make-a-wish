@@ -91,3 +91,4 @@ export const defaultViewportConfig = {
   once: true,
   amount: 0.15,
 };
+

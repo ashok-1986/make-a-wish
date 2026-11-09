@@ -69,3 +69,4 @@ test("Homepage page flow embeds CategoryShowcaseSection and FeaturedSetsSection"
   assert.ok(content.includes("<CategoryShowcaseSection"), "Must embed CategoryShowcaseSection");
   assert.ok(content.includes("<FeaturedSetsSection"), "Must embed FeaturedSetsSection");
 });
+
