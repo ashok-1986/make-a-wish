@@ -11,7 +11,7 @@ import { MotionProvider } from "../components/providers/MotionProvider";
 /* High-contrast architectural grotesque sans echoing 8gnc.io enterprise aesthetic */
 const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500"],
   variable: "--font-sans",
   display: "swap",
 });

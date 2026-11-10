@@ -113,3 +113,4 @@ test("Typography Invariant: Pillar Category Card and Featured Set Card H3s scale
     "FeaturedSetsSection Card H3 must use lg:text-[40px] font-medium"
   );
 });
+
