@@ -864,23 +864,31 @@ export function rfqEmailBody(details: RFQDetails): string {
     "",
     "Please provide a corporate volume quote and custom presentation for our organization:",
     "",
-    `• Company: ${details.company.trim()}`,
-    `• Contact Name: ${details.name.trim()}`,
-    `• Work Email: ${details.email.trim()}`,
-    `• WhatsApp / Phone: ${details.phone.trim()}`,
-    `• Gifting Purpose: ${purpose}`,
-    qty ? `• Estimated Quantity Tier: ${qty}` : "",
-    details.location?.trim() ? `• Delivery Location: ${details.location.trim()}` : "",
-    details.target?.trim() ? `• Target Date: ${details.target.trim()}` : "",
+    `- Company: ${details.company.trim()}`,
+    `- Contact Name: ${details.name.trim()}`,
+    `- Work Email: ${details.email.trim()}`,
+    `- WhatsApp / Phone: ${details.phone.trim()}`,
+    `- Gifting Purpose: ${purpose}`,
+    qty ? `- Estimated Quantity Tier: ${qty}` : "",
+    details.location?.trim() ? `- Delivery Location: ${details.location.trim()}` : "",
+    details.target?.trim() ? `- Target Date: ${details.target.trim()}` : "",
   ].filter(Boolean);
 
   if (details.items && details.items.length > 0) {
     lines.push("");
-    lines.push(`Shortlisted Items / SKUs (${details.items.length}):`);
-    details.items.forEach((item, index) => {
-      const detail = item.detail ? ` — ${item.detail}` : "";
-      lines.push(`${index + 1}. ${item.name} (${shortlistKindLabels[item.kind] || item.kind})${detail}`);
+    lines.push(`Shortlisted Items (${details.items.length}):`);
+    const maxEmailItems = 6;
+    const displayedItems = details.items.slice(0, maxEmailItems);
+    displayedItems.forEach((item, index) => {
+      const name = item.name.length > 40 ? `${item.name.slice(0, 37)}...` : item.name;
+      const detail = item.detail ? ` - ${item.detail}` : "";
+      lines.push(`${index + 1}. ${name} (${shortlistKindLabels[item.kind] || item.kind})${detail}`);
     });
+    if (details.items.length > maxEmailItems) {
+      lines.push(
+        `...and ${details.items.length - maxEmailItems} more items (complete shortlist transmitted via server request / WhatsApp).`
+      );
+    }
   }
 
   if (details.requirements?.trim()) {

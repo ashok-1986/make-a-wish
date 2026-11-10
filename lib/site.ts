@@ -8,6 +8,15 @@ const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "+919773411805";
 const secondaryPhoneNumber = process.env.NEXT_PUBLIC_SECONDARY_PHONE_NUMBER || "+919987119558";
 const emailAddress = process.env.NEXT_PUBLIC_EMAIL || "makeawishevents@gmail.com";
 
+function formatPhoneDisplay(num: string, fallback: string): string {
+  if (!num) return fallback;
+  const cleaned = num.replace(/\s+/g, "");
+  if (cleaned.startsWith("+91") && cleaned.length === 13) {
+    return `+91 ${cleaned.slice(3, 8)} ${cleaned.slice(8)}`;
+  }
+  return num;
+}
+
 export const DEFAULT_MESSAGE =
   "Hello Make a Wish, I would like to enquire about Year-Round Corporate Gifting, Employee Joining Kits and Turnkey Solutions.";
 
@@ -18,13 +27,13 @@ export function whatsappLink(message: string = DEFAULT_MESSAGE) {
 
 export const contact = {
   /* Human-readable forms for showing the numbers as text */
-  display: "+91 97734 11805",
-  secondaryDisplay: "+91 99871 19558",
+  display: formatPhoneDisplay(phoneNumber, "+91 97734 11805"),
+  secondaryDisplay: formatPhoneDisplay(secondaryPhoneNumber, "+91 99871 19558"),
   whatsapp: whatsappLink(),
   phone: `tel:${phoneNumber}`,
-  phoneLabel: "+91 97734 11805",
+  phoneLabel: formatPhoneDisplay(phoneNumber, "+91 97734 11805"),
   secondaryPhone: `tel:${secondaryPhoneNumber}`,
-  secondaryPhoneLabel: "+91 99871 19558",
+  secondaryPhoneLabel: formatPhoneDisplay(secondaryPhoneNumber, "+91 99871 19558"),
   email: `mailto:${emailAddress}`,
   emailLabel: emailAddress,
   locations: "Navi Mumbai (Panvel, Kharghar, Belapur, Nerul, Vashi, Airoli), Thane & Mumbai",

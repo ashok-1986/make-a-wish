@@ -73,8 +73,19 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
 
     // Global anchor link smooth scroll interception
     function handleAnchorClick(event: MouseEvent) {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
       const target = (event.target as HTMLElement)?.closest("a");
-      if (!target) return;
+      if (!target || (target.target && target.target !== "_self")) return;
 
       const href = target.getAttribute("href");
       if (!href) return;

@@ -35,6 +35,7 @@ type GiftingContextValue = {
   closeCatalogue: () => void;
   rfqSeed: RFQSeed | null;
   seedRFQ: (seed?: { inquiryType?: string; notes?: string }) => void;
+  consumeSeed: () => void;
 };
 
 const GiftingContext = createContext<GiftingContextValue | null>(null);
@@ -52,7 +53,14 @@ export function GiftingProvider({ children }: { children: React.ReactNode }) {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed: unknown = JSON.parse(raw);
-        if (Array.isArray(parsed)) setItems(parsed as ShortlistItem[]);
+        if (Array.isArray(parsed)) {
+          setItems(
+            parsed.filter(
+              (i): i is ShortlistItem =>
+                Boolean(i && typeof i === "object" && typeof (i as ShortlistItem).key === "string" && typeof (i as ShortlistItem).name === "string")
+            )
+          );
+        }
       }
     } catch {
       /* A corrupted or unavailable store should not block the page. */
@@ -140,6 +148,17 @@ export function GiftingProvider({ children }: { children: React.ReactNode }) {
     }, 80);
   }, []);
 
+  const consumeSeed = useCallback(() => {
+    setRfqSeed(null);
+    if (typeof window !== "undefined") {
+      try {
+        window.sessionStorage.removeItem(RFQ_SEED_KEY);
+      } catch {
+        /* Storage can be unavailable in private modes. */
+      }
+    }
+  }, []);
+
   const value = useMemo<GiftingContextValue>(
     () => ({
       items,
@@ -157,6 +176,7 @@ export function GiftingProvider({ children }: { children: React.ReactNode }) {
       closeCatalogue,
       rfqSeed,
       seedRFQ,
+      consumeSeed,
     }),
     [
       items,
@@ -174,6 +194,7 @@ export function GiftingProvider({ children }: { children: React.ReactNode }) {
       closeCatalogue,
       rfqSeed,
       seedRFQ,
+      consumeSeed,
     ]
   );
 

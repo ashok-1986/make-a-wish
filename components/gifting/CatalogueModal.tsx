@@ -40,8 +40,25 @@ export function CatalogueModal() {
 
   const message = catalogueRequestMessage({ name, company, email, phone, interest });
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    try {
+      await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          company: company.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          purpose: `Catalogue Request (${interest})`,
+          notes: `Interested in collection: ${interest}`,
+          inquiryType: "Catalog Request",
+        }),
+      });
+    } catch (err) {
+      console.warn("[CATALOGUE LEAD DISPATCH WARNING]: Could not record request on server:", err);
+    }
     window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
     setSent(true);
   }
@@ -164,8 +181,8 @@ export function CatalogueModal() {
           </button>
         </form>
 
-        <p role="status" aria-live="polite" className="mt-3 min-h-[1.5rem] text-xs font-medium text-emerald-600">
-          {sent ? "WhatsApp opened with your catalogue request." : ""}
+        <p role="status" aria-live="polite" className="mt-3 min-h-[1.5rem] text-xs font-medium text-emerald-700">
+          {sent ? "Catalogue request recorded on sales desk server & WhatsApp opened." : ""}
         </p>
 
         {sent && (

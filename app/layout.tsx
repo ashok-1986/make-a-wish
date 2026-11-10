@@ -17,6 +17,7 @@ const sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://makeawishevents.in"),
   title: {
     default: "Make a Wish | 365-Day Corporate Gifting, Joining Kits & Turnkey Decor in Navi Mumbai",
     template: "%s | Make a Wish",

@@ -14,7 +14,7 @@ import { RFQ_SEED_KEY, useGifting } from "./GiftingProvider";
 const fieldClass = "field";
 
 export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
-  const { items, removeItem, clearItems, rfqSeed } = useGifting();
+  const { items, removeItem, clearItems, rfqSeed, consumeSeed } = useGifting();
   const formRef = useRef<HTMLFormElement>(null);
 
   const [name, setName] = useState("");
@@ -27,6 +27,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
   const [quantityTier, setQuantityTier] = useState<QuantityTier>(QUANTITY_TIERS[1]);
   const [location, setLocation] = useState("");
   const [requirements, setRequirements] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [submissionState, setSubmissionState] = useState<{
     type: "whatsapp" | "email";
@@ -34,7 +35,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
     summary: string;
   } | null>(null);
 
-  /* Sync RFQ seed from context or session storage fallback */
+  /* Sync RFQ seed from context or session storage fallback and consume it */
   useEffect(() => {
     let seed: { inquiryType?: string; notes?: string } | null = rfqSeed;
     if (!seed) {
@@ -50,13 +51,9 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
       if (seed.inquiryType) setGiftingPurpose(seed.inquiryType);
       if (seed.notes) setRequirements(seed.notes);
       setSubmissionState(null);
-      try {
-        window.sessionStorage.removeItem(RFQ_SEED_KEY);
-      } catch {
-        /* Storage can be unavailable in private modes. */
-      }
+      consumeSeed();
     }
-  }, [rfqSeed]);
+  }, [rfqSeed, consumeSeed]);
 
   const purposeOptions = useMemo(() => {
     const base = [...corporateGiftingPurposes] as string[];
@@ -66,7 +63,21 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
     return Array.from(new Set([...extras, ...base]));
   }, [defaultInquiry, giftingPurpose]);
 
-  function handleAction(action: "whatsapp" | "email") {
+  /* Calculate whether the corporate desk is currently in operational hours (Mon-Sat 10:00-19:00 IST) */
+  const deskActive = useMemo(() => {
+    try {
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      const ist = new Date(utc + 5.5 * 3600000);
+      const day = ist.getDay(); // 0 is Sunday
+      const hour = ist.getHours();
+      return day >= 1 && day <= 6 && hour >= 10 && hour < 19;
+    } catch {
+      return true;
+    }
+  }, []);
+
+  async function handleAction(action: "whatsapp" | "email") {
     if (formRef.current && !formRef.current.reportValidity()) {
       return;
     }
@@ -83,6 +94,33 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
       items,
     };
 
+    setIsSubmitting(true);
+
+    // 1. Record lead on server to prevent lost leads
+    try {
+      await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: details.name,
+          company: details.company,
+          email: details.email,
+          phone: details.phone,
+          purpose: details.giftingPurpose,
+          quantity: details.quantityTier,
+          location: details.location,
+          notes: details.requirements,
+          items: details.items,
+          inquiryType: `RFQ (${action.toUpperCase()})`,
+        }),
+      });
+    } catch (err) {
+      console.warn("[RFQ LEAD DISPATCH WARNING]: Could not record quote on server:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
+
+    // 2. Open client-side channel
     if (action === "whatsapp") {
       const message = rfqMessage(details);
       const href = whatsappLink(message);
@@ -90,17 +128,17 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
       setSubmissionState({
         type: "whatsapp",
         href,
-        summary: `WhatsApp inquiry opened for ${details.company} (${details.giftingPurpose}).`,
+        summary: `Quote request recorded on server & WhatsApp opened for ${details.company} (${details.giftingPurpose}).`,
       });
     } else {
       const subject = `B2B Volume Quote Request - ${details.company} (${details.giftingPurpose})`;
       const body = rfqEmailBody(details);
-      const href = `mailto:makeawishevents@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const href = `mailto:${contact.emailLabel}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = href;
       setSubmissionState({
         type: "email",
         href,
-        summary: `Email client opened with RFQ for ${details.company} to makeawishevents@gmail.com.`,
+        summary: `Quote request recorded on server & Email drafted for ${details.company} to ${contact.emailLabel}.`,
       });
     }
   }
@@ -123,9 +161,19 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
             B2B Corporate Quotation Request
           </h3>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-xs font-medium text-emerald-800 shadow-xs">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span>B2B Desk Online</span>
+        <div
+          className={`flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-xs font-medium shadow-xs ${
+            deskActive
+              ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+              : "border-amber-200 bg-amber-50 text-amber-800"
+          }`}
+        >
+          <span
+            className={`h-2 w-2 rounded-full ${
+              deskActive ? "bg-emerald-500 animate-pulse" : "bg-amber-500"
+            }`}
+          />
+          <span>{deskActive ? "B2B Desk Online (10:00–19:00 IST)" : "B2B Desk (Replies Mon–Sat 10:00)"}</span>
         </div>
       </div>
 
@@ -387,13 +435,13 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
             <div className="flex-1 text-sm">
               <p className="font-medium text-zinc-900">
                 {submissionState.type === "whatsapp"
-                  ? "WhatsApp Inquiry Initiated"
-                  : "Email Drafted to Sales Desk"}
+                  ? "Quote Request Saved & WhatsApp Opened"
+                  : "Quote Request Saved & Email Drafted"}
               </p>
               <p className="mt-1 text-xs opacity-90 leading-relaxed text-zinc-700">
                 {submissionState.type === "whatsapp" ? (
                   <>
-                    A direct WhatsApp chat with our B2B desk (<strong>{contact.display}</strong>) has been opened with your details. If the tab did not open,{" "}
+                    Your request details have been recorded on our sales desk server, and a direct WhatsApp chat with our B2B desk (<strong>{contact.display}</strong>) has been opened with your proposal. If the chat did not open automatically,{" "}
                     <a
                       href={submissionState.href}
                       target="_blank"
@@ -406,7 +454,7 @@ export function RFQForm({ defaultInquiry }: { defaultInquiry?: string }) {
                   </>
                 ) : (
                   <>
-                    Your mail client has been opened with your proposal request for <strong>{contact.emailLabel}</strong>. If your email client did not launch,{" "}
+                    Your request details have been recorded on our sales desk server, and your mail client has been opened with your proposal draft for <strong>{contact.emailLabel}</strong>. If your email client did not launch,{" "}
                     <a
                       href={submissionState.href}
                       className="underline font-medium text-purple-700 hover:text-purple-900"

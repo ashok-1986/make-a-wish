@@ -84,3 +84,33 @@ test("rfqEmailBody generates structured sales desk email format", () => {
   assert.ok(email.includes("Copper Bedside Carafe Set"));
   assert.ok(email.includes("Requires samples before board sign-off"));
 });
+
+test("rfqEmailBody caps long shortlist to protect mailto length limits", () => {
+  const fiftyItems = Array.from({ length: 50 }, (_, i) => ({
+    key: `item-${i + 1}`,
+    kind: "product",
+    name: `Executive Premium Corporate Gift Item Number ${i + 1} with Full Inclusions`,
+    detail: `SKU: EX-GIFT-${1000 + i}`,
+  }));
+
+  const email = rfqEmailBody({
+    name: "Aakash Agarwal",
+    company: "Tata Consultancy Services Enterprise Solutions",
+    email: "aakash.agarwal@tcs.com",
+    phone: "+91 98765 43210",
+    giftingPurpose: "Employee Joining Kits & Onboarding",
+    quantityTier: "250+ Units",
+    location: "Vikhroli, Mumbai, Maharashtra, 400079",
+    requirements: "Need custom branded packaging and individual dispatch to multiple branch offices across Western India.",
+    items: fiftyItems,
+  });
+
+  // Verify items are capped in the email body
+  assert.ok(email.includes("Executive Premium Corporate Gift"));
+  assert.ok(!email.includes("Item Number 7"));
+  assert.ok(email.includes("...and 44 more items (complete shortlist transmitted via server request / WhatsApp)"));
+
+  // Check URL encoded length stays within ~2,000 char Windows mailto limit
+  const mailtoUrl = `mailto:makeawishevents@gmail.com?subject=Test&body=${encodeURIComponent(email)}`;
+  assert.ok(mailtoUrl.length < 1800, `Encoded mailto length (${mailtoUrl.length}) exceeds 1800 chars`);
+});

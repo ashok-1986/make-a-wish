@@ -92,21 +92,3 @@ export const PILLARS: PillarMeta[] = [
     iconName: "gift",
   },
 ];
-
-export function buildProductWhatsAppLink(
-  product: CatalogProduct,
-  quantityTier: string = "50–99",
-  phoneNumber: string = "919773411805"
-): string {
-  const tier = quantityTier || "50–99";
-  const message = [
-    `Hi Make A Wish, we would like a B2B volume quote:`,
-    `• Product: ${product.name}`,
-    `• SKU: ${product.sku}`,
-    `• Pillar: ${product.categoryName}`,
-    `• Estimated Quantity Tier: ${tier}`,
-    `Please share the catalogue sheet, branding options, and lead times.`,
-  ].join("\n");
-
-  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-}
